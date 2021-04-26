@@ -10,20 +10,18 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="什么叫$nextTick vue 官网说$nextTick在下次 DOM 更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，获取更新后的 DOM。123456789101112&#x2F;&#x2F; 修改数据vm.msg &#x3D; &#39;Hello&#39;&#x2F;&#x2F; DOM 还没有更新Vue.nextTick(function () &amp;#123;  &#x2F;&#x2F; DOM 更新了&amp;#125;)&#x2F;&#x2F; 作为一个 Promise 使用 (2">
+  <meta name="description" content="什么叫$nextTick vue 官网说$nextTick在下次 DOM 更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，获取更新后的 DOM。123456789101112// 修改数据vm.msg = &apos;Hello&apos;// DOM 还没有更新Vue.nextTick(function () &amp;#123;  // DOM 更新了&amp;#125;)// 作为一个 Promise 使用 (2">
+<meta name="keywords" content="vue,nextTick,event loop">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue的$nextTick的实现">
 <meta property="og:url" content="http://littleki.com/2018/08/08/vue/nextTick/index.html">
 <meta property="og:site_name" content="Littleki">
-<meta property="og:description" content="什么叫$nextTick vue 官网说$nextTick在下次 DOM 更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，获取更新后的 DOM。123456789101112&#x2F;&#x2F; 修改数据vm.msg &#x3D; &#39;Hello&#39;&#x2F;&#x2F; DOM 还没有更新Vue.nextTick(function () &amp;#123;  &#x2F;&#x2F; DOM 更新了&amp;#125;)&#x2F;&#x2F; 作为一个 Promise 使用 (2">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2018-08-07T16:30:57.000Z">
-<meta property="article:modified_time" content="2019-10-18T02:01:34.645Z">
-<meta property="article:author" content="Littleki">
-<meta property="article:tag" content="vue">
-<meta property="article:tag" content="nextTick">
-<meta property="article:tag" content="event loop">
+<meta property="og:description" content="什么叫$nextTick vue 官网说$nextTick在下次 DOM 更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，获取更新后的 DOM。123456789101112// 修改数据vm.msg = &apos;Hello&apos;// DOM 还没有更新Vue.nextTick(function () &amp;#123;  // DOM 更新了&amp;#125;)// 作为一个 Promise 使用 (2">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-03-24T13:33:27.061Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue的$nextTick的实现">
+<meta name="twitter:description" content="什么叫$nextTick vue 官网说$nextTick在下次 DOM 更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，获取更新后的 DOM。123456789101112// 修改数据vm.msg = &apos;Hello&apos;// DOM 还没有更新Vue.nextTick(function () &amp;#123;  // DOM 更新了&amp;#125;)// 作为一个 Promise 使用 (2">
   
     <link rel="alternative" href="/blog/atom.xml" title="Littleki" type="application/atom+xml">
   
@@ -66,54 +64,75 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/blog/" class="profilepic">
-			<img src="/blog/img/person.jpg" class="js-avatar">
-		</a>
-		<hgroup>
-			<h1 class="header-author"><a href="/blog/">Littleki</a></h1>
-		</hgroup>
-		
+	<img src="/blog/img/person.jpg" class="js-avatar">
+	</a>
+	<hgroup>
+		<h1 class="header-author"><a href="/blog/">Littleki</a></h1>
+	</hgroup>
+	
 
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="/blog/" target="_blank">主页</a></li>
-			
-				<li><a href="https://zhousiwei.gitee.io/ibooks/" target="_blank">技术笔记</a></li>
-			
-				<li><a href="/blog/tags/%E9%9A%8F%E7%AC%94/" target="_blank">随笔</a></li>
-			
+	<li><a href="/blog/" target="_blank" >主页</a>
+	</li>
+	
+	<li><a href="/blog/2019/10/17/随手笔记/" target="_blank" >随手笔记</a>
+	</li>
+	
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
 			
-				
-					<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
-				
-			
-				
-					<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
-				
-			
-				
-					<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
-				
-			
+	
+	<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
+	
+	
+	
+	<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
+	
+	
+	
+	<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+	
+	
 		</nav>
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" href="#" title="GitHub" target="_blank"><i class="icon-github"></i></a>
-				
-					<a class="gitee" href="#" title="码云" target="_blank"><i class="icon-gitee"></i></a>
-				
-					<a class="jianshu" href="#" title="简书" target="_blank"><i class="icon-jianshu"></i></a>
-				
-					<a class="cnblog" href="#" title="博客园" target="_blank"><i class="icon-cnblog"></i></a>
-				
+	<a class="github" href="https://github.com/cxxLittleKing"
+		title="GitHub"
+		target="_blank" ><i class="icon-github"></i></a>
+	
+	<a class="gitee" href="https://gitee.com/littleki"
+		title="码云"
+		target="_blank" ><i class="icon-gitee"></i></a>
+	
+	<a class="jianshu" href="#"
+		title="简书"
+		target="_blank" ><i class="icon-jianshu"></i></a>
+	
+	<a class="cnblog" href="#"
+		title="博客园"
+		target="_blank" ><i class="icon-cnblog"></i></a>
+	
 			</div>
 		
-		</nav>
-	</header>		
+	
+	
+	
+	
+	<div>
+		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="240" height="52"
+			src="//music.163.com/outchain/player?type=2&id=1366551860&auto=1&height=32"></iframe>
+	</div>
+	
+	
+	<p style="font-size: 12px;">。。。<p>
+			
+			
+			</nav>
+			</header>
 </div>
 
     </div>
@@ -121,7 +140,7 @@
       
       
       <a class="forkMe" style="position:absolute;z-index:999;top:0;right:0.5em;" 
-        href="https://github.com/JoeyBling/hexo-theme-yilia-plus" target="_blank">
+        href="https://github.com/cxxLittleKing" target="_blank">
         <img src="/blog/img/forkme.png"
           class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
       
@@ -148,16 +167,14 @@
 			
 				
 			
-				
-			
 			
 			
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="GitHub"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/cxxLittleKing" title="GitHub"><i class="icon-github"></i></a>
 			        
-						<a class="gitee" target="_blank" href="#" title="码云"><i class="icon-gitee"></i></a>
+						<a class="gitee" target="_blank" href="https://gitee.com/littleki" title="码云"><i class="icon-gitee"></i></a>
 			        
 						<a class="jianshu" target="_blank" href="#" title="简书"><i class="icon-jianshu"></i></a>
 			        
@@ -167,14 +184,12 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 70%">
+				<ul style="width: 50%">
 				
 				
-					<li style="width: 33.333333333333336%"><a href="/blog/">主页</a></li>
+					<li style="width: 50%"><a href="/blog/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="https://zhousiwei.gitee.io/ibooks/" target="_blank" rel="noopener">技术笔记</a></li>
-		        
-					<li style="width: 33.333333333333336%"><a href="/blog/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 50%"><a href="/blog/2019/10/17/随手笔记/">随手笔记</a></li>
 		        
 				</ul>
 			</nav>
@@ -193,7 +208,7 @@
             <article id="post-vue/nextTick" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
+      <header class=" article-header">
   
   
     <h1 class="article-title" itemprop="name">
@@ -215,7 +230,7 @@
 
   
   
-    
+  
 <div style="margin-top:10px;">
   <span class="post-time">
     <span class="post-meta-item-icon">
@@ -284,7 +299,7 @@
 <li>从e.g.1的输出结果可以看到传给then方法的回调是在最后执行的，所以可以判断出new Promise(function)中的function是同步执行的，而then(reslove,reject)中的resolve或reject是异步执行的。</li>
 </ul>
 <h2 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h2><ul>
-<li>[nextTick 的实现]<br>(<a href="http://hcysun.me/vue-design/art/8vue-reactive-dep-watch.html#nexttick-的实现" target="_blank" rel="noopener">http://hcysun.me/vue-design/art/8vue-reactive-dep-watch.html#nexttick-的实现</a>)</li>
+<li><a href="http://hcysun.me/vue-design/art/8vue-reactive-dep-watch.html#nexttick-的实现" target="_blank" rel="noopener">nextTick 的实现</a></li>
 <li><a href="http://www.ruanyifeng.com/blog/2014/10/event-loop.html" target="_blank" rel="noopener">JavaScript 运行机制详解：再谈Event Loop</a></li>
 <li><a href="https://www.cnblogs.com/dong-xu/p/7000139.html" target="_blank" rel="noopener">深入理解 JavaScript 事件循环（二）— task and microtask</a></li>
 </ul>
@@ -292,41 +307,9 @@
     
 
     
-    <div class="page-reward">
-      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
-        <div class="tooltip tooltip-east">
-          <span class="tooltip-item">
-            赏
-          </span>
-          <span class="tooltip-content">
-            <span class="tooltip-text">
-              <span class="tooltip-inner">
-                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
-                    class="icon icon-quo-right"></i></p>
-                <div class="reward-box">
-                  
-                  <div class="reward-box-item">
-                    <img class="reward-img" src="/blog/img/alipay.jpg">
-                    <span class="reward-type">支付宝</span>
-                  </div>
-                  
-                  
-                  <div class="reward-box-item">
-                    <img class="reward-img" src="/blog/img/weixin.png">
-                    <span class="reward-type">微信</span>
-                  </div>
-                  
-                </div>
-              </span>
-            </span>
-          </span>
-        </div>
-      </a>
-    </div>
-    
 
     
-    <div class="declare"> 
+    <div class="declare">
       <ul class="post-copyright">
         <li>
           <strong>本文作者：</strong>
@@ -334,7 +317,8 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://littleki.com/blog/2018/08/08/vue/nextTick/" title="vue的$nextTick的实现" target="_blank">http://littleki.com/blog/2018/08/08/vue/nextTick/</a>
+          <a href="http://littleki.com/blog/2018/08/08/vue/nextTick/" title="vue的$nextTick的实现"
+            target="_blank">http://littleki.com/blog/2018/08/08/vue/nextTick/</a>
         </li>
         
         <li>
@@ -435,7 +419,7 @@
 
 <nav id="article-nav">
   
-    <a href="/blog/2019/01/31/%E8%BF%9F%E6%9D%A5%E7%9A%842018%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/blog/2019/01/31/年度总结/迟来的2018年度总结/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -445,8 +429,8 @@
     </a>
   
   
-    <a href="/blog/2018/07/22/JavaScript/Ajax/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">如何实现jQuery中的Ajax</div>
+    <a href="/blog/2018/07/22/JavaScript/ES6/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ES6笔记</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -502,7 +486,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018-2020 <a href="http://littleki.com/blog/" target="_blank">Littleki</a>
+    		&copy; 2017-2021 <a href="http://littleki.com/blog/" target="_blank">Littleki</a>
     	</div>
       	<div class="footer-right">
 			
@@ -538,7 +522,7 @@
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
-		toc_hide_index: true,
+		toc_hide_index: false,
 		root: "/blog/",
 		innerArchive: true,
 		showTags: true
@@ -667,6 +651,58 @@
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">vue的坑</a>
               </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">javaScript高级程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">分享会</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">promise</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">typescript笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">mac 快捷键、mac操作</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vue3.0</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">重构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">年度总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">反思</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vue3源码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">UT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">随手笔记</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -770,7 +806,7 @@
     	<section class="tools-section tools-section-me" q-show="aboutme">
         
           
-  	  		<div class="aboutme-wrap" id="aboutme">主要涉及技术：<br>Java后端开发、聚合支付、<br>公众号开发、开源爱好者、Linux<br><br>联系QQ:2434387555<br><br>很惭愧<br><br>只做了一点微小的工作<br>谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="aboutme">告诫自己要不断的学习，<br>否则你永远比别人低n个高度</div>
   	  	
     	</section>
     

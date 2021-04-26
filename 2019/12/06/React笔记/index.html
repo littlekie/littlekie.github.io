@@ -6,23 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://littleki.com">
-  <title>我的前端面试问题 | Littleki</title>
+  <title>React笔记 | Littleki</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="ReactReact中文文档 React生命周期 所有有关生命周期的变量应该放到class里  123456789class Clock extends React.Component &amp;#123; constructor(props) &amp;#123;   super(props);   this.state &#x3D; &amp;#123;date: new Date()&amp;#125;; &amp;#125; change">
+  <meta name="description" content="ReactReact中文文档 react VRwebVR ract-vr、aframe webgQL setState的问题setState是异步更新 setState循环调用风险当调用setState时，实际上会执行enqueueSetState方法，并对partialState以及pending-StateQueue更新队列进行合并操作，最终通过enqueueUpdate执行state更新而p">
+<meta name="keywords" content="React,React笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的前端面试问题">
-<meta property="og:url" content="http://littleki.com/2019/12/06/React%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:title" content="React笔记">
+<meta property="og:url" content="http://littleki.com/2019/12/06/React笔记/index.html">
 <meta property="og:site_name" content="Littleki">
-<meta property="og:description" content="ReactReact中文文档 React生命周期 所有有关生命周期的变量应该放到class里  123456789class Clock extends React.Component &amp;#123; constructor(props) &amp;#123;   super(props);   this.state &#x3D; &amp;#123;date: new Date()&amp;#125;; &amp;#125; change">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2019-12-06T08:34:31.000Z">
-<meta property="article:modified_time" content="2019-12-13T15:51:19.751Z">
-<meta property="article:author" content="Littleki">
-<meta property="article:tag" content="React">
-<meta property="article:tag" content="React笔记">
+<meta property="og:description" content="ReactReact中文文档 react VRwebVR ract-vr、aframe webgQL setState的问题setState是异步更新 setState循环调用风险当调用setState时，实际上会执行enqueueSetState方法，并对partialState以及pending-StateQueue更新队列进行合并操作，最终通过enqueueUpdate执行state更新而p">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-06-09T07:42:11.112Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React笔记">
+<meta name="twitter:description" content="ReactReact中文文档 react VRwebVR ract-vr、aframe webgQL setState的问题setState是异步更新 setState循环调用风险当调用setState时，实际上会执行enqueueSetState方法，并对partialState以及pending-StateQueue更新队列进行合并操作，最终通过enqueueUpdate执行state更新而p">
   
     <link rel="alternative" href="/blog/atom.xml" title="Littleki" type="application/atom+xml">
   
@@ -65,54 +64,75 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/blog/" class="profilepic">
-			<img src="/blog/img/person.jpg" class="js-avatar">
-		</a>
-		<hgroup>
-			<h1 class="header-author"><a href="/blog/">Littleki</a></h1>
-		</hgroup>
-		
+	<img src="/blog/img/person.jpg" class="js-avatar">
+	</a>
+	<hgroup>
+		<h1 class="header-author"><a href="/blog/">Littleki</a></h1>
+	</hgroup>
+	
 
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="/blog/" target="_blank">主页</a></li>
-			
-				<li><a href="https://zhousiwei.gitee.io/ibooks/" target="_blank">技术笔记</a></li>
-			
-				<li><a href="/blog/tags/%E9%9A%8F%E7%AC%94/" target="_blank">随笔</a></li>
-			
+	<li><a href="/blog/" target="_blank" >主页</a>
+	</li>
+	
+	<li><a href="/blog/2019/10/17/随手笔记/" target="_blank" >随手笔记</a>
+	</li>
+	
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
 			
-				
-					<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
-				
-			
-				
-					<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
-				
-			
-				
-					<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
-				
-			
+	
+	<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
+	
+	
+	
+	<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
+	
+	
+	
+	<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+	
+	
 		</nav>
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" href="#" title="GitHub" target="_blank"><i class="icon-github"></i></a>
-				
-					<a class="gitee" href="#" title="码云" target="_blank"><i class="icon-gitee"></i></a>
-				
-					<a class="jianshu" href="#" title="简书" target="_blank"><i class="icon-jianshu"></i></a>
-				
-					<a class="cnblog" href="#" title="博客园" target="_blank"><i class="icon-cnblog"></i></a>
-				
+	<a class="github" href="https://github.com/cxxLittleKing"
+		title="GitHub"
+		target="_blank" ><i class="icon-github"></i></a>
+	
+	<a class="gitee" href="https://gitee.com/littleki"
+		title="码云"
+		target="_blank" ><i class="icon-gitee"></i></a>
+	
+	<a class="jianshu" href="#"
+		title="简书"
+		target="_blank" ><i class="icon-jianshu"></i></a>
+	
+	<a class="cnblog" href="#"
+		title="博客园"
+		target="_blank" ><i class="icon-cnblog"></i></a>
+	
 			</div>
 		
-		</nav>
-	</header>		
+	
+	
+	
+	
+	<div>
+		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="240" height="52"
+			src="//music.163.com/outchain/player?type=2&id=1366551860&auto=1&height=32"></iframe>
+	</div>
+	
+	
+	<p style="font-size: 12px;">。。。<p>
+			
+			
+			</nav>
+			</header>
 </div>
 
     </div>
@@ -120,7 +140,7 @@
       
       
       <a class="forkMe" style="position:absolute;z-index:999;top:0;right:0.5em;" 
-        href="https://github.com/JoeyBling/hexo-theme-yilia-plus" target="_blank">
+        href="https://github.com/cxxLittleKing" target="_blank">
         <img src="/blog/img/forkme.png"
           class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
       
@@ -147,16 +167,14 @@
 			
 				
 			
-				
-			
 			
 			
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="GitHub"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/cxxLittleKing" title="GitHub"><i class="icon-github"></i></a>
 			        
-						<a class="gitee" target="_blank" href="#" title="码云"><i class="icon-gitee"></i></a>
+						<a class="gitee" target="_blank" href="https://gitee.com/littleki" title="码云"><i class="icon-gitee"></i></a>
 			        
 						<a class="jianshu" target="_blank" href="#" title="简书"><i class="icon-jianshu"></i></a>
 			        
@@ -166,14 +184,12 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 70%">
+				<ul style="width: 50%">
 				
 				
-					<li style="width: 33.333333333333336%"><a href="/blog/">主页</a></li>
+					<li style="width: 50%"><a href="/blog/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="https://zhousiwei.gitee.io/ibooks/" target="_blank" rel="noopener">技术笔记</a></li>
-		        
-					<li style="width: 33.333333333333336%"><a href="/blog/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 50%"><a href="/blog/2019/10/17/随手笔记/">随手笔记</a></li>
 		        
 				</ul>
 			</nav>
@@ -192,11 +208,11 @@
             <article id="post-React笔记" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
+      <header class=" article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      我的前端面试问题
+      React笔记
     </h1>
   
 
@@ -208,13 +224,13 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/blog/2019/12/06/React%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+<a href="/blog/2019/12/06/React笔记/" class="archive-article-date">
         <time datetime="2019-12-06T08:34:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-06</time>
 </a>
 
   
   
-    
+  
 <div style="margin-top:10px;">
   <span class="post-time">
     <span class="post-meta-item-icon">
@@ -222,7 +238,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.6k字</span>
+      <span class="post-count">3.1k字</span>
     </span>
   </span>
 
@@ -231,7 +247,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">7分</span>
+      <span class="post-count">13分</span>
     </span>
   </span>
 </div>
@@ -243,70 +259,37 @@
   <div class="article-entry" itemprop="articleBody">
     
     <h1 id="React"><a href="#React" class="headerlink" title="React"></a>React</h1><p><a href="https://zh-hans.reactjs.org/docs/hooks-overview.html" target="_blank" rel="noopener">React中文文档</a></p>
+<h2 id="react-VR"><a href="#react-VR" class="headerlink" title="react VR"></a>react VR</h2><p>webVR ract-vr、aframe</p>
+<p>webgQL</p>
+<h2 id="setState的问题"><a href="#setState的问题" class="headerlink" title="setState的问题"></a>setState的问题</h2><p>setState是异步更新</p>
+<h3 id="setState循环调用风险"><a href="#setState循环调用风险" class="headerlink" title="setState循环调用风险"></a>setState循环调用风险</h3><p>当调用setState时，实际上会执行enqueueSetState方法，并对partialState以及<em>pending-StateQueue更新队列进行合并操作，最终通过enqueueUpdate执行state更新<br>而performUpdateIfNecessary方法会获取_pendingElement,</em> pendingStateQueue，_ pending-ForceUpdate，并调用receiveComponent和updateComponent方法进行组件更新<br>如果在shouldComponentUpdate或者componentWillUpdate方法中调用setState，此时this._pending-StateQueue != null，就会造成循环调用，使得浏览器内存占满后崩溃</p>
+<h3 id="调用栈"><a href="#调用栈" class="headerlink" title="调用栈"></a>调用栈</h3><p>既然setState最终是通过enqueueUpdate执行state更新，那么enqueueUpdate到底是如何更新state的呢？ 首先看下面的问题</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>()&#123;</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">        <span class="comment">//在组件初始化可以直接操作this.state</span></span><br><span class="line">        <span class="keyword">this</span>.state = &#123;</span><br><span class="line">            val: <span class="number">0</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    componentDidMount()&#123;</span><br><span class="line">        <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">           val: <span class="keyword">this</span>.state.val + <span class="number">1</span></span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="comment">//第一次输出</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.state.val);</span><br><span class="line">        <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">           val: <span class="keyword">this</span>.state.val + <span class="number">1</span></span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="comment">//第二次输出</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.state.val);</span><br><span class="line">        setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">           <span class="keyword">this</span>.setState(&#123;<span class="attr">val</span>: <span class="keyword">this</span>.state.val + <span class="number">1</span>&#125;);</span><br><span class="line">            <span class="comment">//第三次输出</span></span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.state.val);</span><br><span class="line">            <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">               val: <span class="keyword">this</span>.state.val + <span class="number">1</span></span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="comment">//第四次输出</span></span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.state.val);</span><br><span class="line">        &#125;, <span class="number">0</span>);  </span><br><span class="line">    &#125;</span><br><span class="line">    render()&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上述代码中，4次console.log打印出来的val分别是: 0，0，2 ，3</p>
+<p>enqueueUpdate的源码如下(上面流程的第三步)(batching的意思是批量的)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">enqueueUpdate</span>(<span class="params">component</span>)</span>&#123;</span><br><span class="line">       <span class="comment">//injected注入的</span></span><br><span class="line">       ensureInjected();</span><br><span class="line">       <span class="comment">//如果不处于批量更新模式</span></span><br><span class="line">       <span class="keyword">if</span>(!batchingStrategy.isBatchingUpdates)&#123;</span><br><span class="line">           batchingStrategy.batchedUpdates(enqueueUpdate, component);</span><br><span class="line">           <span class="keyword">return</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">//如果处于批量更新模式</span></span><br><span class="line">       dirtyComponents.push(component);</span><br></pre></td></tr></table></figure>
+<p>如果isBatchingUpdates为true，则对所有队列中的更新执行 <code>batchedUpdates</code> 方法，否则只把当前组件(即调用了setState的组件)放入dirtyComponents数组中，例子中4次setState调用的表现之所以不同，这里的逻辑判断起了关键作用</p>
+<p>前两次调用<code>setState</code> 时 <code>isBatchingUpdates</code> 已经被设置为true，所以没有立即更新，<br>后两次在setTimeout的  因为没有前置的batchedUpdates,所以立即更新</p>
+<h2 id="React-的坑"><a href="#React-的坑" class="headerlink" title="React 的坑"></a>React 的坑</h2><p>在 <code>React</code> 应用中，当某个组件的状态发生变化时，它会以该组件为根，重新渲染整个组件子树。<br>如要避免不必要的子组件的重渲染，你需要在所有可能的地方使用 PureComponent，或是手动实现 shouldComponentUpdate 方法。同时你可能会需要使用不可变的数据结构来使得你的组件更容易被优化。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">shouldComponentUpdate(nextProps) &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">JSON</span>.stringify(nextProps) == <span class="built_in">JSON</span>.stringify(<span class="keyword">this</span>.props)) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">import</span> React, &#123; PureComponent &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">IndexPage</span> <span class="keyword">extends</span> <span class="title">PureComponent</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>() &#123;</span><br><span class="line">    <span class="keyword">super</span>();</span><br><span class="line">    <span class="keyword">this</span>.state = &#123;</span><br><span class="line">      isShow: <span class="literal">false</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'constructor'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  changeState = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">      isShow: <span class="literal">true</span></span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'render'</span>);</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;button onClick=&#123;<span class="keyword">this</span>.changeState&#125;&gt;点击&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">        &lt;div&gt;&#123;this.state.isShow.toString()&#125;&lt;/</span>div&gt;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>在 Vue 应用中，组件的依赖是在渲染过程中自动追踪的，所以系统能精确知晓哪个组件确实需要被重渲染。你可以理解为每一个组件都已经自动获得了 shouldComponentUpdate，并且没有上述的子树问题限制。</p>
+<p>Vue 的这个特点使得开发者不再需要考虑此类优化，从而能够更好地专注于应用本身。</p>
 <h2 id="React生命周期"><a href="#React生命周期" class="headerlink" title="React生命周期"></a>React生命周期</h2><p> 所有有关生命周期的变量应该放到class里</p>
  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Clock</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line"> <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">   <span class="keyword">super</span>(props);</span><br><span class="line">   <span class="keyword">this</span>.state = &#123;<span class="attr">date</span>: <span class="keyword">new</span> <span class="built_in">Date</span>()&#125;;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> changeState()&#123;</span><br><span class="line">   <span class="keyword">this</span>.setState(&#123;<span class="attr">data</span>:<span class="string">''</span>&#125;)</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>[state]在React.Component里是只读状态，需要改变state里的值要使用this.setState({data:’’})</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Component</span>&lt;<span class="title">P</span>, <span class="title">S</span>&gt; </span>&#123;</span><br><span class="line">       <span class="comment">// tslint won't let me format the sample code in a way that vscode likes it :(</span></span><br><span class="line">       <span class="comment">/**</span></span><br><span class="line"><span class="comment">        * If set, `this.context` will be set at runtime to the current value of the given Context.</span></span><br><span class="line"><span class="comment">        *</span></span><br><span class="line"><span class="comment">        * Usage:</span></span><br><span class="line"><span class="comment">        *</span></span><br><span class="line"><span class="comment">        * ```ts</span></span><br><span class="line"><span class="comment">        * type MyContext = number</span></span><br><span class="line"><span class="comment">        * const Ctx = React.createContext&lt;MyContext&gt;(0)</span></span><br><span class="line"><span class="comment">        *</span></span><br><span class="line"><span class="comment">        * class Foo extends React.Component &#123;</span></span><br><span class="line"><span class="comment">        *   static contextType = Ctx</span></span><br><span class="line"><span class="comment">        *   context!: React.ContextType&lt;typeof Ctx&gt;</span></span><br><span class="line"><span class="comment">        *   render () &#123;</span></span><br><span class="line"><span class="comment">        *     return &lt;&gt;My context's value: &#123;this.context&#125;&lt;/&gt;;</span></span><br><span class="line"><span class="comment">        *   &#125;</span></span><br><span class="line"><span class="comment">        * &#125;</span></span><br><span class="line"><span class="comment">        *</span></span><br></pre></td></tr></table></figure>
-<pre><code> *
- * @see https://reactjs.org/docs/context.html#classcontexttype
- */
-static contextType?: Context&lt;any&gt;;
+<li>[state]在React.Component里是只读状态，需要改变state里的值要使用this.setState({data:’’})<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Component</span>&lt;<span class="title">P</span>, <span class="title">S</span>&gt; </span>&#123;</span><br><span class="line">       <span class="comment">// tslint won't let me format the sample code in a way that vscode likes it :(</span></span><br><span class="line">       <span class="comment">/**</span></span><br><span class="line"><span class="comment">        * If set, `this.context` will be set at runtime to the current value of the given Context.</span></span><br><span class="line"><span class="comment">        *</span></span><br><span class="line"><span class="comment">        * Usage:</span></span><br><span class="line"><span class="comment">        *</span></span><br><span class="line"><span class="comment">        * </span></span><br><span class="line"><span class="comment">        * type MyContext = number</span></span><br><span class="line"><span class="comment">        * const Ctx = React.createContext&lt;MyContext&gt;(0)</span></span><br><span class="line"><span class="comment">        *</span></span><br><span class="line"><span class="comment">        * class Foo extends React.Component &#123;</span></span><br><span class="line"><span class="comment">        *   static contextType = Ctx</span></span><br><span class="line"><span class="comment">        *   context!: React.ContextType&lt;typeof Ctx&gt;</span></span><br><span class="line"><span class="comment">        *   render () &#123;</span></span><br><span class="line"><span class="comment">        *     return &lt;&gt;My context's value: &#123;this.context&#125;&lt;/&gt;;</span></span><br><span class="line"><span class="comment">        *   &#125;</span></span><br><span class="line"><span class="comment">        * &#125;</span></span><br><span class="line"><span class="comment">        * </span></span><br><span class="line"><span class="comment">        *</span></span><br><span class="line"><span class="comment">        * <span class="doctag">@see </span>https://reactjs.org/docs/context.html#classcontexttype</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">       <span class="keyword">static</span> contextType?: Context&lt;any&gt;;</span><br><span class="line"></span><br><span class="line">       <span class="comment">/**</span></span><br><span class="line"><span class="comment">        * If using the new style context, re-declare this in your class to be the</span></span><br><span class="line"><span class="comment">        * `React.ContextType` of your `static contextType`.</span></span><br><span class="line"><span class="comment">        * Should be used with type annotation or static contextType.</span></span><br><span class="line"><span class="comment">        *</span></span><br><span class="line"><span class="comment">        * </span></span><br><span class="line"><span class="comment">        * static contextType = MyContext</span></span><br><span class="line"><span class="comment">        * // For TS pre-3.7:</span></span><br><span class="line"><span class="comment">        * context!: React.ContextType&lt;typeof MyContext&gt;</span></span><br><span class="line"><span class="comment">        * // For TS 3.7 and above:</span></span><br><span class="line"><span class="comment">        * declare context: React.ContextType&lt;typeof MyContext&gt;</span></span><br><span class="line"><span class="comment">        * </span></span><br><span class="line"><span class="comment">        *</span></span><br><span class="line"><span class="comment">        * <span class="doctag">@see </span>https://reactjs.org/docs/context.html</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">       <span class="comment">// TODO (TypeScript 3.0): unknown</span></span><br><span class="line">       context: any;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">constructor</span>(props: Readonly&lt;P&gt;);</span><br><span class="line">       /**</span><br><span class="line">        * @deprecated</span><br><span class="line">        * @see https://reactjs.org/docs/legacy-context.html</span><br><span class="line">        */</span><br><span class="line">       <span class="keyword">constructor</span>(props: P, context?: any);</span><br><span class="line"></span><br><span class="line">       // We MUST keep setState() as a unified signature because it allows proper checking of the method return type.</span><br><span class="line">       // See: https://github.com/DefinitelyTyped/DefinitelyTyped/issues/18365#issuecomment-351013257</span><br><span class="line">       // Also, the ` | S` allows intellisense to not be dumbisense</span><br><span class="line">       setState&lt;K extends keyof S&gt;(</span><br><span class="line">           state: ((prevState: Readonly&lt;S&gt;, props: Readonly&lt;P&gt;) =&gt; (Pick&lt;S, K&gt; | S | null)) | (Pick&lt;S, K&gt; | S | null),</span><br><span class="line">           callback?: () =&gt; void</span><br><span class="line">       ): void;</span><br><span class="line"></span><br><span class="line">       forceUpdate(callback?: () =&gt; void): void;</span><br><span class="line">       render(): ReactNode;</span><br><span class="line"></span><br><span class="line">       // React.Props&lt;T&gt; is now deprecated, which means that the `children`</span><br><span class="line">       // property is not available on `P` by default, even though you can</span><br><span class="line">       // always pass children as variadic arguments to `createElement`.</span><br><span class="line">       // In the future, if we can define its call signature conditionally</span><br><span class="line">       // on the existence of `children` in `P`, then we should remove this.</span><br><span class="line">       readonly props: Readonly&lt;P&gt; &amp; Readonly&lt;&#123; children?: ReactNode &#125;&gt;;</span><br><span class="line">       state: Readonly&lt;S&gt;;</span><br><span class="line">       <span class="comment">/**</span></span><br><span class="line"><span class="comment">        * <span class="doctag">@deprecated</span></span></span><br><span class="line"><span class="comment">        * https://reactjs.org/docs/refs-and-the-dom.html#legacy-api-string-refs</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">       refs: &#123;</span><br><span class="line">           [key: string]: ReactInstance</span><br><span class="line">       &#125;;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 
-/**
- * If using the new style context, re-declare this in your class to be the
- * `React.ContextType` of your `static contextType`.
- * Should be used with type annotation or static contextType.
- *
- * ```ts
- * static contextType = MyContext
- * // For TS pre-3.7:
- * context!: React.ContextType&lt;typeof MyContext&gt;
- * // For TS 3.7 and above:
- * declare context: React.ContextType&lt;typeof MyContext&gt;
- * ```
- *
- * @see https://reactjs.org/docs/context.html
- */
-// TODO (TypeScript 3.0): unknown
-context: any;
-
-constructor(props: Readonly&lt;P&gt;);
-/**
- * @deprecated
- * @see https://reactjs.org/docs/legacy-context.html
- */
-constructor(props: P, context?: any);
-
-// We MUST keep setState() as a unified signature because it allows proper checking of the method return type.
-// See: https://github.com/DefinitelyTyped/DefinitelyTyped/issues/18365#issuecomment-351013257
-// Also, the ` | S` allows intellisense to not be dumbisense
-setState&lt;K extends keyof S&gt;(
-    state: ((prevState: Readonly&lt;S&gt;, props: Readonly&lt;P&gt;) =&gt; (Pick&lt;S, K&gt; | S | null)) | (Pick&lt;S, K&gt; | S | null),
-    callback?: () =&gt; void
-): void;
-
-forceUpdate(callback?: () =&gt; void): void;
-render(): ReactNode;
-
-// React.Props&lt;T&gt; is now deprecated, which means that the `children`
-// property is not available on `P` by default, even though you can
-// always pass children as variadic arguments to `createElement`.
-// In the future, if we can define its call signature conditionally
-// on the existence of `children` in `P`, then we should remove this.
-readonly props: Readonly&lt;P&gt; &amp; Readonly&lt;{ children?: ReactNode }&gt;;
-state: Readonly&lt;S&gt;;
-/**
- * @deprecated
- * https://reactjs.org/docs/refs-and-the-dom.html#legacy-api-string-refs
- */
-refs: {
-    [key: string]: ReactInstance
-};</code></pre><p>  }</p>
-<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## React Hook</span></span><br><span class="line">```<span class="javascript">javascript</span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> React, &#123; useState &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">Example</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">  <span class="comment">// 声明一个叫 “count” 的 state 变量。</span></span></span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> [count, setCount] = useState(<span class="number">0</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">  <span class="keyword">return</span> (</span></span><br><span class="line"><span class="javascript">    &lt;div&gt;</span></span><br><span class="line"><span class="javascript">      &lt;p&gt;You clicked &#123;count&#125; times&lt;<span class="regexp">/p&gt;</span></span></span><br><span class="line"><span class="javascript">      &lt;button onClick=&#123;() =&gt; setCount(count + <span class="number">1</span>)&#125;&gt;</span></span><br><span class="line"><span class="javascript">        Click me</span></span><br><span class="line"><span class="javascript">      &lt;<span class="regexp">/button&gt;</span></span></span><br><span class="line"><span class="javascript">    &lt;<span class="regexp">/div&gt;</span></span></span><br><span class="line"><span class="javascript">  );</span></span><br><span class="line"><span class="javascript">&#125;</span></span><br></pre></td></tr></table></figure>
-<p>在这里，useState 就是一个 Hook （等下我们会讲到这是什么意思）。通过在函数组件里调用它来给组件添加一些内部 state。React 会在重复渲染时保留这个 state。useState 会返回一对值：当前状态和一个让你更新它的函数，你可以在事件处理函数中或其他一些地方调用这个函数。它类似 class 组件的 this.setState，但是它不会把新的 state 和旧的 state 进行合并</p>
 </li>
 </ul>
+<h3 id="setState"><a href="#setState" class="headerlink" title="setState"></a>setState</h3><ul>
+<li>setState是异步的，如果需要在改变一个值后在执行方法，需要在setState回调的方法里执行。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">setState&lt;K extends keyof S&gt;<span class="function">(<span class="params">state: ((prevState: Readonly&lt;S&gt;, props: P</span>) =&gt;</span> Pick&lt;S, K&gt; | S) | <span class="function">(<span class="params">Pick&lt;S, K&gt; | S</span>), <span class="params">callback</span>?: <span class="params">()</span> =&gt;</span> any): <span class="keyword">void</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">           <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">               qrCodeContent: <span class="string">`<span class="subst">$&#123;apiHeader&#125;</span>/merchant/admin/app/login/scan?uuid=<span class="subst">$&#123;data.uuid&#125;</span>`</span></span><br><span class="line">           &#125;,()=&gt;&#123;</span><br><span class="line">               <span class="built_in">console</span>.log(<span class="string">'uuid'</span>, <span class="keyword">this</span>.state.qrCodeContent)</span><br><span class="line"></span><br><span class="line">               <span class="keyword">if</span> (<span class="keyword">this</span>.refs.refWeappQrCode) &#123;</span><br><span class="line">                   <span class="keyword">this</span>.refs.refWeappQrCode.refreshQrCode()</span><br><span class="line">                   <span class="keyword">this</span>.pollingTimerId= <span class="keyword">this</span>.loginWithRqCode(data.uuid)</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="React-Hook"><a href="#React-Hook" class="headerlink" title="React Hook"></a>React Hook</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Example</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 声明一个叫 “count” 的 state 变量。</span></span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = useState(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;p&gt;You clicked &#123;count&#125; times&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">      &lt;button onClick=&#123;() =&gt; setCount(count + 1)&#125;&gt;</span></span><br><span class="line"><span class="regexp">        Click me</span></span><br><span class="line"><span class="regexp">      &lt;/</span>button&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>在这里，useState 就是一个 Hook （等下我们会讲到这是什么意思）。通过在函数组件里调用它来给组件添加一些内部 state。React 会在重复渲染时保留这个 state。useState 会返回一对值：当前状态和一个让你更新它的函数，你可以在事件处理函数中或其他一些地方调用这个函数。它类似 class 组件的 this.setState，但是它不会把新的 state 和旧的 state 进行合并</p>
 <p>你之前可能已经在 React 组件中执行过数据获取、订阅或者手动修改过 DOM。我们统一把这些操作称为“副作用”，或者简称为“作用”。</p>
 <p>useEffect 就是一个 Effect Hook，给函数组件增加了操作副作用的能力。它跟 class 组件中的 componentDidMount、componentDidUpdate 和 componentWillUnmount 具有相同的用途，只不过被合并成了一个 API。（我们会在使用 Effect Hook 里展示对比 useEffect 和这些方法的例子。）</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState, useEffect &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Example</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = useState(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 相当于 componentDidMount 和 componentDidUpdate:</span></span><br><span class="line">  useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 使用浏览器的 API 更新页面标题</span></span><br><span class="line">    <span class="built_in">document</span>.title = <span class="string">`You clicked <span class="subst">$&#123;count&#125;</span> times`</span>;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;p&gt;You clicked &#123;count&#125; times&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">      &lt;button onClick=&#123;() =&gt; setCount(count + 1)&#125;&gt;</span></span><br><span class="line"><span class="regexp">        Click me</span></span><br><span class="line"><span class="regexp">      &lt;/</span>button&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
@@ -315,45 +298,33 @@ refs: {
 <p>只能在函数最外层调用 Hook。不要在循环、条件判断或者子函数中调用。<br>只能在 React 的函数组件中调用 Hook。不要在其他 JavaScript 函数中调用。（还有一个地方可以调用 Hook —— 就是自定义的 Hook 中，我们稍后会学习到。）</p>
 <h3 id="Vue与React的区别"><a href="#Vue与React的区别" class="headerlink" title="Vue与React的区别"></a>Vue与React的区别</h3><p>vue组件分为全局注册和局部注册，在react中都是通过import相应组件，然后模版中引用；<br>props是可以动态变化的，子组件也实时更新，在react中官方建议props要像纯函数那样，输入输出一致对应，而且不太建议通过props来更改视图；<br>子组件一般要显示地调用props选项来声明它期待获得的数据。而在react中不必需，另两者都有props校验机制；<br>每个Vue实例都实现了事件接口，方便父子组件通信，小型项目中不需要引入状态管理机制，而react必需自己实现；<br>使用插槽分发内容，使得可以混合父组件的内容与子组件自己的模板；<br>多了指令系统，让模版可以实现更丰富的功能，而React只能使用JSX语法；<br>Vue增加的语法糖computed和watch，而在React中需要自己写一套逻辑来实现；<br>react的思路是all in js，通过js来生成html，所以设计了jsx，还有通过js来操作css，社区的styled-component、jss等；而 vue是把html，css，js组合到一起，用各自的处理方式，vue有单文件组件，可以把html、css、js写到一个文件中，html提供了模板引擎来处理。<br>react做的事情很少，很多都交给社区去做，vue很多东西都是内置的，写起来确实方便一些， 比如 redux的combineReducer就对应vuex的modules， 比如reselect就对应vuex的getter和vue组件的computed， vuex的mutation是直接改变的原始数据，而redux的reducer是返回一个全新的state，所以redux结合immutable来优化性能，vue不需要。<br>react是整体的思路的就是函数式，所以推崇纯组件，数据不可变，单向数据流，当然需要双向的地方也可以做到，比如结合redux-form，组件的横向拆分一般是通过高阶组件。而vue是数据可变的，双向绑定，声明式的写法，vue组件的横向拆分很多情况下用mixin</p>
 <p>作者：ikoala<br>链接：<a href="https://juejin.im/post/5cf495e96fb9a07ef5622025" target="_blank" rel="noopener">https://juejin.im/post/5cf495e96fb9a07ef5622025</a><br>来源：掘金</p>
+<h2 id="Ant-Design-实战教程"><a href="#Ant-Design-实战教程" class="headerlink" title="Ant Design 实战教程"></a>Ant Design 实战教程</h2><h3 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h3><ul>
+<li><p>一是所有 HTML 标签必须是闭合的，如果写成</p><h1>Hello就会报错。如果是那种没有闭合语法的标签，必须在标签尾部加上斜杠，比如<img src>。二是任何 JSX 表达式，顶层只能有一个标签，也就是说只能有一个根元素<p></p>
+</h1></li>
+<li><p>一般来说，HTML 原生标签都使用小写，开发者自定义的组件标签首字母大写，比如<MyComponent></MyComponent></p>
+</li>
+<li><p>shouldComponentUpdate(nextProps, nextState)：每当this.props或this.state有变化，在render方法执行之前，就会调用这个方法。该方法返回一个布尔值，表示是否应该继续执行render方法，即如果返回false，UI 就不会更新，默认返回true。组件挂载时，render方法的第一次执行，不会调用这个方法。</p>
+</li>
+<li><p>static getDerivedStateFromProps(props, state)：该方法在render方法执行之前调用，包括组件的第一次记载。它应该返回一个新的 state 对象，通常用在组件状态依赖外部输入的参数的情况。</p>
+</li>
+<li><p>getSnapshotBeforeUpdate()：该方法在每次 DOM 更新之前调用，用来收集 DOM 信息。它返回的值，将作为参数传入componentDidUpdate()方法。</p>
+</li>
+</ul>
+<h4 id="非受控组件"><a href="#非受控组件" class="headerlink" title="非受控组件"></a>非受控组件</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">const</span> MyInput = <span class="function">(<span class="params">&#123; onChange &#125;</span>) =&gt;</span> (</span><br><span class="line">  &lt;input onChange=&#123;onChange&#125; /&gt;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  onTextChange = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(event.target.value);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;MyInput onChange=&#123;<span class="keyword">this</span>.onTextChange&#125; /&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>看起来，修改 MyInput 中的值不太容易。<br>对于这种不能直接控制状态的组件，我们称之为“非受控组件”。</li>
+</ul>
+<h4 id="受控组件"><a href="#受控组件" class="headerlink" title="受控组件"></a>受控组件</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> MyInput = <span class="function">(<span class="params">&#123; value = <span class="string">''</span>, onChange &#125;</span>) =&gt;</span> (</span><br><span class="line">  &lt;input value=&#123;value&#125; onChange=&#123;onChange&#125; /&gt;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  state = &#123;</span><br><span class="line">    text: <span class="string">''</span>,</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  onTextChange = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123; <span class="attr">text</span>: event.target.value &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;MyInput value=&#123;<span class="keyword">this</span>.state.text&#125; onChange=&#123;<span class="keyword">this</span>.onTextChange&#125; /&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>“受控”与“非受控”两个概念，区别在于这个 <code>组件的状态是否可以被外部修改</code> 。一个设计得当的组件应该同时支持“受控”与“非受控”两种形式，即当开发者不控制组件属性时，组件自己管理状态，而当开发者控制组件属性时，组件该由属性控制。而开发一个复杂组件更需要注意这点，以避免只有部分属性受控，使其变成一个半受控组件。</li>
+</ul>
 
     
 
     
-    <div class="page-reward">
-      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
-        <div class="tooltip tooltip-east">
-          <span class="tooltip-item">
-            赏
-          </span>
-          <span class="tooltip-content">
-            <span class="tooltip-text">
-              <span class="tooltip-inner">
-                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
-                    class="icon icon-quo-right"></i></p>
-                <div class="reward-box">
-                  
-                  <div class="reward-box-item">
-                    <img class="reward-img" src="/blog/img/alipay.jpg">
-                    <span class="reward-type">支付宝</span>
-                  </div>
-                  
-                  
-                  <div class="reward-box-item">
-                    <img class="reward-img" src="/blog/img/weixin.png">
-                    <span class="reward-type">微信</span>
-                  </div>
-                  
-                </div>
-              </span>
-            </span>
-          </span>
-        </div>
-      </a>
-    </div>
-    
 
     
-    <div class="declare"> 
+    <div class="declare">
       <ul class="post-copyright">
         <li>
           <strong>本文作者：</strong>
@@ -361,7 +332,8 @@ refs: {
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://littleki.com/blog/2019/12/06/React笔记/" title="我的前端面试问题" target="_blank">http://littleki.com/blog/2019/12/06/React笔记/</a>
+          <a href="http://littleki.com/blog/2019/12/06/React笔记/" title="React笔记"
+            target="_blank">http://littleki.com/blog/2019/12/06/React笔记/</a>
         </li>
         
         <li>
@@ -443,7 +415,7 @@ refs: {
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://littleki.com/2019/12/06/React%E7%AC%94%E8%AE%B0/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://littleki.com/2019/12/06/React笔记/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -458,9 +430,18 @@ refs: {
 
 <nav id="article-nav">
   
+    <a href="/blog/2019/12/31/JavaScript/javaScript高级程序设计/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          ES6笔记
+        
+      </div>
+    </a>
   
-    <a href="/blog/2019/10/18/hexoSettng/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hexo的配置</div>
+  
+    <a href="/blog/2019/01/31/年度总结/迟来的2018年度总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">迟来的2018年度总结</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -503,7 +484,7 @@ refs: {
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018-2020 <a href="http://littleki.com/blog/" target="_blank">Littleki</a>
+    		&copy; 2017-2021 <a href="http://littleki.com/blog/" target="_blank">Littleki</a>
     	</div>
       	<div class="footer-right">
 			
@@ -539,7 +520,7 @@ refs: {
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
-		toc_hide_index: true,
+		toc_hide_index: false,
 		root: "/blog/",
 		innerArchive: true,
 		showTags: true
@@ -668,6 +649,58 @@ refs: {
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">vue的坑</a>
               </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">javaScript高级程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">分享会</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">promise</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">typescript笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">mac 快捷键、mac操作</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vue3.0</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">重构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">年度总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">反思</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vue3源码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">UT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">随手笔记</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -771,7 +804,7 @@ refs: {
     	<section class="tools-section tools-section-me" q-show="aboutme">
         
           
-  	  		<div class="aboutme-wrap" id="aboutme">主要涉及技术：<br>Java后端开发、聚合支付、<br>公众号开发、开源爱好者、Linux<br><br>联系QQ:2434387555<br><br>很惭愧<br><br>只做了一点微小的工作<br>谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="aboutme">告诫自己要不断的学习，<br>否则你永远比别人低n个高度</div>
   	  	
     	</section>
     
