@@ -10,17 +10,17 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="万物皆对象在 Dart 中，万物皆对象，包括函数。 所有的对象都继承自 Object 类。 并且，所有对象的默认值都是 null。 12345678void main() &amp;#123;  var test_var;  print(&quot;value = $test_var&quot;);&amp;#125;&amp;gt;&amp;gt;&amp;gt;value = null   Future.whenComplete有些时候，我们会遇到无论">
+  <meta name="description" content="万物皆对象在 Dart 中，万物皆对象，包括函数。 所有的对象都继承自 Object 类。 并且，所有对象的默认值都是 null。 12345678void main() &amp;#123;  var test_var;  print(&quot;value = $test_var&quot;);&amp;#125;&amp;gt;&amp;gt;&amp;gt;value = null  Future.whenComplete有些时候，我们会遇到无论异">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Dart学习">
 <meta property="og:url" content="http://littleki.com/2020/09/04/Dart学习/index.html">
 <meta property="og:site_name" content="Littleki">
-<meta property="og:description" content="万物皆对象在 Dart 中，万物皆对象，包括函数。 所有的对象都继承自 Object 类。 并且，所有对象的默认值都是 null。 12345678void main() &amp;#123;  var test_var;  print(&quot;value = $test_var&quot;);&amp;#125;&amp;gt;&amp;gt;&amp;gt;value = null   Future.whenComplete有些时候，我们会遇到无论">
+<meta property="og:description" content="万物皆对象在 Dart 中，万物皆对象，包括函数。 所有的对象都继承自 Object 类。 并且，所有对象的默认值都是 null。 12345678void main() &amp;#123;  var test_var;  print(&quot;value = $test_var&quot;);&amp;#125;&amp;gt;&amp;gt;&amp;gt;value = null  Future.whenComplete有些时候，我们会遇到无论异">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2020-09-04T08:33:11.798Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Dart学习">
-<meta name="twitter:description" content="万物皆对象在 Dart 中，万物皆对象，包括函数。 所有的对象都继承自 Object 类。 并且，所有对象的默认值都是 null。 12345678void main() &amp;#123;  var test_var;  print(&quot;value = $test_var&quot;);&amp;#125;&amp;gt;&amp;gt;&amp;gt;value = null   Future.whenComplete有些时候，我们会遇到无论">
+<meta name="twitter:description" content="万物皆对象在 Dart 中，万物皆对象，包括函数。 所有的对象都继承自 Object 类。 并且，所有对象的默认值都是 null。 12345678void main() &amp;#123;  var test_var;  print(&quot;value = $test_var&quot;);&amp;#125;&amp;gt;&amp;gt;&amp;gt;value = null  Future.whenComplete有些时候，我们会遇到无论异">
   
     <link rel="alternative" href="/blog/atom.xml" title="Littleki" type="application/atom+xml">
   
@@ -63,7 +63,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/blog/" class="profilepic">
-	<img src="/blog/img/person.jpg" class="js-avatar">
+	<img src="/blog/images/person.jpg" class="js-avatar">
 	</a>
 	<hgroup>
 		<h1 class="header-author"><a href="/blog/">Littleki</a></h1>
@@ -153,7 +153,7 @@
 		<header id="header" class="inner">
 			<div class="profilepic">
 				<a href="/blog/">
-					<img src="/blog/img/person.jpg" class="js-avatar">
+					<img src="/blog/images/person.jpg" class="js-avatar">
 				</a>
 			</div>
 			<hgroup>
@@ -261,7 +261,6 @@
 <p>所有的对象都继承自 Object 类。</p>
 <p>并且，所有对象的默认值都是 null。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> main() &#123;</span><br><span class="line">  <span class="keyword">var</span> test_var;</span><br><span class="line">  print(<span class="string">"value = $test_var"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">value = <span class="literal">null</span></span><br></pre></td></tr></table></figure>
-
 
 <h3 id="Future-whenComplete"><a href="#Future-whenComplete" class="headerlink" title="Future.whenComplete"></a>Future.whenComplete</h3><p>有些时候，我们会遇到无论异步任务执行成功或失败都需要做一些事的场景，比如在网络请求前弹出加载对话框，在请求结束后关闭对话框。这种场景，有两种方法，第一种是分别在then或catch中关闭一下对话框，第二种就是使用Future的whenComplete回调，</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Future.delayed(<span class="keyword">new</span> Duration(seconds: <span class="number">2</span>),()&#123;</span><br><span class="line">   <span class="comment">//return "hi world!";</span></span><br><span class="line">   <span class="keyword">throw</span> AssertionError(<span class="string">"Error"</span>);</span><br><span class="line">&#125;).then((data)&#123;</span><br><span class="line">   <span class="comment">//执行成功会走到这里 </span></span><br><span class="line">   print(data);</span><br><span class="line">&#125;).catchError((e)&#123;</span><br><span class="line">   <span class="comment">//执行失败会走到这里   </span></span><br><span class="line">   print(e);</span><br><span class="line">&#125;).whenComplete(()&#123;</span><br><span class="line">   <span class="comment">//无论成功或失败都会走到这里</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
@@ -534,6 +533,14 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">mac 快捷键、mac操作</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">V8引擎</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
@@ -550,7 +557,39 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">算法 leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">UT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">typescript笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">英文专有名词</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">重构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">随手笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Ajax</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -558,7 +597,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Ajax</a>
+                <a href="javascript:void(0)" class="js-tag color5">javaScript高级程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vue3源码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -570,6 +613,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue的坑</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">nextTick</a>
               </li>
              
@@ -578,11 +625,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue的坑</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">javaScript高级程序</a>
+                <a href="javascript:void(0)" class="js-tag color2">vue3.0</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -594,43 +637,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">typescript笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mac 快捷键、mac操作</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vue3.0</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">重构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">年度总结</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">反思</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vue3源码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">UT</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">随手笔记</a>
               </li>
             
             <div class="clearfix"></div>

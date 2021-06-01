@@ -64,7 +64,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/blog/" class="profilepic">
-	<img src="/blog/img/person.jpg" class="js-avatar">
+	<img src="/blog/images/person.jpg" class="js-avatar">
 	</a>
 	<hgroup>
 		<h1 class="header-author"><a href="/blog/">Littleki</a></h1>
@@ -154,7 +154,7 @@
 		<header id="header" class="inner">
 			<div class="profilepic">
 				<a href="/blog/">
-					<img src="/blog/img/person.jpg" class="js-avatar">
+					<img src="/blog/images/person.jpg" class="js-avatar">
 				</a>
 			</div>
 			<hgroup>
@@ -260,7 +260,8 @@
     
     <h1 id="javaScript高级程序"><a href="#javaScript高级程序" class="headerlink" title="javaScript高级程序"></a>javaScript高级程序</h1><h2 id="String类型"><a href="#String类型" class="headerlink" title="String类型"></a>String类型</h2><h3 id="字符串的特点"><a href="#字符串的特点" class="headerlink" title="字符串的特点"></a>字符串的特点</h3><ul>
 <li><p>ECMAScript 中的字符串是不可变的，也就说字符串一旦创建，它们的值就不能改变，要改变某个变量的字符串，首先要先销毁原来的字符串，然后用包含新值的字符串去填充当前变量，例如：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> lang= <span class="string">"Java"</span></span><br><span class="line">lang= lang + <span class="string">"Script"</span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> lang= <span class="string">"Java"</span></span><br><span class="line">lang= lang + <span class="string">"Script"</span></span><br></pre></td></tr></table></figure>
+</li>
 <li><p>以上示例中的变量 lang 开始时包含字符串”Java”。而第二行代码把 lang 的值重新定义为”Java”<br>与”Script”的组合，即”JavaScript”。实现这个操作的过程如下：首先创建一个能容纳 10 个字符的<br>新字符串，然后在这个字符串中填充”Java”和”Script”，最后一步是销毁原来的字符串”Java”和字<br>符串”Script”，因为这两个字符串已经没用了。这个过程是在后台发生的，</p>
 </li>
 <li><p>在某些旧版本的浏览器（例如版本低于 1.0 的 Firefox、IE6 等）中拼接字符串时速度很慢的原因所在。但这些浏览器后<br>来的版本已经解决了这个低效率问题。</p>
@@ -276,13 +277,17 @@
 <h3 id="管理内存"><a href="#管理内存" class="headerlink" title="管理内存"></a>管理内存</h3><p>一般分配给Web浏览器的可用内存数量比桌面应用程序少，这样做的主要目的是为了防止JavaScript的网页耗尽全部的系统内存而导致崩溃。</p>
 <p>为了占用最少的内存可以让页面获得更好的性能，优化内存占用的最佳方式就是为执行中的代码只保存必要的数据，一旦数据不再有用，就通过将值设置为null来释放其引用，这种做法叫做解除引用。这个方法适用于大多数全局变量和全局对象的属性，局部变量会在离开执行环境时自动被解除引用。</p>
 <h3 id="内存泄露例子"><a href="#内存泄露例子" class="headerlink" title="内存泄露例子"></a>内存泄露例子</h3><h4 id="1-忘记声明的局部变量"><a href="#1-忘记声明的局部变量" class="headerlink" title="1.忘记声明的局部变量"></a>1.忘记声明的局部变量</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    b=<span class="number">2</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'b没有被声明!'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>b 没被声明,会变成一个全局变量,在页面关闭之前不会被释放.使用严格模式可以避免.</p>
 <h4 id="2-闭包带来的内存泄漏"><a href="#2-闭包带来的内存泄漏" class="headerlink" title="2.闭包带来的内存泄漏"></a>2.闭包带来的内存泄漏</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> leaks = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> leak = <span class="string">'xxxxxx'</span>;<span class="comment">// 闭包中引用，不会被回收</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(leak);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+
 <p>当然有时候我们是故意让这个变量保存在内存中的,但是要避免无意的时候造成的内存泄漏.</p>
 <h4 id="3-移除-DOM-节点时候忘记移除暂存的值"><a href="#3-移除-DOM-节点时候忘记移除暂存的值" class="headerlink" title="3.移除 DOM 节点时候忘记移除暂存的值"></a>3.移除 DOM 节点时候忘记移除暂存的值</h4><p>有时候出于优化性能的目的,我们会用一个变量暂存 节点,接下来使用的时候就不用再从 DOM 中去获取.但是在移除 DOM 节点的时候却忘记了解除暂存的变量对 DOM 节点的引用,也会造成内存泄漏</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> element = &#123;</span><br><span class="line">  image: <span class="built_in">document</span>.getElementById(<span class="string">'image'</span>),</span><br><span class="line">  button: <span class="built_in">document</span>.getElementById(<span class="string">'button'</span>)</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">document</span>.body.removeChild(<span class="built_in">document</span>.getElementById(<span class="string">'image'</span>));</span><br><span class="line"><span class="comment">// 如果element没有被回收,这里移除了 image 节点也是没用的,image 节点依然留存在内存中.</span></span><br></pre></td></tr></table></figure>
+
 <p>与此类似情景还有: DOM 节点绑定了事件, 但是在移除的时候没有解除事件绑定,那么仅仅移除 DOM 节点也是没用的</p>
 <h4 id="4-定时器中的内存泄漏"><a href="#4-定时器中的内存泄漏" class="headerlink" title="4.定时器中的内存泄漏"></a>4.定时器中的内存泄漏</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span>  someResource = getData();</span><br><span class="line">setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> node = <span class="built_in">document</span>.getElementById(<span class="string">'Node'</span>);</span><br><span class="line">    <span class="keyword">if</span>(node) &#123;</span><br><span class="line">        node.innerHTML = <span class="built_in">JSON</span>.stringify(someResource));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;, <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a=<span class="number">1</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">window</span>.a=bar</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">window</span>.a()</span><br></pre></td></tr></table></figure>
+
 <p>如果没有清除定时器,那么 someResource 就不会被释放,如果刚好它又占用了较大内存,就会引发性能问题. 再提一下 setTimeout ,它计时结束后它的回调里面引用的对象占用的内存是可以被回收的. 当然有些场景 setTimeout 的计时可能很长, 这样的情况下也是需要纳入考虑的.</p>
 
     
@@ -589,6 +594,14 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">mac 快捷键、mac操作</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">V8引擎</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
@@ -605,7 +618,39 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">算法 leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">UT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">typescript笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">英文专有名词</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">重构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">随手笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Ajax</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -613,7 +658,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Ajax</a>
+                <a href="javascript:void(0)" class="js-tag color5">javaScript高级程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vue3源码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -625,6 +674,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue的坑</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">nextTick</a>
               </li>
              
@@ -633,11 +686,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue的坑</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">javaScript高级程序</a>
+                <a href="javascript:void(0)" class="js-tag color2">vue3.0</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -649,43 +698,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">typescript笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mac 快捷键、mac操作</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vue3.0</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">重构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">年度总结</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">反思</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vue3源码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">UT</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">随手笔记</a>
               </li>
             
             <div class="clearfix"></div>

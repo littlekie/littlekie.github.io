@@ -63,7 +63,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/blog/" class="profilepic">
-	<img src="/blog/img/person.jpg" class="js-avatar">
+	<img src="/blog/images/person.jpg" class="js-avatar">
 	</a>
 	<hgroup>
 		<h1 class="header-author"><a href="/blog/">Littleki</a></h1>
@@ -153,7 +153,7 @@
 		<header id="header" class="inner">
 			<div class="profilepic">
 				<a href="/blog/">
-					<img src="/blog/img/person.jpg" class="js-avatar">
+					<img src="/blog/images/person.jpg" class="js-avatar">
 				</a>
 			</div>
 			<hgroup>
@@ -258,14 +258,16 @@
   <div class="article-entry" itemprop="articleBody">
     
     <h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><h2 id="手写-深度拷贝"><a href="#手写-深度拷贝" class="headerlink" title="手写 深度拷贝"></a>手写 深度拷贝</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">deepCopy</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">  </span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">typeof</span> obj!== <span class="string">'object'</span>) <span class="keyword">return</span> </span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> result = obj <span class="keyword">instanceof</span> <span class="built_in">Array</span> ? [] : &#123;&#125;;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> obj)&#123;</span><br><span class="line">    result[key]=<span class="keyword">typeof</span> obj[key] ===<span class="string">'object'</span>?deepCopy(obj[key]): obj[key]</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person=&#123;<span class="attr">name</span>:<span class="string">"小明"</span>,<span class="attr">ageAndSex</span>:&#123;<span class="attr">age</span>:<span class="number">16</span>,<span class="attr">sex</span>:<span class="string">"男"</span>&#125;&#125;</span><br><span class="line"><span class="keyword">let</span> personCopy= deepCopy(person)</span><br><span class="line">personCopy=== person <span class="comment">// false</span></span><br><span class="line">personCopy.ageAndSex.age=<span class="number">20</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="华雄面试"><a href="#华雄面试" class="headerlink" title="华雄面试"></a>华雄面试</h2><h3 id="什么是盒子模型"><a href="#什么是盒子模型" class="headerlink" title="什么是盒子模型"></a>什么是盒子模型</h3><ul>
 <li>盒子模型有ie模型和 标准模型</li>
 <li>CSS盒模型本质上是一个盒子，封装周围的HTML元素，它包括：边距，边框，填充，和实际内容</li>
 <li>ie盒模型算上border、padding及自身（不算margin），标准的只算上自身窗体的大小 css设置方法如下<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 标准模型 */</span></span><br><span class="line"><span class="selector-tag">box-sizing</span><span class="selector-pseudo">:content-box</span>;</span><br><span class="line"> <span class="comment">/*IE模型*/</span></span><br><span class="line"><span class="selector-tag">box-sizing</span><span class="selector-pseudo">:border-box</span>;</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
 
 </li>
 </ul>
+<a id="more"></a>
+
 <h3 id="什么是静态式布局？什么是流式布局？什么是自适应式布局？什么是响应式布局？什么是弹性布局？"><a href="#什么是静态式布局？什么是流式布局？什么是自适应式布局？什么是响应式布局？什么是弹性布局？" class="headerlink" title="什么是静态式布局？什么是流式布局？什么是自适应式布局？什么是响应式布局？什么是弹性布局？"></a>什么是静态式布局？什么是流式布局？什么是自适应式布局？什么是响应式布局？什么是弹性布局？</h3><h4 id="静态式布局（Static-Layout）"><a href="#静态式布局（Static-Layout）" class="headerlink" title="静态式布局（Static Layout）"></a>静态式布局（Static Layout）</h4><p>布局特点：不管浏览器尺寸具体是多少，网页布局始终按照最初写代码时的布局来显示。常规的pc的网站都是静态（定宽度）布局的，也就是设置了min-width，这样的话，如果小于这个宽度就会出现滚动条，如果大于这个宽度则内容居中外加背景，这种设计常见与pc端。<br>优点：这种布局方式对设计师和CSS编写者来说都是最简单的，亦没有兼容性问题。</p>
 <p>缺点：显而易见，即不能根据用户的屏幕尺寸做出不同的表现。</p>
 <p>当前，大部分门户网站、大部分企业的PC宣传站点都采用了这种布局方式。固定像素尺寸的网页是匹配固定像素尺寸显示器的最简单办法。但这种方法不是一种完全兼容未来网页的制作方法，我们需要一些适应未知设备的方法。</p>
@@ -285,6 +287,7 @@
 <p>流式布局是用于解决类似的设备不同分辨率之间的兼容(一般分辨率差异较少)；响应式是用于解决不用设备之间不用分辨率之间的兼容问题(一般是指PC，平板，手机等设备之间较大的分辨率差异)。</p>
 <h4 id="弹性布局（rem-em布局）"><a href="#弹性布局（rem-em布局）" class="headerlink" title="弹性布局（rem/em布局）"></a>弹性布局（rem/em布局）</h4><p>rem,em区别：rem,em都是顺应不同网页字体大小展现而产生的。其中，em是相对其父元素，在实际应用中相对而言会带来很多不便；而rem是始终相对于html大小，即页面根元素。<br>因为有些浏览器默认的不是16px，或者用户修改了浏览器默认的字体大小（因浏览器分辨率大小，视力，习惯等因素）。如果我们将其设置为10px，一定会影响在这些浏览器上的效果，所以最好用绝大多数用户默认的16作为基数 * 62.5% 得到我们需要的10px。</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span> &#123;<span class="attribute">font-size</span>: <span class="number">62.5%</span>;<span class="comment">/*10 ÷ 16 × 100% = 62.5%*/</span>&#125;</span><br><span class="line"><span class="selector-tag">body</span> &#123;<span class="attribute">font-size</span>: <span class="number">1.4rem</span>;<span class="comment">/*1.4 × 10px = 14px */</span>&#125;</span><br><span class="line"><span class="selector-tag">h1</span> &#123; <span class="attribute">font-size</span>: <span class="number">2.4rem</span>;<span class="comment">/*2.4 × 10px = 24px*/</span>&#125;</span><br></pre></td></tr></table></figure>
+
 <p>实际项目设置成 font-size: 62.5%可能会出现问题，因为chrome不支持小于12px的字体，计算小于12px的时候，会默认取12px去计算，导致chrome的em/rem计算不准确。</p>
 <p>针对这个现象，可以尝试设置html字体为100px，body 修正为16px，这样 0.1rem 就是 10px，而body的字体仍然是默认大小，不影响未设置大小的元素的默认字体的大小。</p>
 <p>5、用em/rem定义尺寸的另一个好处是更能适应缩进/以字体单位padding或margin／浏览器设置字体尺寸等情况（因为em/rem相对于字体大小，会同步改变）。例如：p{ text-indent: 2em; }</p>
@@ -292,13 +295,17 @@
 <ul>
 <li>优点：内联CSS也可称为行内CSS或者行级CSS，它直接在标签内部引入，显著的优点是十分的便捷、高效；内联CSS能够使浏览器开始页面渲染的时间提前</li>
 <li>缺点：但是同时也造成了不能够重用样式的缺点，如果代码行数到达一定长度不建议采用。通常内联CSS作为测试使用，可以查找代码中bug。<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">body</span>&gt;</span><br><span class="line">    &lt;div style="width: 65px;height: 20px;border: 1px solid;"&gt;测试元素&lt;/div&gt;</span><br><span class="line"> &lt;/body&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="2-文件压缩"><a href="#2-文件压缩" class="headerlink" title="2.文件压缩"></a>2.文件压缩</h4>虽然文件压缩能够降低文件大小。但CSS文件压缩通常只会去除无用的空格，这样就限制了CSS文件的压缩比例。那是否还有其他手段来精简CSS呢？答案显然是肯定的，如果压缩后的文件仍然超出了预期的大小，我们可以试着找到并删除代码中无用的CSS。<h4 id="3-优化重排与重绘"><a href="#3-优化重排与重绘" class="headerlink" title="3.优化重排与重绘"></a>3.优化重排与重绘</h4><h4 id="4-不要使用-import"><a href="#4-不要使用-import" class="headerlink" title="4.不要使用@import"></a>4.不要使用@import</h4>最后提一下，不要使用@import引入CSS，相信大家也很少使用。</li>
+
+</li>
 </ul>
+<h4 id="2-文件压缩"><a href="#2-文件压缩" class="headerlink" title="2.文件压缩"></a>2.文件压缩</h4><p>虽然文件压缩能够降低文件大小。但CSS文件压缩通常只会去除无用的空格，这样就限制了CSS文件的压缩比例。那是否还有其他手段来精简CSS呢？答案显然是肯定的，如果压缩后的文件仍然超出了预期的大小，我们可以试着找到并删除代码中无用的CSS。</p>
+<h4 id="3-优化重排与重绘"><a href="#3-优化重排与重绘" class="headerlink" title="3.优化重排与重绘"></a>3.优化重排与重绘</h4><h4 id="4-不要使用-import"><a href="#4-不要使用-import" class="headerlink" title="4.不要使用@import"></a>4.不要使用@import</h4><p>最后提一下，不要使用@import引入CSS，相信大家也很少使用。</p>
 <p>不建议使用@import主要有以下两点原因。</p>
 <p>首先，使用@import引入CSS会影响浏览器的并行下载。使用@import引用的CSS文件只有在引用它的那个css文件被下载、解析之后，浏览器才会知道还有另外一个css需要下载，这时才去下载，然后下载后开始解析、构建render tree等一系列操作。这就导致浏览器无法并行下载所需的样式文件。</p>
 <h4 id="css动画"><a href="#css动画" class="headerlink" title="css动画"></a>css动画</h4><p>1 .css动画启用GPU加速，应用GPU的图形性能对浏览器中的一些图形操作交给GPU完成。canvas2D,布局合成，css3转换，css3d变换，webGL，视频</p>
 <h3 id="什么是闭包，闭包的用途"><a href="#什么是闭包，闭包的用途" class="headerlink" title="什么是闭包，闭包的用途"></a>什么是闭包，闭包的用途</h3><p>如果一个函数用到了它作用域外面的变量，那么这个变量和这个函数之间的环境就叫闭包。</p>
 <h3 id="闭包用途"><a href="#闭包用途" class="headerlink" title="闭包用途"></a>闭包用途</h3><h4 id="1-模仿块级作用域"><a href="#1-模仿块级作用域" class="headerlink" title="1.模仿块级作用域"></a>1.模仿块级作用域</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">x</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">  (<span class="function"><span class="keyword">function</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;num.length;i++)&#123;</span><br><span class="line">      num+=num</span><br><span class="line">      <span class="built_in">console</span>.log(num)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)(num)</span><br><span class="line">  <span class="built_in">console</span>.log(num)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h4 id="3-储存变量"><a href="#3-储存变量" class="headerlink" title="3.储存变量"></a>3.储存变量</h4><p>function S1(){<br>var a = 1<br>return function(){<br>return a++<br>}</p>
 <p>}<br>var d = S1() // 100<br>undefined<br>d()<br>1<br>d()<br>2<br>d()<br>3</p>
 <h4 id="3-封装私有变量"><a href="#3-封装私有变量" class="headerlink" title="3.封装私有变量"></a>3.封装私有变量</h4><p>我们可以把函数当作一个范围，函数内部的变量就是私有变量，在外部无法引用，但是我们可以通过闭包的特点来访问私有变量。</p>
@@ -314,8 +321,10 @@
 <p>Prototype通常用来解决一个问题：对象的创建比较耗费资源。比如，对象创建的时候需要访问数据库、需要读取外部文件</p>
 <h4 id="call和prototype克隆的关系。"><a href="#call和prototype克隆的关系。" class="headerlink" title="call和prototype克隆的关系。"></a>call和prototype克隆的关系。</h4><ul>
 <li>B函数如何操作，才可以继承A的属性和方法<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">　　<span class="keyword">this</span>.name = name;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">A.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">　　alert(<span class="keyword">this</span>.name);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">B</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">B</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">　　A.call(<span class="keyword">this</span>,name);<span class="comment">//此时，B函数只是继承了A函数的属性name，并未继承A的sayName方法。</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 或者</span></span><br><span class="line">    <span class="comment">// A.apply(this,name)</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">B.prototype = <span class="keyword">new</span> A(<span class="string">"Jack"</span>);</span><br></pre></td></tr></table></figure>
-Call只会继承对象本身的属性和方法，而不会继承原型中的方法。prototype本身的作用是克隆，而不是继承</li>
+
+</li>
 </ul>
+<p>Call只会继承对象本身的属性和方法，而不会继承原型中的方法。prototype本身的作用是克隆，而不是继承</p>
 <h3 id="事件冒泡和事件捕获的差别"><a href="#事件冒泡和事件捕获的差别" class="headerlink" title="事件冒泡和事件捕获的差别"></a>事件冒泡和事件捕获的差别</h3><p>在JS中，绑定的事件默认的执行时间是在冒泡阶段执行，而非在捕获阶段（重要），这也是为什么当父类和子类都绑定了某个事件，会先调用子类绑定的事件，后调用父类的事件。直接看下面实例</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!Doctype <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line">    * &#123;</span><br><span class="line">      margin: 0;</span><br><span class="line">      padding: 0;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"id1"</span> <span class="attr">style</span>=<span class="string">"height:400px; background: red;  border:1px solid #000;"</span>&gt;</span></span><br><span class="line">  obj1</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"id2"</span> <span class="attr">style</span>=<span class="string">"height:200px; background: blue;  border:1px solid #000;"</span>&gt;</span></span><br><span class="line">    obj2</span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"id3"</span> <span class="attr">style</span>=<span class="string">"height:50px;  background: yellow; border:1px solid #000;"</span>&gt;</span></span><br><span class="line">      obj3</span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">var</span> obj1 = <span class="built_in">document</span>.getElementById(<span class="string">'id1'</span>);</span></span><br><span class="line"><span class="actionscript">  obj1.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">    alert(<span class="string">'id1'</span>);</span></span><br><span class="line"><span class="actionscript">  &#125;, <span class="literal">false</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">  <span class="keyword">var</span> obj2 = <span class="built_in">document</span>.getElementById(<span class="string">'id2'</span>);</span></span><br><span class="line"><span class="actionscript">  obj2.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">    alert(<span class="string">'id2'</span>);</span></span><br><span class="line"><span class="actionscript">  &#125;, <span class="literal">true</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">  <span class="keyword">var</span> obj3 = <span class="built_in">document</span>.getElementById(<span class="string">'id3'</span>);</span></span><br><span class="line"><span class="actionscript">  obj3.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">    alert(<span class="string">'id3'</span>);</span></span><br><span class="line"><span class="actionscript">  &#125;, <span class="literal">true</span>);</span></span><br><span class="line"><span class="actionscript">    <span class="comment">/*如果第三个参数为true，则事件在捕获阶段执行，如果第三个参数为false，则事件在冒泡阶段执行*/</span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
@@ -356,6 +365,7 @@ Call只会继承对象本身的属性和方法，而不会继承原型中的方�
 <h2 id="babel原理"><a href="#babel原理" class="headerlink" title="babel原理"></a>babel原理</h2><p>ES6、7代码输入 -&gt; babylon进行解析 -&gt; 得到AST（抽象语法树）-&gt; plugin用babel-traverse对AST树进行遍历转译 -&gt;得到新的AST树-&gt;用babel-generator通过AST树生成ES5代码、</p>
 <h2 id="vue的设计模式"><a href="#vue的设计模式" class="headerlink" title="vue的设计模式"></a>vue的设计模式</h2><p>vue的设计模式是<code>mvvm</code><br>在Model和View之间多了叫做View-Model的一层</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--view页面--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  ...</span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">vm-bind-key</span>=<span class="string">"name"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">vm-bind-key</span>=<span class="string">"data"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">  <span class="comment">// 生成model数据模型</span></span></span><br><span class="line"><span class="actionscript">  <span class="function"><span class="keyword">function</span> <span class="title">getDataApi</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">    <span class="comment">// 模拟接口返回</span></span></span><br><span class="line"><span class="actionscript">    <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="actionscript">      name: <span class="string">'mvc'</span>,</span></span><br><span class="line"><span class="actionscript">      data: <span class="string">'mvc 数据信息'</span></span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="actionscript">  <span class="comment">// ViewModel控制逻辑</span></span></span><br><span class="line"><span class="actionscript">  <span class="function"><span class="keyword">function</span> <span class="title">pageViewModel</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">const</span> result = getDataApi();</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">return</span> result;</span></span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>上面作为理想情况下例子，在ViewModel引入之后，视图完全由接口返回数据驱动，由开发者所控制的逻辑非常轻量。不过这里要说明的是，在MVVM模式下，Controller控制逻辑并非就没了，像操作页面DOM响应的逻辑被SDK（如Vue的内部封装实现）统一实现了，像不操作接口返回的数据是因为服务端在数据返回给前端前已经操作好了。<br>例子里pageViewModel函数的实现是非常关键的一步，如何将数据模型与页面视图绑定起来呢？在目前的前端领域里有三类实现，Angularjs的主动轮询检查新旧值变化更新视图、Vue利用ES5的Object.defineProperty的getter/setter方法绑定、backbone的发布订阅模式，从主动和被动的方式去实现了ViewModel的关系绑定，接下来主要看看Vue中的MVVM的实现。</p>
 <h3 id="Vue2-0中的MVVM实现"><a href="#Vue2-0中的MVVM实现" class="headerlink" title="Vue2.0中的MVVM实现"></a>Vue2.0中的MVVM实现</h3><p>Vue2.0的MVVM实现中，对View-Model的实现本质利用的ES5的Object.defineProperty方法，当Object.defineProperty方法在给数据Model对象定义属性的时候先挂载一些方法，在这些方法里实现与界面的值绑定响应关系，当应用的属性被读取或者写入的时候便会触发这些方法，从而达到数据模型里的值发生变化时同步响应到页面上。</p>
 <h2 id="当你在浏览器地址栏输入一个URL后回车，将会发生的事情？"><a href="#当你在浏览器地址栏输入一个URL后回车，将会发生的事情？" class="headerlink" title="当你在浏览器地址栏输入一个URL后回车，将会发生的事情？"></a>当你在浏览器地址栏输入一个URL后回车，将会发生的事情？</h2><h3 id="基本流程："><a href="#基本流程：" class="headerlink" title="基本流程："></a>基本流程：</h3><p>①查询ip地址</p>
@@ -394,6 +404,7 @@ Call只会继承对象本身的属性和方法，而不会继承原型中的方�
 <h4 id="发送HTTP请求"><a href="#发送HTTP请求" class="headerlink" title="发送HTTP请求"></a>发送HTTP请求</h4><p>浏览器会分析这个url，并设置好请求报文发出。请求报文中包括请求行、请求头、空行、请求主体。<br>https默认请求端口 <code>443</code>， http默认 <code>80</code>。<br>常见的http请求如下</p>
 <p><a href="https://juejin.im/post/5b94d8965188255c5a0cdc02" target="_blank" rel="noopener">链接：</a></p>
 <h2 id="闭包中变量访问问题（笔试题）"><a href="#闭包中变量访问问题（笔试题）" class="headerlink" title="闭包中变量访问问题（笔试题）"></a>闭包中变量访问问题（笔试题）</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name=<span class="string">"world"</span>;</span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(name);</span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">typeof</span> name===<span class="string">"undefined"</span>)&#123;  </span><br><span class="line"><span class="keyword">var</span> name=<span class="string">"jack"</span>;     </span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"Goodbye "</span>+name);</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"Hello"</span>+name);</span><br><span class="line">&#125;</span><br><span class="line">&#125;)();<span class="comment">//Goodbye jack</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> name=<span class="string">"world"</span>;</span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(name);</span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">typeof</span> name===<span class="string">"undefined"</span>)&#123;  </span><br><span class="line"><span class="keyword">let</span> name=<span class="string">"jack"</span>;     </span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"Goodbye "</span>+name);</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"Hello"</span>+name);</span><br><span class="line">&#125;</span><br><span class="line">&#125;)();<span class="comment">//Hello word</span></span><br></pre></td></tr></table></figure>
+
 <p>解释：</p>
 <ol>
 <li><p>只要在预解析时发现了闭包中有name的存在，就不会去外部找name，所以第三行的name是undefined。而如果将下边的所有内容包括var name注释掉，则此处的name就只能去闭包外边找，找到了全局变量name，值为world。</p>
@@ -679,6 +690,14 @@ Call只会继承对象本身的属性和方法，而不会继承原型中的方�
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">mac 快捷键、mac操作</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">V8引擎</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
@@ -695,7 +714,39 @@ Call只会继承对象本身的属性和方法，而不会继承原型中的方�
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">算法 leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">UT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">typescript笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">英文专有名词</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">重构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">随手笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Ajax</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -703,7 +754,11 @@ Call只会继承对象本身的属性和方法，而不会继承原型中的方�
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Ajax</a>
+                <a href="javascript:void(0)" class="js-tag color5">javaScript高级程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vue3源码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -715,6 +770,10 @@ Call只会继承对象本身的属性和方法，而不会继承原型中的方�
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue的坑</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">nextTick</a>
               </li>
              
@@ -723,11 +782,7 @@ Call只会继承对象本身的属性和方法，而不会继承原型中的方�
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue的坑</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">javaScript高级程序</a>
+                <a href="javascript:void(0)" class="js-tag color2">vue3.0</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -739,43 +794,11 @@ Call只会继承对象本身的属性和方法，而不会继承原型中的方�
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">typescript笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mac 快捷键、mac操作</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vue3.0</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">重构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">年度总结</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">反思</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vue3源码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">UT</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">随手笔记</a>
               </li>
             
             <div class="clearfix"></div>

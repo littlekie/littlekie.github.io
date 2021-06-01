@@ -17,16 +17,16 @@
 <meta property="og:site_name" content="Littleki">
 <meta property="og:description" content="TV 分享 TV 主要围绕 数字键切台（数字键扫台）、上下键切台、TV键切源功能、频道列表 、频道锁展开  切台过程中会发送一些事件通知上来 ,例如 source.signal.change（是否有信号通知）、tuner.channel.direct.set.finished（数字键切台成功到通知）   TV下有哪些特定的源？每个应用下都有自己独立的源，例如 Usb 的源是8、VGA 的源是13">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://littleki.com/blog/2020/08/12/%E5%88%86%E4%BA%AB%E4%BC%9A/SCBC-TV-SHARE/quickEntryTv.png">
-<meta property="og:image" content="http://littleki.com/blog/2020/08/12/%E5%88%86%E4%BA%AB%E4%BC%9A/SCBC-TV-SHARE/smartHome.png">
-<meta property="og:image" content="http://littleki.com/blog/2020/08/12/%E5%88%86%E4%BA%AB%E4%BC%9A/SCBC-TV-SHARE/selectMode.png">
-<meta property="og:image" content="http://littleki.com/blog/2020/08/12/%E5%88%86%E4%BA%AB%E4%BC%9A/SCBC-TV-SHARE/changeTv.png">
-<meta property="og:image" content="http://littleki.com/blog/2020/08/12/%E5%88%86%E4%BA%AB%E4%BC%9A/SCBC-TV-SHARE/$parent.png">
-<meta property="og:updated_time" content="2020-08-31T08:27:01.408Z">
+<meta property="og:image" content="http://littleki.com/blog/2020/08/12/分享会/SCBC-TV-SHARE/quickEntryTv.png">
+<meta property="og:image" content="http://littleki.com/blog/2020/08/12/分享会/SCBC-TV-SHARE/smartHome.png">
+<meta property="og:image" content="http://littleki.com/blog/2020/08/12/分享会/SCBC-TV-SHARE/selectMode.png">
+<meta property="og:image" content="http://littleki.com/blog/2020/08/12/分享会/SCBC-TV-SHARE/changeTv.png">
+<meta property="og:image" content="http://littleki.com/blog/2020/08/12/分享会/SCBC-TV-SHARE/$parent.png">
+<meta property="og:updated_time" content="2020-10-21T11:44:19.243Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SCBC-TV-SHARE">
 <meta name="twitter:description" content="TV 分享 TV 主要围绕 数字键切台（数字键扫台）、上下键切台、TV键切源功能、频道列表 、频道锁展开  切台过程中会发送一些事件通知上来 ,例如 source.signal.change（是否有信号通知）、tuner.channel.direct.set.finished（数字键切台成功到通知）   TV下有哪些特定的源？每个应用下都有自己独立的源，例如 Usb 的源是8、VGA 的源是13">
-<meta name="twitter:image" content="http://littleki.com/blog/2020/08/12/%E5%88%86%E4%BA%AB%E4%BC%9A/SCBC-TV-SHARE/quickEntryTv.png">
+<meta name="twitter:image" content="http://littleki.com/blog/2020/08/12/分享会/SCBC-TV-SHARE/quickEntryTv.png">
   
     <link rel="alternative" href="/blog/atom.xml" title="Littleki" type="application/atom+xml">
   
@@ -69,7 +69,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/blog/" class="profilepic">
-	<img src="/blog/img/person.jpg" class="js-avatar">
+	<img src="/blog/images/person.jpg" class="js-avatar">
 	</a>
 	<hgroup>
 		<h1 class="header-author"><a href="/blog/">Littleki</a></h1>
@@ -159,7 +159,7 @@
 		<header id="header" class="inner">
 			<div class="profilepic">
 				<a href="/blog/">
-					<img src="/blog/img/person.jpg" class="js-avatar">
+					<img src="/blog/images/person.jpg" class="js-avatar">
 				</a>
 			</div>
 			<hgroup>
@@ -276,7 +276,7 @@
 <h2 id="切源问题"><a href="#切源问题" class="headerlink" title="切源问题"></a>切源问题</h2><p>目前切源主要分为 1、主动切源（source.weitch）。2、底层切源(realrc.watchTV、NVT切源)，会有对应 <code>NUI_EVENT_UPDATE_UI_SOURCE</code> 事件通告 </p>
 <h2 id="目前有哪些入口可以进入到Tv？"><a href="#目前有哪些入口可以进入到Tv？" class="headerlink" title="目前有哪些入口可以进入到Tv？"></a>目前有哪些入口可以进入到Tv？</h2><p>1、如果当前不在 Tv 模式下，按 <code>TV键</code> <code>都能进入到 Tv 模式，会切到上次播放到Tv源（底层切源）（接口：realrc.watchTV）
 2、按</code>setting键<code>移到</code>Watch Tv<code>下有三个 S-T-C 可以选择进入到 Tv （用户主动切源）
-3、按 左键 移到source ，会切到系统中上一个源，如果上一个源是Tv源则切到Tv ,如果是</code>Usb<code>则切到</code>Usb` （底层切源）（接口：source.getLastSource –&gt; realrc.watchTV）<br>4、底层切源,其他源进入APP；在APP中退出，不是UI/中间件调用NUI接口退出。<br><img src="/blog/2020/08/12/%E5%88%86%E4%BA%AB%E4%BC%9A/SCBC-TV-SHARE/quickEntryTv.png" alt><br><img src="/blog/2020/08/12/%E5%88%86%E4%BA%AB%E4%BC%9A/SCBC-TV-SHARE/smartHome.png" alt></p>
+3、按 左键 移到source ，会切到系统中上一个源，如果上一个源是Tv源则切到Tv ,如果是</code>Usb<code>则切到</code>Usb` （底层切源）（接口：source.getLastSource –&gt; realrc.watchTV）<br>4、底层切源,其他源进入APP；在APP中退出，不是UI/中间件调用NUI接口退出。<br><img src="/blog/2020/08/12/分享会/SCBC-TV-SHARE/quickEntryTv.png" alt><br><img src="/blog/2020/08/12/分享会/SCBC-TV-SHARE/smartHome.png" alt></p>
 <h2 id="切台的方式有哪些？"><a href="#切台的方式有哪些？" class="headerlink" title="切台的方式有哪些？"></a>切台的方式有哪些？</h2><ol>
 <li>上下键切台，ch+\ch- 切台，</li>
 <li>频道列表切台</li>
@@ -296,7 +296,7 @@
 <h4 id="如何处理TV键？"><a href="#如何处理TV键？" class="headerlink" title="如何处理TV键？"></a>如何处理TV键？</h4><p>用TV键从非Tv切源的时候是根据 <code>realrc.watchTV</code> 这个接口 来做切源，这个接口底层做好配置，能帮我们切到上一个TV源，一样要等这个接口的 <code>reponse</code> 才能到Tv页，因为只要开做切源到动作，都会有 <code>source.switch.start</code>通知。</p>
 <p>如果当前是Tv源则会调出  selectChannelList 窗口 (如下图) 选择 Atenna 、 Cable和Satellite ，如果选择当前源会先判断当前源是有安装，有的话不做操作，没有的话，会做切源动作。如果非当前源则调用  <code>source.switch</code> 。进入到 Setting 页面 按Tv键等于按 EXIT 退出 Setting 页。</p>
 <p>打开 <code>selectChannelList</code> 窗口 会默认选择当前源的那项，当前源会从进入到Tv后就开始保存当前源，每切换一次TV源都会更新当前源。（也就是调用 <code>epgControlInit</code> 方法）</p>
-<p><img src="/blog/2020/08/12/%E5%88%86%E4%BA%AB%E4%BC%9A/SCBC-TV-SHARE/selectMode.png" alt></p>
+<p><img src="/blog/2020/08/12/分享会/SCBC-TV-SHARE/selectMode.png" alt></p>
 <h3 id="2-接口优化"><a href="#2-接口优化" class="headerlink" title="2.接口优化"></a>2.接口优化</h3><p>当初进入到Tv源到时候要调用各种接口，后面根中间件他们讨论，把源相关的和当前源是否有安装，以及当前台的信息，这样能减少Rpc请求，也可以提高进入到Tv页后到响应速度。</p>
 <h4 id="如何对TV节目进行状态管理？"><a href="#如何对TV节目进行状态管理？" class="headerlink" title="如何对TV节目进行状态管理？"></a>如何对TV节目进行状态管理？</h4><ol>
 <li>对当前源进行缓存 （在切源对时候在 事件控制器缓存当前源）</li>
@@ -308,7 +308,7 @@
 <p>因为在TV页经常要用到  chahnelInfo 和 listType ,避免重复调用，所以在更改这两个的地方要统一更新他们的值，</p>
 <h3 id="切台优化"><a href="#切台优化" class="headerlink" title="切台优化"></a>切台优化</h3><p>主要是针对快切优化，避免调用不必要对接口造成切台卡顿，</p>
 <p>上下键切台主要走 channelList 这个类，它负责频道的增删改查，以及对频道缓存。<br>整体的流程图如下</p>
-<p><img src="/blog/2020/08/12/%E5%88%86%E4%BA%AB%E4%BC%9A/SCBC-TV-SHARE/changeTv.png" alt></p>
+<p><img src="/blog/2020/08/12/分享会/SCBC-TV-SHARE/changeTv.png" alt></p>
 <ul>
 <li>以及一些事件要重新获取频道列表（比如重新扫台，或者码流机切换码流、skip or delete等） ,<code>skip or delete是否可以不更新频道列表通过标志位?</code></li>
 </ul>
@@ -316,6 +316,7 @@
 <li>主要是对弹窗显示进行优化，弹窗显示对优先级放在 computed 处理</li>
 </ol>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">isPopDataShow() &#123;</span><br><span class="line">  <span class="keyword">return</span> !<span class="keyword">this</span>.isSelectChannelListShow &amp;&amp; <span class="keyword">this</span>.popData.show</span><br><span class="line">&#125;,</span><br><span class="line">isPinShow() &#123;</span><br><span class="line">  <span class="comment">// pin code dialog</span></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.setPin;</span><br><span class="line">&#125;,</span><br><span class="line">channelBarShow()&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.nowChannelInfoShow &amp;&amp; !<span class="keyword">this</span>.isChannelShow &amp;&amp; <span class="keyword">this</span>.hasInstall</span><br><span class="line">&#125;,</span><br><span class="line">isNoSingalNoticeShow() &#123;</span><br><span class="line">  <span class="comment">// no signal notice</span></span><br><span class="line">  <span class="keyword">return</span> !(<span class="keyword">this</span>.isPopDataShow || <span class="keyword">this</span>.isSelectChannelListShow) &amp;&amp; <span class="keyword">this</span>.noSingalNotice</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h4 id="为什么要这样处理弹窗显示放在-computed-处理？"><a href="#为什么要这样处理弹窗显示放在-computed-处理？" class="headerlink" title="为什么要这样处理弹窗显示放在 computed 处理？"></a>为什么要这样处理弹窗显示放在 computed 处理？</h4><p>1、因为调用接口时，或者底层有新的通知都要去改变弹窗显示值，然后这些弹窗值又互相依赖，所以统一放在 computed 处理再好不过了。</p>
 <p>2、如果出现弹窗值显示出现问题，直接找这个变量里的依赖值，能够快速定位到问题所在。</p>
 <p>3、在代码层面上，能够更简洁明了，弹窗到相互依赖性，方便其他人介入维护，避免有其他条件加入时造成其他问题。<br>2. 请求接口尽量用 Promise 的形式</p>
@@ -332,6 +333,7 @@
 <li>进入到频道列表要对应到找到当前节目信息到位置</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.startIndex = <span class="keyword">this</span>.getNowChannelInfo.searchIndex - <span class="number">7</span> &gt; <span class="number">0</span> ? <span class="keyword">this</span>.getNowChannelInfo.searchIndex - <span class="number">7</span> : <span class="number">1</span></span><br><span class="line"><span class="keyword">this</span>.$parent.loadingTag = <span class="literal">true</span></span><br><span class="line"><span class="keyword">this</span>.nowListId = <span class="keyword">this</span>.getListTypeId</span><br><span class="line"><span class="keyword">this</span>.getChannelList(<span class="keyword">this</span>.startIndex, <span class="literal">true</span>)</span><br></pre></td></tr></table></figure>
+
 <p>因为ui一页要展示 8 个，如果大于等于7个时高亮到位置要在保持在蒂7个位子,所以要提前取前面的7个。</p>
 <ul>
 <li><p>更新四色键主要根根据  <code>fetchColorKey(chInfo)</code> 方法  主要根据listType来显示 四色键到类型</p>
@@ -359,11 +361,13 @@
 <p>左右件翻页，主要根据当前焦点在数组中的位置，翻页时是否需要请求新的数据，然后焦点要落在当前视图上的位置</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="在项目里-我们尽量用常用的组件通信方法"><a href="#在项目里-我们尽量用常用的组件通信方法" class="headerlink" title="在项目里 我们尽量用常用的组件通信方法"></a>在项目里 我们尽量用常用的组件通信方法</h3><p>少用 $parent 或者 $children 这样的方式去去数据，让我们在项目里的的数据保持单一性</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// parent</span></span><br><span class="line"> &lt;my-epg</span><br><span class="line">      v-<span class="keyword">if</span>=<span class="string">"epg"</span></span><br><span class="line">      ref=<span class="string">"epg"</span></span><br><span class="line">      :propData=<span class="string">'parentData'</span></span><br><span class="line">      @getCurrentServiceStatus=<span class="string">"getCurrentServiceStatus"</span></span><br><span class="line">      @getChannelBeforeIndex=<span class="string">"getChannelBeforeIndex"</span></span><br><span class="line">      @channelSetAfter=<span class="string">"channelSetAfter"</span></span><br><span class="line">      @skipChannel=<span class="string">"skipChannel"</span></span><br><span class="line">      @updateChannelList=<span class="string">"channelListBuild"</span></span><br><span class="line">      @close=<span class="string">"closeEpg"</span></span><br><span class="line">    /&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">// children</span></span><br><span class="line"><span class="keyword">this</span>.$emit(<span class="string">'updateChannelList'</span>)</span><br><span class="line"><span class="comment">// 用 事件这样的形式去掉用</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果要用到父级的数据，用 props去取，少用  $parent 去取</span></span><br><span class="line"></span><br><span class="line"> props: &#123;</span><br><span class="line">   propData:&#123;</span><br><span class="line">     type:<span class="built_in">Object</span>,</span><br><span class="line">     <span class="keyword">default</span>()&#123;</span><br><span class="line">       <span class="keyword">return</span> &#123;&#125;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;,</span><br><span class="line">    staring:&#123;</span><br><span class="line">     type:<span class="built_in">String</span>,</span><br><span class="line">     <span class="keyword">default</span>:<span class="string">''</span></span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<p><img src="/blog/2020/08/12/%E5%88%86%E4%BA%AB%E4%BC%9A/SCBC-TV-SHARE/$parent.png" alt></p>
+
+<p><img src="/blog/2020/08/12/分享会/SCBC-TV-SHARE/$parent.png" alt></p>
 <h3 id="vuex的正确使用"><a href="#vuex的正确使用" class="headerlink" title="vuex的正确使用"></a>vuex的正确使用</h3><p>vuex 里不要用这 <code>this.$store.state</code> 这样的方式去取值或者负值，这样会照成对当前的数据的可控性。</p>
 <p>要取值就放到 computed</p>
 <p>要设置值就放到 methods</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">    ...mapMutations([<span class="string">'SET_LIST_TYPE'</span>, <span class="string">'SET_NOW_CHANNEL_INFO'</span>]),</span><br><span class="line">    ...mapGetters([</span><br><span class="line">  <span class="string">'facotryMode'</span>,</span><br><span class="line">  <span class="string">'getHasAllSource'</span>,</span><br><span class="line">  <span class="string">'getListTypeId'</span>,</span><br><span class="line">  <span class="string">'getIsSkipedOrDeleted'</span>,</span><br><span class="line">  <span class="string">'getNowChannelInfo'</span></span><br><span class="line">]),</span><br></pre></td></tr></table></figure>
+
 <p>很多时候我们都是偷懒，不想去多写两行代码。</p>
 <h3 id="bus事件挂载里一定要在组件销毁时卸载它，否则会造成内存泄漏，最后面会卡死"><a href="#bus事件挂载里一定要在组件销毁时卸载它，否则会造成内存泄漏，最后面会卡死" class="headerlink" title="bus事件挂载里一定要在组件销毁时卸载它，否则会造成内存泄漏，最后面会卡死"></a>bus事件挂载里一定要在组件销毁时卸载它，否则会造成内存泄漏，最后面会卡死</h3><ul>
 <li>后面会写个插件当组件挂载了某个bus事件，在组件销毁时自动卸载 这个bus事件。</li>
@@ -638,6 +642,14 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">mac 快捷键、mac操作</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">V8引擎</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
@@ -654,7 +666,39 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">算法 leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">UT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">typescript笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">英文专有名词</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">重构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">随手笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Ajax</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -662,7 +706,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Ajax</a>
+                <a href="javascript:void(0)" class="js-tag color5">javaScript高级程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vue3源码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -674,6 +722,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue的坑</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">nextTick</a>
               </li>
              
@@ -682,11 +734,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue的坑</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">javaScript高级程序</a>
+                <a href="javascript:void(0)" class="js-tag color2">vue3.0</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -698,43 +746,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">typescript笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mac 快捷键、mac操作</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vue3.0</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">重构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">年度总结</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">反思</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vue3源码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">UT</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">随手笔记</a>
               </li>
             
             <div class="clearfix"></div>

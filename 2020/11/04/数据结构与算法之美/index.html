@@ -17,12 +17,12 @@
 <meta property="og:site_name" content="Littleki">
 <meta property="og:description" content="数据结构与算法之美一、什么是复杂度分析？1.数据结构和算法解决是“如何让计算机更快时间、更省空间的解决问题”。2.因此需从执行时间和占用空间两个维度来评估数据结构和算法的性能。3.分别用时间复杂度和空间复杂度两个概念来描述性能问题，二者统称为复杂度。4.复杂度描述的是算法执行时间（或占用空间）与数据规模的增长关系。 二、为什么要进行复杂度分析？1.和性能测试相比，复杂度分析有不依赖执行环境、成本低">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://littleki.com/blog/2020/11/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E7%BE%8E/%E6%95%B0%E7%BB%84%E9%93%BE%E8%A1%A8.jpg">
+<meta property="og:image" content="http://littleki.com/blog/2020/11/04/数据结构与算法之美/%E6%95%B0%E7%BB%84%E9%93%BE%E8%A1%A8.jpg">
 <meta property="og:updated_time" content="2020-11-05T02:21:14.006Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构与算法之美">
 <meta name="twitter:description" content="数据结构与算法之美一、什么是复杂度分析？1.数据结构和算法解决是“如何让计算机更快时间、更省空间的解决问题”。2.因此需从执行时间和占用空间两个维度来评估数据结构和算法的性能。3.分别用时间复杂度和空间复杂度两个概念来描述性能问题，二者统称为复杂度。4.复杂度描述的是算法执行时间（或占用空间）与数据规模的增长关系。 二、为什么要进行复杂度分析？1.和性能测试相比，复杂度分析有不依赖执行环境、成本低">
-<meta name="twitter:image" content="http://littleki.com/blog/2020/11/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E7%BE%8E/%E6%95%B0%E7%BB%84%E9%93%BE%E8%A1%A8.jpg">
+<meta name="twitter:image" content="http://littleki.com/blog/2020/11/04/数据结构与算法之美/%E6%95%B0%E7%BB%84%E9%93%BE%E8%A1%A8.jpg">
   
     <link rel="alternative" href="/blog/atom.xml" title="Littleki" type="application/atom+xml">
   
@@ -65,7 +65,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/blog/" class="profilepic">
-	<img src="/blog/img/person.jpg" class="js-avatar">
+	<img src="/blog/images/person.jpg" class="js-avatar">
 	</a>
 	<hgroup>
 		<h1 class="header-author"><a href="/blog/">Littleki</a></h1>
@@ -155,7 +155,7 @@
 		<header id="header" class="inner">
 			<div class="profilepic">
 				<a href="/blog/">
-					<img src="/blog/img/person.jpg" class="js-avatar">
+					<img src="/blog/images/person.jpg" class="js-avatar">
 				</a>
 			</div>
 			<hgroup>
@@ -272,7 +272,7 @@
 </ol>
 <h3 id="缓存概念"><a href="#缓存概念" class="headerlink" title="缓存概念"></a>缓存概念</h3><h4 id="硬件中的缓存"><a href="#硬件中的缓存" class="headerlink" title="硬件中的缓存:"></a>硬件中的缓存:</h4><p>CPU缓存，而cpu缓存又可以分为寄存器，一级缓存，二级缓存，三级缓存。 软件中的缓存: 数据库缓存，数据库本身产品就自带缓存。redis也可以作为数据库缓存. 浏览器缓存，就是我们常说的Cookie,本质上就是一个文件。</p>
 <h4 id="缓存的大小有限，当缓存被用满时，哪些数据应该被清理出去，哪些数据应该被保留？"><a href="#缓存的大小有限，当缓存被用满时，哪些数据应该被清理出去，哪些数据应该被保留？" class="headerlink" title="缓存的大小有限，当缓存被用满时，哪些数据应该被清理出去，哪些数据应该被保留？"></a>缓存的大小有限，当缓存被用满时，哪些数据应该被清理出去，哪些数据应该被保留？</h4><p>常见的策略有三种：先进先出策略 FIFO（First In，First Out）、最少使用策略 LFU（Least Frequently Used）、最近最少使用策略 LRU（Least Recently Used）。<br>FIFO（先进先出调度器） 、Capacity Scheduler（容量调度器）和 Fair Sceduler（公平调度器）。</p>
-<h4 id="链表-VS-数组性能大比拼"><a href="#链表-VS-数组性能大比拼" class="headerlink" title="链表 VS 数组性能大比拼"></a>链表 VS 数组性能大比拼</h4><p>通过前面内容的学习，你应该已经知道，数组和链表是两种截然不同的内存组织方式。正是因为内存存储的区别，它们插入、删除、随机访问操作的时间复杂度正好相反。<br><img src="/blog/2020/11/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E7%BE%8E/%E6%95%B0%E7%BB%84%E9%93%BE%E8%A1%A8.jpg" alt></p>
+<h4 id="链表-VS-数组性能大比拼"><a href="#链表-VS-数组性能大比拼" class="headerlink" title="链表 VS 数组性能大比拼"></a>链表 VS 数组性能大比拼</h4><p>通过前面内容的学习，你应该已经知道，数组和链表是两种截然不同的内存组织方式。正是因为内存存储的区别，它们插入、删除、随机访问操作的时间复杂度正好相反。<br><img src="/blog/2020/11/04/数据结构与算法之美/%E6%95%B0%E7%BB%84%E9%93%BE%E8%A1%A8.jpg" alt></p>
 
     
 
@@ -543,6 +543,14 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">mac 快捷键、mac操作</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">V8引擎</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
@@ -559,7 +567,39 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">算法 leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">UT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">typescript笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">英文专有名词</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">重构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">随手笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Ajax</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -567,7 +607,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Ajax</a>
+                <a href="javascript:void(0)" class="js-tag color5">javaScript高级程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vue3源码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -579,6 +623,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue的坑</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">nextTick</a>
               </li>
              
@@ -587,11 +635,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue的坑</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">javaScript高级程序</a>
+                <a href="javascript:void(0)" class="js-tag color2">vue3.0</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -603,43 +647,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">typescript笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mac 快捷键、mac操作</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vue3.0</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">重构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">年度总结</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">反思</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vue3源码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">UT</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">随手笔记</a>
               </li>
             
             <div class="clearfix"></div>

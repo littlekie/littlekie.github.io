@@ -10,17 +10,17 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="Vue3.0 笔记插槽 跟 v-on 和 v-bind 一样，v-slot 也有缩写，即把参数之前的所有内容 (v-slot:) 替换为字符 #。例如 v-slot:header 可以被重写为 #header：  123456789101112131415&amp;lt;base-layout&amp;gt;  &amp;lt;!-- #header === v-slot:header --&amp;gt;  &amp;lt;templ">
+  <meta name="description" content="Vue3.0 笔记definedProperty 和 Proxy 差别Object.definedProperty 是劫持对象的属性，新增元素需要再次 definedProperty。而 Proxy 劫持的是整个对象，不需要做特殊处理 插槽 跟 v-on 和 v-bind 一样，v-slot 也有缩写，即把参数之前的所有内容 (v-slot:) 替换为字符 #。例如 v-slot:header 可">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue3.0 笔记">
 <meta property="og:url" content="http://littleki.com/2020/08/12/Vue3-0-笔记/Vue3.xApi-笔记/index.html">
 <meta property="og:site_name" content="Littleki">
-<meta property="og:description" content="Vue3.0 笔记插槽 跟 v-on 和 v-bind 一样，v-slot 也有缩写，即把参数之前的所有内容 (v-slot:) 替换为字符 #。例如 v-slot:header 可以被重写为 #header：  123456789101112131415&amp;lt;base-layout&amp;gt;  &amp;lt;!-- #header === v-slot:header --&amp;gt;  &amp;lt;templ">
+<meta property="og:description" content="Vue3.0 笔记definedProperty 和 Proxy 差别Object.definedProperty 是劫持对象的属性，新增元素需要再次 definedProperty。而 Proxy 劫持的是整个对象，不需要做特殊处理 插槽 跟 v-on 和 v-bind 一样，v-slot 也有缩写，即把参数之前的所有内容 (v-slot:) 替换为字符 #。例如 v-slot:header 可">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-04-19T15:33:09.851Z">
+<meta property="og:updated_time" content="2021-05-27T04:02:28.467Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue3.0 笔记">
-<meta name="twitter:description" content="Vue3.0 笔记插槽 跟 v-on 和 v-bind 一样，v-slot 也有缩写，即把参数之前的所有内容 (v-slot:) 替换为字符 #。例如 v-slot:header 可以被重写为 #header：  123456789101112131415&amp;lt;base-layout&amp;gt;  &amp;lt;!-- #header === v-slot:header --&amp;gt;  &amp;lt;templ">
+<meta name="twitter:description" content="Vue3.0 笔记definedProperty 和 Proxy 差别Object.definedProperty 是劫持对象的属性，新增元素需要再次 definedProperty。而 Proxy 劫持的是整个对象，不需要做特殊处理 插槽 跟 v-on 和 v-bind 一样，v-slot 也有缩写，即把参数之前的所有内容 (v-slot:) 替换为字符 #。例如 v-slot:header 可">
   
     <link rel="alternative" href="/blog/atom.xml" title="Littleki" type="application/atom+xml">
   
@@ -63,7 +63,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/blog/" class="profilepic">
-	<img src="/blog/img/person.jpg" class="js-avatar">
+	<img src="/blog/images/person.jpg" class="js-avatar">
 	</a>
 	<hgroup>
 		<h1 class="header-author"><a href="/blog/">Littleki</a></h1>
@@ -153,7 +153,7 @@
 		<header id="header" class="inner">
 			<div class="profilepic">
 				<a href="/blog/">
-					<img src="/blog/img/person.jpg" class="js-avatar">
+					<img src="/blog/images/person.jpg" class="js-avatar">
 				</a>
 			</div>
 			<hgroup>
@@ -237,7 +237,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.4k字</span>
+      <span class="post-count">1.7k字</span>
     </span>
   </span>
 
@@ -246,7 +246,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">6分</span>
+      <span class="post-count">7分</span>
     </span>
   </span>
 </div>
@@ -257,19 +257,26 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="Vue3-0-笔记"><a href="#Vue3-0-笔记" class="headerlink" title="Vue3.0 笔记"></a>Vue3.0 笔记</h1><h2 id="插槽"><a href="#插槽" class="headerlink" title="插槽"></a>插槽</h2><ul>
+    <h1 id="Vue3-0-笔记"><a href="#Vue3-0-笔记" class="headerlink" title="Vue3.0 笔记"></a>Vue3.0 笔记</h1><h2 id="definedProperty-和-Proxy-差别"><a href="#definedProperty-和-Proxy-差别" class="headerlink" title="definedProperty 和 Proxy 差别"></a>definedProperty 和 Proxy 差别</h2><p>Object.definedProperty 是劫持对象的属性，新增元素需要再次 definedProperty。<br>而 Proxy 劫持的是整个对象，不需要做特殊处理</p>
+<h2 id="插槽"><a href="#插槽" class="headerlink" title="插槽"></a>插槽</h2><ul>
 <li>跟 v-on 和 v-bind 一样，v-slot 也有缩写，即把参数之前的所有内容 (v-slot:) 替换为字符 #。例如 v-slot:header 可以被重写为 #header：</li>
 </ul>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">base-layout</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- #header === v-slot:header --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">template</span> #<span class="attr">header</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Here might be a page title<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">template</span> #<span class="attr">default</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>A paragraph for the main content.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>And another one.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">template</span> #<span class="attr">footer</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>Here's some contact info<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">base-layout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="v"><a href="#v" class="headerlink" title="v"></a>v</h2><ol>
-<li>Performance: 性能比vue2.0快1.2～2倍。</li>
-<li>Tree Shaking Support: 按需编译，体积更小</li>
-<li>Composition Api :组合式Api（类似React Hooks)</li>
-<li>Better Typescript Support: 更好的支持TS</li>
-<li>Custom Render API : 自定义渲染 API</li>
-<li>Fragment、Teleport(portal),Suspense:更先进的组件</li>
-</ol>
-<h3 id="setup注意点"><a href="#setup注意点" class="headerlink" title="setup注意点"></a>setup注意点</h3><h5 id="setup生命周期"><a href="#setup生命周期" class="headerlink" title="setup生命周期"></a>setup生命周期</h5><ol>
+<li><p>Performance: 性能比vue2.0快1.2～2倍。</p>
+</li>
+<li><p>Tree Shaking Support: 按需编译，体积更小</p>
+</li>
+<li><p>Composition Api :组合式Api（类似React Hooks)</p>
+</li>
+<li><p>Better Typescript Support: 更好的支持TS</p>
+</li>
+<li><p>Custom Render API : 自定义渲染 API</p>
+</li>
+<li><p>Fragment、Teleport(portal),Suspense:更先进的组件</p>
+<a id="more"></a>
+<h3 id="setup注意点"><a href="#setup注意点" class="headerlink" title="setup注意点"></a>setup注意点</h3><h5 id="setup生命周期"><a href="#setup生命周期" class="headerlink" title="setup生命周期"></a>setup生命周期</h5></li>
 <li><p>beforeCeate =&gt; setup =&gt; created</p>
 </li>
 <li><p>setup 中不能使用 data 和 methods </p>
@@ -283,7 +290,6 @@
 <p>或者在末尾执行 triggerRef()</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> person = ref(&#123;</span><br><span class="line">  age:<span class="number">123</span></span><br><span class="line">&#125;)</span><br><span class="line">person.value.age = <span class="number">666</span></span><br><span class="line"></span><br><span class="line">triggerRef(<span class="number">666</span>); <span class="comment">// triggerReacctive不存在这方法</span></span><br></pre></td></tr></table></figure>
 
-
 <p>reactiv=&gt;&gt; 监听复杂类型数据变化（对象、数组）</p>
 <h3 id="什么是reactive？"><a href="#什么是reactive？" class="headerlink" title="什么是reactive？"></a>什么是reactive？</h3><p>reactive 是vue3.0实现响应数据的方法<br><code>vue</code>: defineProperty实现<br><code>vue3.0</code>: Proxy 实现</p>
 <h3 id="reactive-注意点"><a href="#reactive-注意点" class="headerlink" title="reactive 注意点"></a>reactive 注意点</h3><ol>
@@ -291,10 +297,23 @@
 </ol>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> oldObj = reactive(&#123;</span><br><span class="line">  person:&#123;</span><br><span class="line">    age:<span class="number">18</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"> <span class="comment">// 数据是不会被更新的</span></span><br><span class="line"><span class="comment">// obj.person.age = obj.person.age+20 </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> newObj = obj.person.age+<span class="number">20</span></span><br><span class="line"></span><br><span class="line">oldObj = newObj <span class="comment">//会被自动更新</span></span><br></pre></td></tr></table></figure>
 
-
 <p>本质上是将传入的数据包装成 Proxy 对象</p>
 <h3 id="shallowRef-shallowReactive-非递归监听"><a href="#shallowRef-shallowReactive-非递归监听" class="headerlink" title="shallowRef shallowReactive (非递归监听)"></a>shallowRef shallowReactive (非递归监听)</h3><p>用于复杂数据类型，比如有多层嵌套，可以减少递归次数，提高性能</p>
-<h3 id="在setup中提供的方法"><a href="#在setup中提供的方法" class="headerlink" title="在setup中提供的方法"></a>在setup中提供的方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">    setup( props, ctx) &#123;</span><br><span class="line">      <span class="keyword">const</span> &#123;atts,eimit,isServer,listeners,parent,refs,root,slots,ssrContext&#125; = ctx</span><br><span class="line">        <span class="built_in">console</span>.group()</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'%cprops：'</span>, <span class="string">'color: red'</span>, props,)</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'%cctx：'</span>, <span class="string">'color: red'</span>, ctx,)</span><br><span class="line">        <span class="keyword">const</span> count = ref(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 在setup中使用$nextTick等</span></span><br><span class="line"></span><br><span class="line">        ctx.root.$nextTick()</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 在setup中使用Vue-Router的API</span></span><br><span class="line">        <span class="keyword">const</span> &#123; $router, $route &#125; = ctx.root;</span><br><span class="line">        <span class="built_in">console</span>.log($router, $route);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="string">``</span><span class="string">`        </span></span><br><span class="line"><span class="string">### 为何比2.0快？</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">#### 1.diff方法优化</span></span><br><span class="line"><span class="string">`</span>vue2:<span class="string">` 虚拟dom 是进行全量的对比</span></span><br><span class="line"><span class="string">`</span>vue3:<span class="string">` 增加了静态标记（patchFlag）,在与上次虚拟节点进行对比时，只对比带有patch falg的节点。（比较的次数少了，性能也好了）</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">(模版编译)[https://vue-next-template-explorer.netlify.app/]</span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">#### 2.hoistStatic 静态提升 和  cacheHandles 事件侦听器</span></span><br><span class="line"><span class="string">`</span>vue2:<span class="string">`无论元素是否参与更新，每次都会被重新创建，然后再渲染</span></span><br><span class="line"><span class="string">`</span>vue3:<span class="string">` 会对不参与更新的元素做变量提升，只会被创建一次，在渲染时复用。</span></span><br><span class="line"><span class="string">cacheHandles： 默认情况下是动态绑定，由于是同一个函数所以没有追踪变化，所以直接缓存起来使用。（不用进行比较所以提高性能）</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">## 生命周期钩子函数</span></span><br><span class="line"><span class="string">- 直接导入 onXXX 一族的函数来注册生命周期钩子：</span></span><br><span class="line"><span class="string">与 2.x 版本生命周期相对应的组合式 API</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>javascript</span><br><span class="line"><span class="keyword">import</span> &#123; onMounted, onUpdated, onUnmounted &#125; <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> MyComponent = &#123;</span><br><span class="line">  setup() &#123;</span><br><span class="line">    onMounted(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'mounted!'</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">    onUpdated(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'updated!'</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">    onUnmounted(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'unmounted!'</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="在setup中提供的方法"><a href="#在setup中提供的方法" class="headerlink" title="在setup中提供的方法"></a>在setup中提供的方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">    setup( props, ctx) &#123;</span><br><span class="line">      <span class="keyword">const</span> &#123;atts,eimit,isServer,listeners,parent,refs,root,slots,ssrContext&#125; = ctx</span><br><span class="line">        <span class="built_in">console</span>.group()</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'%cprops：'</span>, <span class="string">'color: red'</span>, props,)</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'%cctx：'</span>, <span class="string">'color: red'</span>, ctx,)</span><br><span class="line">        <span class="keyword">const</span> count = ref(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 在setup中使用$nextTick等</span></span><br><span class="line"></span><br><span class="line">        ctx.root.$nextTick()</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 在setup中使用Vue-Router的API</span></span><br><span class="line">        <span class="keyword">const</span> &#123; $router, $route &#125; = ctx.root;</span><br><span class="line">        <span class="built_in">console</span>.log($router, $route);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="string">``</span><span class="string">`        </span></span><br><span class="line"><span class="string">### toRef 和toRefs 用法</span></span><br><span class="line"><span class="string">- 想结构  `</span>reactive<span class="string">` =&gt; toRefs 结构某一个用 toRef</span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>html</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      name:&#123;&#123;name&#125;&#125;</span><br><span class="line">      &lt;input type=<span class="string">"text"</span> v-model=<span class="string">"name"</span> /&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;div&gt;</span></span><br><span class="line"><span class="regexp">            age:&#123;&#123;age&#125;&#125;</span></span><br><span class="line"><span class="regexp">      &lt;input type="number" v-model="age" /</span>&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;div&gt;</span></span><br><span class="line"><span class="regexp">            height:&#123;&#123;height&#125;&#125;</span></span><br><span class="line"><span class="regexp">      &lt;input type="number" v-model="height" /</span>&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>div&gt;</span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">import &#123; reactive, toRef, toRefs &#125; from 'vue'</span></span><br><span class="line"><span class="regexp">export default &#123;</span></span><br><span class="line"><span class="regexp">  setup() &#123;</span></span><br><span class="line"><span class="regexp">    const proxy = reactive(&#123;</span></span><br><span class="line"><span class="regexp">      name: 'cxx',</span></span><br><span class="line"><span class="regexp">      age: 12</span></span><br><span class="line"><span class="regexp">    &#125;)</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    const user = reactive(&#123;height:100&#125;)</span></span><br><span class="line"><span class="regexp">    </span></span><br><span class="line"><span class="regexp">    const age = toRef(proxy,'age')</span></span><br><span class="line"><span class="regexp">    const &#123;name&#125; = toRefs(proxy)</span></span><br><span class="line"><span class="regexp">    return &#123;</span></span><br><span class="line"><span class="regexp">      age,</span></span><br><span class="line"><span class="regexp">      name,</span></span><br><span class="line"><span class="regexp">      ...toRefs(user)</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="watch"><a href="#watch" class="headerlink" title="watch"></a>watch</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; ref, watch &#125; <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> counter = ref(<span class="number">0</span>)</span><br><span class="line">watch(counter, (newValue, oldValue) =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'The new counter value is: '</span> + counter.value)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>以下是等效的选项式 API：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      counter: <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  watch: &#123;</span><br><span class="line">    counter(newValue, oldValue) &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'The new counter value is: '</span> + <span class="keyword">this</span>.counter)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="为何比2-0快？"><a href="#为何比2-0快？" class="headerlink" title="为何比2.0快？"></a>为何比2.0快？</h2><h4 id="1-diff方法优化"><a href="#1-diff方法优化" class="headerlink" title="1.diff方法优化"></a>1.diff方法优化</h4><p><code>vue2:</code> 虚拟dom 是进行全量的对比<br><code>vue3:</code> 增加了静态标记（patchFlag）,在与上次虚拟节点进行对比时，只对比带有patch falg的节点。（比较的次数少了，性能也好了）</p>
+<p>(模版编译)[<a href="https://vue-next-template-explorer.netlify.app/]" target="_blank" rel="noopener">https://vue-next-template-explorer.netlify.app/]</a></p>
+<h4 id="2-hoistStatic-静态提升-和-cacheHandles-事件侦听器"><a href="#2-hoistStatic-静态提升-和-cacheHandles-事件侦听器" class="headerlink" title="2.hoistStatic 静态提升 和  cacheHandles 事件侦听器"></a>2.hoistStatic 静态提升 和  cacheHandles 事件侦听器</h4><p><code>vue2:</code>无论元素是否参与更新，每次都会被重新创建，然后再渲染<br><code>vue3:</code> 会对不参与更新的元素做变量提升，只会被创建一次，在渲染时复用。<br>cacheHandles： 默认情况下是动态绑定，由于是同一个函数所以没有追踪变化，所以直接缓存起来使用。（不用进行比较所以提高性能）</p>
+<h2 id="生命周期钩子函数"><a href="#生命周期钩子函数" class="headerlink" title="生命周期钩子函数"></a>生命周期钩子函数</h2><ul>
+<li>直接导入 onXXX 一族的函数来注册生命周期钩子：<br>与 2.x 版本生命周期相对应的组合式 API</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; onMounted, onUpdated, onUnmounted &#125; <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> MyComponent = &#123;</span><br><span class="line">  setup() &#123;</span><br><span class="line">    onMounted(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'mounted!'</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">    onUpdated(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'updated!'</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">    onUnmounted(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'unmounted!'</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><p>这些生命周期钩子注册函数只能在 setup() 期间同步使用， 因为它们依赖于内部的全局状态来定位当前组件实例（正在调用 setup() 的组件实例）, 不在当前组件下调用这些函数会抛出一个错误。</p>
 </li>
@@ -304,8 +323,10 @@
 <h3 id="与-2-x-版本生命周期相对应的组合式-API"><a href="#与-2-x-版本生命周期相对应的组合式-API" class="headerlink" title="与 2.x 版本生命周期相对应的组合式 API"></a>与 2.x 版本生命周期相对应的组合式 API</h3><p>beforeCreate -&gt; 使用 setup()<br>created -&gt; 使用 setup()<br>beforeMount -&gt; onBeforeMount<br>mounted -&gt; onMounted<br>beforeUpdate -&gt; onBeforeUpdate<br>updated -&gt; onUpdated<br>beforeDestroy -&gt; onBeforeUnmount<br>destroyed -&gt; onUnmounted<br>errorCaptured -&gt; onErrorCaptured</p>
 <h2 id="render-函数实用的示例"><a href="#render-函数实用的示例" class="headerlink" title="render()函数实用的示例"></a>render()函数实用的示例</h2><p>可以使用render函数简写很多代码</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">app.component(<span class="string">'anchored-heading'</span>, &#123;</span><br><span class="line">  template: <span class="string">`</span></span><br><span class="line"><span class="string">    &lt;h1 v-if="level === 1"&gt;</span></span><br><span class="line"><span class="string">      &lt;slot&gt;&lt;/slot&gt;</span></span><br><span class="line"><span class="string">    &lt;/h1&gt;</span></span><br><span class="line"><span class="string">    &lt;h2 v-else-if="level === 2"&gt;</span></span><br><span class="line"><span class="string">      &lt;slot&gt;&lt;/slot&gt;</span></span><br><span class="line"><span class="string">    &lt;/h2&gt;</span></span><br><span class="line"><span class="string">    &lt;h3 v-else-if="level === 3"&gt;</span></span><br><span class="line"><span class="string">      &lt;slot&gt;&lt;/slot&gt;</span></span><br><span class="line"><span class="string">    &lt;/h3&gt;</span></span><br><span class="line"><span class="string">    &lt;h4 v-else-if="level === 4"&gt;</span></span><br><span class="line"><span class="string">      &lt;slot&gt;&lt;/slot&gt;</span></span><br><span class="line"><span class="string">    &lt;/h4&gt;</span></span><br><span class="line"><span class="string">    &lt;h5 v-else-if="level === 5"&gt;</span></span><br><span class="line"><span class="string">      &lt;slot&gt;&lt;/slot&gt;</span></span><br><span class="line"><span class="string">    &lt;/h5&gt;</span></span><br><span class="line"><span class="string">    &lt;h6 v-else-if="level === 6"&gt;</span></span><br><span class="line"><span class="string">      &lt;slot&gt;&lt;/slot&gt;</span></span><br><span class="line"><span class="string">    &lt;/h6&gt;</span></span><br><span class="line"><span class="string">  `</span>,</span><br><span class="line">  props: &#123;</span><br><span class="line">    level: &#123;</span><br><span class="line">      type: <span class="built_in">Number</span>,</span><br><span class="line">      required: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 可以使用render函数简写很多代码</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = Vue.createApp(&#123;&#125;)</span><br><span class="line"></span><br><span class="line">app.component(<span class="string">'anchored-heading'</span>, &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; h &#125; = Vue</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> h(</span><br><span class="line">      <span class="string">'h'</span> + <span class="keyword">this</span>.level, <span class="comment">// tag name</span></span><br><span class="line">      &#123;&#125;, <span class="comment">// props/attributes</span></span><br><span class="line">      <span class="keyword">this</span>.$slots.default() <span class="comment">// array of children</span></span><br><span class="line">    )</span><br><span class="line">  &#125;,</span><br><span class="line">  props: &#123;</span><br><span class="line">    level: &#123;</span><br><span class="line">      type: <span class="built_in">Number</span>,</span><br><span class="line">      required: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
 <h2 id="新组件"><a href="#新组件" class="headerlink" title="新组件"></a>新组件</h2><h3 id><a href="#" class="headerlink" title></a><teleport></teleport></h3><p>使用<teleport>并告诉Vue 将这个HTML 传送到 “ body ”标签</teleport></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">app.component(<span class="string">'modal-button'</span>, &#123;</span><br><span class="line">  template: <span class="string">`</span></span><br><span class="line"><span class="string">    &lt;button @click="modalOpen = true"&gt;</span></span><br><span class="line"><span class="string">        Open full screen modal! (With teleport!)</span></span><br><span class="line"><span class="string">    &lt;/button&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &lt;teleport to="body"&gt;</span></span><br><span class="line"><span class="string">      &lt;div v-if="modalOpen" class="modal"&gt;</span></span><br><span class="line"><span class="string">        &lt;div&gt;</span></span><br><span class="line"><span class="string">          I'm a teleported modal! </span></span><br><span class="line"><span class="string">          (My parent is "body")</span></span><br><span class="line"><span class="string">          &lt;button @click="modalOpen = false"&gt;</span></span><br><span class="line"><span class="string">            Close</span></span><br><span class="line"><span class="string">          &lt;/button&gt;</span></span><br><span class="line"><span class="string">        &lt;/div&gt;</span></span><br><span class="line"><span class="string">      &lt;/div&gt;</span></span><br><span class="line"><span class="string">    &lt;/teleport&gt;</span></span><br><span class="line"><span class="string">  `</span>,</span><br><span class="line">  data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123; </span><br><span class="line">      modalOpen: <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
 <h3 id="除了和-2-x-生命周期等效项之外，组合式-API-还提供了以下调试钩子函数："><a href="#除了和-2-x-生命周期等效项之外，组合式-API-还提供了以下调试钩子函数：" class="headerlink" title="除了和 2.x 生命周期等效项之外，组合式 API 还提供了以下调试钩子函数："></a>除了和 2.x 生命周期等效项之外，组合式 API 还提供了以下调试钩子函数：</h3><ol>
 <li><code>onRenderTracked</code></li>
 <li><code>onRenderTriggered</code><br>两个钩子函数都接收一个 DebuggerEvent，与 watchEffect 参数选项中的 onTrack 和 onTrigger 类似：</li>
@@ -582,6 +603,14 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">mac 快捷键、mac操作</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">V8引擎</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
@@ -598,7 +627,39 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">算法 leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">UT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">typescript笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">英文专有名词</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">重构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">随手笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Ajax</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -606,7 +667,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Ajax</a>
+                <a href="javascript:void(0)" class="js-tag color5">javaScript高级程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vue3源码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -618,6 +683,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue的坑</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">nextTick</a>
               </li>
              
@@ -626,11 +695,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue的坑</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">javaScript高级程序</a>
+                <a href="javascript:void(0)" class="js-tag color2">vue3.0</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -642,43 +707,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">typescript笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mac 快捷键、mac操作</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vue3.0</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">重构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">年度总结</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">反思</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vue3源码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">UT</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">随手笔记</a>
               </li>
             
             <div class="clearfix"></div>

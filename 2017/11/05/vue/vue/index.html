@@ -10,18 +10,18 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="聊聊VUE的一些坑吧我刚玩vue的坑1、图片的路径一定要加 ‘./‘ 例如 src=’./dd/cc’例如 1&amp;lt;img src=./dd/aa &amp;gt; 不知道 ./ ../ /的赶紧百度（分别是当前路径、当前路径的附近、这个项目的根级）2、templet里最外层要套一层DIV 例如   12345&amp;lt;template&amp;gt;    &amp;lt;div&amp;gt;        &amp;lt;div&amp;">
+  <meta name="description" content="聊聊VUE的一些坑吧我刚玩vue的坑1、图片的路径一定要加 ‘./‘ 例如 src=’./dd/cc’例如 1&amp;lt;img src=./dd/aa &amp;gt;  不知道 ./ ../ /的赶紧百度（分别是当前路径、当前路径的附近、这个项目的根级）2、templet里最外层要套一层DIV 例如   12345&amp;lt;template&amp;gt;    &amp;lt;div&amp;gt;        &amp;lt;div">
 <meta name="keywords" content="vue,vue的坑">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue的坑">
 <meta property="og:url" content="http://littleki.com/2017/11/05/vue/vue/index.html">
 <meta property="og:site_name" content="Littleki">
-<meta property="og:description" content="聊聊VUE的一些坑吧我刚玩vue的坑1、图片的路径一定要加 ‘./‘ 例如 src=’./dd/cc’例如 1&amp;lt;img src=./dd/aa &amp;gt; 不知道 ./ ../ /的赶紧百度（分别是当前路径、当前路径的附近、这个项目的根级）2、templet里最外层要套一层DIV 例如   12345&amp;lt;template&amp;gt;    &amp;lt;div&amp;gt;        &amp;lt;div&amp;">
+<meta property="og:description" content="聊聊VUE的一些坑吧我刚玩vue的坑1、图片的路径一定要加 ‘./‘ 例如 src=’./dd/cc’例如 1&amp;lt;img src=./dd/aa &amp;gt;  不知道 ./ ../ /的赶紧百度（分别是当前路径、当前路径的附近、这个项目的根级）2、templet里最外层要套一层DIV 例如   12345&amp;lt;template&amp;gt;    &amp;lt;div&amp;gt;        &amp;lt;div">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-10-18T02:01:34.646Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue的坑">
-<meta name="twitter:description" content="聊聊VUE的一些坑吧我刚玩vue的坑1、图片的路径一定要加 ‘./‘ 例如 src=’./dd/cc’例如 1&amp;lt;img src=./dd/aa &amp;gt; 不知道 ./ ../ /的赶紧百度（分别是当前路径、当前路径的附近、这个项目的根级）2、templet里最外层要套一层DIV 例如   12345&amp;lt;template&amp;gt;    &amp;lt;div&amp;gt;        &amp;lt;div&amp;">
+<meta name="twitter:description" content="聊聊VUE的一些坑吧我刚玩vue的坑1、图片的路径一定要加 ‘./‘ 例如 src=’./dd/cc’例如 1&amp;lt;img src=./dd/aa &amp;gt;  不知道 ./ ../ /的赶紧百度（分别是当前路径、当前路径的附近、这个项目的根级）2、templet里最外层要套一层DIV 例如   12345&amp;lt;template&amp;gt;    &amp;lt;div&amp;gt;        &amp;lt;div">
   
     <link rel="alternative" href="/blog/atom.xml" title="Littleki" type="application/atom+xml">
   
@@ -64,7 +64,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/blog/" class="profilepic">
-	<img src="/blog/img/person.jpg" class="js-avatar">
+	<img src="/blog/images/person.jpg" class="js-avatar">
 	</a>
 	<hgroup>
 		<h1 class="header-author"><a href="/blog/">Littleki</a></h1>
@@ -154,7 +154,7 @@
 		<header id="header" class="inner">
 			<div class="profilepic">
 				<a href="/blog/">
-					<img src="/blog/img/person.jpg" class="js-avatar">
+					<img src="/blog/images/person.jpg" class="js-avatar">
 				</a>
 			</div>
 			<hgroup>
@@ -260,18 +260,25 @@
     
     <h2 id="聊聊VUE的一些坑吧"><a href="#聊聊VUE的一些坑吧" class="headerlink" title="聊聊VUE的一些坑吧"></a>聊聊VUE的一些坑吧</h2><h3 id="我刚玩vue的坑"><a href="#我刚玩vue的坑" class="headerlink" title="我刚玩vue的坑"></a>我刚玩vue的坑</h3><p>1、图片的路径一定要加 ‘./‘ 例如 src=’./dd/cc’<br>例如</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">./dd/aa</span> &gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>不知道 ./ ../ /的赶紧百度（分别是当前路径、当前路径的附近、这个项目的根级）<br>2、templet里最外层要套一层DIV<br> 例如  </p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>aaas<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>不然会报错，而且template的子元素也只能一个，不然也会报错。<br>也可以有两个子元素的时候例如</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">''</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>aaas<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>aaas<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>通过v-if 来判断要渲染哪一个子元素，用到v-else前一兄弟元素必须有 v-if 或 v-else-if。<br>也可以有三个子元素,v-else-if前一兄弟元素必须有 v-if 或 v-else-if。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">"type === 'A'"</span>&gt;</span></span><br><span class="line">  A</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else-if</span>=<span class="string">"type === 'B'"</span>&gt;</span></span><br><span class="line">  B</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else-if</span>=<span class="string">"type === 'C'"</span>&gt;</span></span><br><span class="line">  C</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else</span>&gt;</span></span><br><span class="line">  Not A/B/C</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <a id="more"></a>
 <p>3、当在JS数据带有标签的话要用  v-html=’aa’来渲染DOM元素&gt;不然数据渲染出来就是本身。<br>  例如</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-html</span>=<span class="string">'row'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">data()&#123;</span><br><span class="line"><span class="actionscript">    <span class="keyword">return</span>&#123;</span></span><br><span class="line"><span class="handlebars"><span class="xml">        row:'<span class="tag">&lt;<span class="name">div</span>&gt;</span>我要用v-html才能渲染<span class="tag">&lt;/<span class="name">div</span>&gt;</span>'</span></span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>4、vue启动时可以自动打开浏览器<br>在config文件夹里的index.js设置 autoOpenBrowser: true,<br>5、设置ico文件(title旁边的logo)<br>(1)把favicon.ico文件放到根目录下<br>(2)打开 bulit里的.webpack.dev.conf.js文件里plugins里加入这段代码</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">new HtmlWebpackPlugin(&#123;</span><br><span class="line">  filename: 'index.html',</span><br><span class="line">  template: 'index.html',</span><br><span class="line">  inject: true,</span><br><span class="line">  favicon: './favicon.ico'</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
-<p>  (3)在index.html中引入代码(可加可不加，我没加是可以的，加了也是可以的)<br>  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"shortcut icon"</span> <span class="attr">type</span>=<span class="string">"image/x-icon"</span> <span class="attr">href</span>=<span class="string">"./favicon.ico"</span> <span class="attr">rel</span>=<span class="string">"external nofollow"</span> /&gt;</span></span><br></pre></td></tr></table></figure><br>  (4)修改完配置文件记得重新npm run dev才会奏效<br>    关于谷歌浏览器不显示小图标： 是缓存问题，手动强制刷新一下试试（ctrl+F5）注：( 也有把favicon放入static文件夹下的，因为我没有奏效，所以用了这个方法，如果放入static的话只要改一下favicon的路径就可以。)</p>
+
+<p>  (3)在index.html中引入代码(可加可不加，我没加是可以的，加了也是可以的)<br>  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"shortcut icon"</span> <span class="attr">type</span>=<span class="string">"image/x-icon"</span> <span class="attr">href</span>=<span class="string">"./favicon.ico"</span> <span class="attr">rel</span>=<span class="string">"external nofollow"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>  (4)修改完配置文件记得重新npm run dev才会奏效<br>    关于谷歌浏览器不显示小图标： 是缓存问题，手动强制刷新一下试试（ctrl+F5）注：( 也有把favicon放入static文件夹下的，因为我没有奏效，所以用了这个方法，如果放入static的话只要改一下favicon的路径就可以。)</p>
 
     
 
@@ -570,6 +577,14 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">mac 快捷键、mac操作</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">V8引擎</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
@@ -586,7 +601,39 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">算法 leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">UT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">typescript笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">英文专有名词</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">重构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">随手笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Ajax</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -594,7 +641,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Ajax</a>
+                <a href="javascript:void(0)" class="js-tag color5">javaScript高级程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vue3源码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -606,6 +657,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue的坑</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">nextTick</a>
               </li>
              
@@ -614,11 +669,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue的坑</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">javaScript高级程序</a>
+                <a href="javascript:void(0)" class="js-tag color2">vue3.0</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -630,43 +681,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">typescript笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mac 快捷键、mac操作</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vue3.0</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">重构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">年度总结</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">反思</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vue3源码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">UT</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">随手笔记</a>
               </li>
             
             <div class="clearfix"></div>
