@@ -1240,7 +1240,7 @@
 
 
   
-    <article id="post-JavaScript/ES6" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-JavaScript/Ajax" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class=" article-header">
@@ -1248,7 +1248,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2018/07/22/JavaScript/ES6/" target="_blank">ES6笔记</a>
+	  <a class="article-title" href="/2018/07/22/JavaScript/Ajax/" target="_blank">如何实现jQuery中的Ajax</a>
   
     </h1>
   
@@ -1256,7 +1256,7 @@
 
   
   
-<a href="/2018/07/22/JavaScript/ES6/" class="archive-article-date">
+<a href="/2018/07/22/JavaScript/Ajax/" class="archive-article-date">
         <time datetime="2018-07-22T04:30:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-22</time>
 </a>
 
@@ -1269,30 +1269,19 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <ul>
-<li>以下笔记将大量参考阮一峰写的<a href="https://www.zhihu.com/question/28586791/answer/145424285" target="_blank" rel="noopener">ECAMScript入门</a><h2 id="ES6简介"><a href="#ES6简介" class="headerlink" title="ES6简介"></a>ES6简介</h2><h3 id="1-ECMAScript-和-JavaScript-的关系"><a href="#1-ECMAScript-和-JavaScript-的关系" class="headerlink" title="1.ECMAScript 和 JavaScript 的关系"></a>1.ECMAScript 和 JavaScript 的关系</h3>1996 年 11 月，JavaScript 的创造者 Netscape 公司，决定将 JavaScript 提交给标准化组织 ECMA，希望这种语言能够成为国际标准。次年，ECMA 发布 262 号标准文件（ECMA-262）的第一版，规定了浏览器脚本语言的标准，并将这种语言称为 ECMAScript，这个版本就是 1.0 版。</li>
-</ul>
-<p>该标准从一开始就是针对 JavaScript 语言制定的，但是之所以不叫 JavaScript，有两个原因。一是商标，Java 是 Sun 公司的商标，根据授权协议，只有 Netscape 公司可以合法地使用 JavaScript 这个名字，且 JavaScript 本身也已经被 Netscape 公司注册为商标。二是想体现这门语言的制定者是 ECMA，不是 Netscape，这样有利于保证这门语言的开放性和中立性。</p>
-<p>因此，ECMAScript 和 JavaScript 的关系是，前者是后者的规格，后者是前者的一种实现（另外的 ECMAScript 方言还有 Jscript 和 ActionScript）。日常场合，这两个词是可以互换的。</p>
-<h3 id="2-ES6-与-ECMAScript-2015-的关系"><a href="#2-ES6-与-ECMAScript-2015-的关系" class="headerlink" title="2.ES6 与 ECMAScript 2015 的关系"></a>2.ES6 与 ECMAScript 2015 的关系</h3><p>2011 年，ECMAScript 5.1 版发布后，就开始制定 6.0 版了。因此，ES6 这个词的原意，就是指 JavaScript 语言的下一个版本。</p>
-<h3 id="3-ECMAScript-的历史"><a href="#3-ECMAScript-的历史" class="headerlink" title="3.ECMAScript 的历史"></a>3.ECMAScript 的历史</h3><p>ES6 从开始制定到最后发布，整整用了 15 年。</p>
-<p>ECMAScript 1.0 是 1997 年发布的，接下来的两年，连续发布了 ECMAScript 2.0（1998 年 6 月）和 ECMAScript 3.0（1999 年 12 月）。3.0 版是一个巨大的成功，在业界得到广泛支持，成为通行标准，奠定了 JavaScript 语言的基本语法，以后的版本完全继承。直到今天，初学者一开始学习 JavaScript，其实就是在学 3.0 版的语法。</p>
-<p>2000 年，ECMAScript 4.0 开始酝酿。这个版本最后没有通过，但是它的大部分内容被 ES6 继承了。因此，ES6 制定的起点其实是 2000 年。</p>
-<p>2009 年 12 月，ECMAScript 5.0 版正式发布。Harmony 项目则一分为二，一些较为可行的设想定名为 JavaScript.next 继续开发，后来演变成 ECMAScript 6；一些不是很成熟的设想，则被视为 JavaScript.next.next，在更远的将来再考虑推出。TC39 委员会的总体考虑是，ES5 与 ES3 基本保持兼容，较大的语法修正和新功能加入，将由 JavaScript.next 完成。当时，JavaScript.next 指的是 ES6，第六版发布以后，就指 ES7。TC39 的判断是，ES5 会在 2013 年的年中成为 JavaScript 开发的主流标准，并在此后五年中一直保持这个位置。</p>
-<p>2011 年 6 月，ECMAscript 5.1 版发布，并且成为 ISO 国际标准（ISO/IEC 16262:2011）。</p>
-<p>2013 年 3 月，ECMAScript 6 草案冻结，不再添加新功能。新的功能设想将被放到 ECMAScript 7。</p>
-<p>2013 年 12 月，ECMAScript 6 草案发布。然后是 12 个月的讨论期，听取各方反馈。</p>
-<p>2015 年 6 月，ECMAScript 6 正式通过，成为国际标准。从 2000 年算起，这时已经过去了 15 年。</p>
-<h3 id="Object-keys"><a href="#Object-keys" class="headerlink" title="Object.keys"></a>Object.keys</h3><p><a href="https://github.com/berwin/Blog/issues/24" target="_blank" rel="noopener">参考地址</a></p>
-<ul>
-<li>Object.keys在内部会根据属性名key的类型进行不同的排序逻辑。分三种情况：</li>
+    <h2 id="什么叫Ajax"><a href="#什么叫Ajax" class="headerlink" title="什么叫Ajax"></a>什么叫Ajax</h2><ul>
+<li>AJAX的全称是Asynchronous JavaScript and XML（异步的 JavaScript 和 XML）。</li>
+<li>ajax是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。</li>
+<li>ajax是一种用于创建快速动态网页的技术。通过在后台与服务器进行少量数据交换。<h3 id="Ajax的优点"><a href="#Ajax的优点" class="headerlink" title="Ajax的优点"></a>Ajax的优点</h3></li>
 </ul>
 <ol>
-<li>如果属性名的类型是Number，那么Object.keys返回值是按照key从小到大排序</li>
-<li>如果属性名的类型是String，那么Object.keys返回值是按照属性被创建的时间升序排序。</li>
-<li>如果属性名的类型是Symbol，那么逻辑同String相同</li>
-</ol>
-
+<li>最大的一点是页面无刷新，用户的体验非常好。</li>
+<li>使用异步方式与服务器通信，具有更加迅速的响应能力。</li>
+<li>可以把以前一些服务器负担的工作转嫁到客户端，利用客户端闲置的能力来处理，减轻服务器和带宽的负担，节约空间和宽带租用成本。并且减轻服务器的负担，ajax的原则是“按需取数据”，可以最大程度的减少冗余请求，和响应对服务器造成的负担。</li>
+<li>ajax可使因特网应用程序更小、更快，更友好</li></ol>
+    
+    <a class="article-more-a" href="/2018/07/22/JavaScript/Ajax/#more">more >></a>
+    
     
 
     
@@ -1308,7 +1297,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">GET</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">POST</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Ajax</a>
         		</li>
       		
 		</ul>
@@ -1329,7 +1326,7 @@
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/2018/07/22/JavaScript/ES6/">展开全文 >></a>
+      <a class="article-more-a" href="/2018/07/22/JavaScript/Ajax/">展开全文 >></a>
     </p>
     
 
@@ -1496,15 +1493,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">V8引擎</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">React笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">V8引擎</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1548,15 +1545,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Ajax</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">javaScript高级程序</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vue3源码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1564,11 +1561,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">javaScript高级程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Axios</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vue3源码</a>
+                <a href="javascript:void(0)" class="js-tag color1">vue的坑</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1577,10 +1578,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">event loop</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue的坑</a>
               </li>
              
               <li class="article-tag-list-item">
