@@ -210,6 +210,93 @@
             
 
   
+    <article id="post-Mac笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/blog/2020/05/09/Mac笔记/" target="_blank">Mac笔记</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/blog/2020/05/09/Mac笔记/" class="archive-article-date">
+        <time datetime="2020-05-09T02:09:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-09</time>
+</a>
+
+  
+  
+  
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="Mac-快捷键"><a href="#Mac-快捷键" class="headerlink" title="Mac 快捷键"></a>Mac 快捷键</h2><p><code>command + shift + .</code>  查看文件的隐藏文件</p>
+<p><code>command + shift + n</code>  新建文件夹</p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">mac 快捷键、mac操作</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/blog/2020/05/09/Mac笔记/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-面试题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1100,127 +1187,6 @@
 
 
   
-    <article id="post-随手笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/blog/2019/04/25/随手笔记/" target="_blank">随手笔记</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/blog/2019/04/25/随手笔记/" class="archive-article-date">
-        <time datetime="2019-04-25T06:06:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-25</time>
-</a>
-
-  
-  
-  
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="params动态路由传参"><a href="#params动态路由传参" class="headerlink" title="params动态路由传参"></a>params动态路由传参</h2><p>params动态路由传参一定要在路由中定义参数，然后在路由跳转的时候必须要加上参数，否则就是空白页面：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;      </span><br><span class="line">    path: <span class="string">'/detail/:id'</span>,      </span><br><span class="line">    name: <span class="string">'Detail'</span>,      </span><br><span class="line">    component: Detail    </span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p><strong>注意</strong>，params传参时，如果没有在路由中定义参数，也是可以传过去的，同时也能接收到，但是一旦刷新页面，这个参数就不存在了。这对于需要依赖参数进行某些操作的行为是行不通的，因为你总不可能要求用户不能刷新页面吧</p>
-</blockquote>
-<h2 id="在引用子组件里的-click-方法不生效"><a href="#在引用子组件里的-click-方法不生效" class="headerlink" title="在引用子组件里的 click 方法不生效"></a>在引用子组件里的 click 方法不生效</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"disable-hover button ion-button"</span></span></span><br><span class="line"><span class="tag">          <span class="attr">:class</span>=<span class="string">"[modeClass,typeClass,shapeClass,sizeClass,colorClass,roleClass,strongClass]"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"button-inner"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">slot</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"button-effect"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ion-button</span> @<span class="attr">click.native</span>=<span class="string">"primary()"</span> <span class="attr">color</span>=<span class="string">"primary"</span>&gt;</span>primary<span class="tag">&lt;/<span class="name">ion-button</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>据<code>Vue2.x</code>官方文档关于父子组件通讯的原则，父组件通过prop传递数据给子组件，子组件触发事件给父组件。但父组件想在子组件上监听自己的click的话，需要加上native修饰符</p>
-<p>注意：<strong>Vue.3x</strong> 已经移除 <del>v-on.native</del></p>
-<h2 id="commit-lint"><a href="#commit-lint" class="headerlink" title="commit-lint"></a>commit-lint</h2><p>可以帮助我们检查提交的 commit 信息，它强制约束我们的 commit 信息必须在开头附加指定类型，用于标示本次提交的大致意图，支持的类型关键字有：</p>
-<ul>
-<li>feat：表示添加一个新特性；</li>
-<li>chore：表示做了一些与特性和修复无关的「家务事」；</li>
-<li>fix：表示修复了一个 Bug；</li>
-<li>refactor：表示本次提交是因为重构了代码；</li>
-<li>style：表示代码美化或格式化；</li>
-</ul>
-<h2 id="CSS-变量教程"><a href="#CSS-变量教程" class="headerlink" title="CSS 变量教程"></a>CSS 变量教程</h2>
-    
-    <a class="article-more-a" href="/blog/2019/04/25/随手笔记/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    <div class="article-pop-out tagcloud">
-      <i class="icon-tuding"></i>
-      <a class="article-tag-list-link color3">置顶</a>
-    </div>
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">浏览器</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">随手笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">平时遇到的问题</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/blog/2019/04/25/随手笔记/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-年度总结/迟来的2018年度总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1444,11 +1410,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">V8引擎</a>
+                <a href="javascript:void(0)" class="js-tag color4">mac 快捷键、mac操作</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mac 快捷键、mac操作</a>
+                <a href="javascript:void(0)" class="js-tag color5">V8引擎</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1484,11 +1450,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
+                <a href="javascript:void(0)" class="js-tag color1">经验 经历</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">经验 经历</a>
+                <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1508,11 +1474,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Ajax</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color5">Ajax</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1524,7 +1490,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue的坑</a>
+                <a href="javascript:void(0)" class="js-tag color1">Axios</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1532,7 +1498,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Axios</a>
+                <a href="javascript:void(0)" class="js-tag color1">vue的坑</a>
               </li>
              
               <li class="article-tag-list-item">
