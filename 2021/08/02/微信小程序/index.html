@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="Littleki">
 <meta property="og:description" content="微信小程序小程序主包和分包得资源可以相互引用吗？主包里的资源（js, template, wxss, components, 图片）都是全局的，可以被公用；而每个分包相当于有自己的“作用域”，自己的资源，只能用自己的或者使用主包的，但不能使用其他子包的资源。 可以把你写的这个页面放在用的比较多的分包里面。这样这个页面可以使用自己分包和主包里面得内容。实在是没办法用的还是得重新写。 打包原则 声明">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-12-08T15:24:52.437Z">
+<meta property="og:updated_time" content="2022-11-21T08:38:07.728Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信小程序">
 <meta name="twitter:description" content="微信小程序小程序主包和分包得资源可以相互引用吗？主包里的资源（js, template, wxss, components, 图片）都是全局的，可以被公用；而每个分包相当于有自己的“作用域”，自己的资源，只能用自己的或者使用主包的，但不能使用其他子包的资源。 可以把你写的这个页面放在用的比较多的分包里面。这样这个页面可以使用自己分包和主包里面得内容。实在是没办法用的还是得重新写。 打包原则 声明">
@@ -238,7 +238,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">859字</span>
+      <span class="post-count">865字</span>
     </span>
   </span>
 
@@ -283,7 +283,7 @@
 <p><a href="https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/01wxs-module.html" target="_blank" rel="noopener">微信文档 wxs 模块文档</a></p>
 <h3 id="回到顶部"><a href="#回到顶部" class="headerlink" title="回到顶部"></a>回到顶部</h3><h4 id="页面回到顶部"><a href="#页面回到顶部" class="headerlink" title="页面回到顶部"></a>页面回到顶部</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wx.pageScrollTo(&#123;</span><br><span class="line">			    scrollTop: <span class="number">0</span></span><br><span class="line">			&#125;)</span><br></pre></td></tr></table></figure>
 
-<h4 id><a href="#" class="headerlink" title></a></h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">scroll-view</span> <span class="attr">class</span>=<span class="string">""</span> <span class="attr">scroll-top</span>=<span class="string">'&#123;&#123;courseScrollTop&#125;&#125;'</span>  <span class="attr">scroll-y</span>=<span class="string">"&#123;&#123;topFlag&#125;&#125;"</span> <span class="attr">bindscrolltolower</span>=<span class="string">"loadMore"</span> <span class="attr">lower-threshold</span>=<span class="string">"120"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">scroll-view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="scroll-view-回到顶部"><a href="#scroll-view-回到顶部" class="headerlink" title="scroll-view 回到顶部"></a>scroll-view 回到顶部</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">scroll-view</span> <span class="attr">class</span>=<span class="string">""</span> <span class="attr">scroll-top</span>=<span class="string">'&#123;&#123;courseScrollTop&#125;&#125;'</span>  <span class="attr">scroll-y</span>=<span class="string">"&#123;&#123;topFlag&#125;&#125;"</span> <span class="attr">bindscrolltolower</span>=<span class="string">"loadMore"</span> <span class="attr">lower-threshold</span>=<span class="string">"120"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">scroll-view</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>当需要 scroll-view 回到顶部时可以把 scroll-top 设置成 0</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">data:&#123;</span><br><span class="line">  courseScrollTop:<span class="number">0</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">this</span>.setData(&#123;<span class="attr">courseScrollTop</span>:<span class="number">0</span>&#125;)</span><br></pre></td></tr></table></figure>
@@ -591,15 +591,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">V8引擎</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">React笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">V8引擎</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -647,11 +647,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">经验 经历</a>
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color1">经验 经历</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -699,7 +699,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Axios</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue的坑</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -711,15 +719,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Axios</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue的坑</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">分享会</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">promise</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vitest</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">jest</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">test</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -736,10 +752,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">workspace</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">promise</a>
               </li>
              
               <li class="article-tag-list-item">

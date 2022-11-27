@@ -10,18 +10,18 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="service worker/indexdb service worker 判断断网问题（workbox\workbox-webpack-plugin） indexdb,取上下20条数据，避免内存溢出(localforage) 如何定位内存问题（heapdump）闭包手写 深度拷贝1234567891011121314 function deepCopy(obj)&amp;#123;  if(typeof">
+  <meta name="description" content="service worker/indexdb service worker 判断断网问题（workbox\workbox-webpack-plugin） indexdb,取上下20条数据，避免内存溢出(localforage) 如何定位内存问题（heapdump）大文件切片上传 blob.slice axios 2.1、前端并发控制 p-limit/pmaps、sindrrsohus) (http">
 <meta name="keywords" content="面试题">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面试题">
 <meta property="og:url" content="https://littleki.gitee.io/2020/04/09/面试/面试题/index.html">
 <meta property="og:site_name" content="Littleki">
-<meta property="og:description" content="service worker/indexdb service worker 判断断网问题（workbox\workbox-webpack-plugin） indexdb,取上下20条数据，避免内存溢出(localforage) 如何定位内存问题（heapdump）闭包手写 深度拷贝1234567891011121314 function deepCopy(obj)&amp;#123;  if(typeof">
+<meta property="og:description" content="service worker/indexdb service worker 判断断网问题（workbox\workbox-webpack-plugin） indexdb,取上下20条数据，避免内存溢出(localforage) 如何定位内存问题（heapdump）大文件切片上传 blob.slice axios 2.1、前端并发控制 p-limit/pmaps、sindrrsohus) (http">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2022-08-04T10:30:20.518Z">
+<meta property="og:updated_time" content="2022-11-27T13:18:02.397Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试题">
-<meta name="twitter:description" content="service worker/indexdb service worker 判断断网问题（workbox\workbox-webpack-plugin） indexdb,取上下20条数据，避免内存溢出(localforage) 如何定位内存问题（heapdump）闭包手写 深度拷贝1234567891011121314 function deepCopy(obj)&amp;#123;  if(typeof">
+<meta name="twitter:description" content="service worker/indexdb service worker 判断断网问题（workbox\workbox-webpack-plugin） indexdb,取上下20条数据，避免内存溢出(localforage) 如何定位内存问题（heapdump）大文件切片上传 blob.slice axios 2.1、前端并发控制 p-limit/pmaps、sindrrsohus) (http">
   
     <link rel="alternative" href="/atom.xml" title="Littleki" type="application/atom+xml">
   
@@ -238,7 +238,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">7.1k字</span>
+      <span class="post-count">13.1k字</span>
     </span>
   </span>
 
@@ -247,7 +247,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">26分</span>
+      <span class="post-count">49分</span>
     </span>
   </span>
 </div>
@@ -261,10 +261,18 @@
     <h2 id="service-worker-indexdb"><a href="#service-worker-indexdb" class="headerlink" title="service worker/indexdb"></a>service worker/indexdb</h2><ol>
 <li>service worker 判断断网问题（workbox\workbox-webpack-plugin）</li>
 <li>indexdb,取上下20条数据，避免内存溢出(localforage)</li>
-<li>如何定位内存问题（heapdump）<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><h2 id="手写-深度拷贝"><a href="#手写-深度拷贝" class="headerlink" title="手写 深度拷贝"></a>手写 深度拷贝</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">deepCopy</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">  </span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">typeof</span> obj!== <span class="string">'object'</span>) <span class="keyword">return</span> </span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> result = obj <span class="keyword">instanceof</span> <span class="built_in">Array</span> ? [] : &#123;&#125;;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> obj)&#123;</span><br><span class="line">    result[key]=<span class="keyword">typeof</span> obj[key] ===<span class="string">'object'</span>?deepCopy(obj[key]): obj[key]</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person=&#123;<span class="attr">name</span>:<span class="string">"小明"</span>,<span class="attr">ageAndSex</span>:&#123;<span class="attr">age</span>:<span class="number">16</span>,<span class="attr">sex</span>:<span class="string">"男"</span>&#125;&#125;</span><br><span class="line"><span class="keyword">let</span> personCopy= deepCopy(person)</span><br><span class="line">personCopy=== person <span class="comment">// false</span></span><br><span class="line">personCopy.ageAndSex.age=<span class="number">20</span></span><br></pre></td></tr></table></figure>
-
-</li>
+<li>如何定位内存问题（heapdump）<h2 id="大文件切片上传"><a href="#大文件切片上传" class="headerlink" title="大文件切片上传"></a>大文件切片上传</h2></li>
+<li>blob.slice</li>
+<li>axios<br> 2.1、前端并发控制 p-limit/pmaps、sindrrsohus) (<a href="https://github.com/sindresorhus/p-limit" target="_blank" rel="noopener">https://github.com/sindresorhus/p-limit</a>)<br> 2.2  高并发的控制：（rate limit） (redis)</li>
+<li>graphql<br> 3.1 可请求所需的数据<br> 3.2 post 和缓存</li>
+<li>jwt <a href="https://jwt.io/" target="_blank" rel="noopener">https://jwt.io/</a><br> jwt的好处？ 不需要做数据存储，<br> 分为三部分 header payload signature</li>
 </ol>
+<ul>
+<li>时间久远的项目 ，如果技术不懂建议不要放在简历上</li>
+<li>写在简历上的技术要保证很熟悉<h2 id="0-1-0-2-0-3"><a href="#0-1-0-2-0-3" class="headerlink" title="0.1+0.2 !== 0.3"></a>0.1+0.2 !== 0.3</h2>由于 0.2转化为二进制会出现精度丢失问题，所以 0.1+0.2 !== 0.3</li>
+</ul>
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><h2 id="手写-深度拷贝"><a href="#手写-深度拷贝" class="headerlink" title="手写 深度拷贝"></a>手写 深度拷贝</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepCopy</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">typeof</span> obj!== <span class="string">'object'</span>) <span class="keyword">return</span> </span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> result = obj <span class="keyword">instanceof</span> <span class="built_in">Array</span> ? [] : &#123;&#125;;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> obj)&#123;</span><br><span class="line">    result[key]=<span class="keyword">typeof</span> obj[key] ===<span class="string">'object'</span>?deepCopy(obj[key]): obj[key]</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person=&#123;<span class="attr">name</span>:<span class="string">"小明"</span>,<span class="attr">ageAndSex</span>:&#123;<span class="attr">age</span>:<span class="number">16</span>,<span class="attr">sex</span>:<span class="string">"男"</span>&#125;&#125;</span><br><span class="line"><span class="keyword">let</span> personCopy= deepCopy(person)</span><br><span class="line">personCopy=== person <span class="comment">// false</span></span><br><span class="line">personCopy.ageAndSex.age=<span class="number">20</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="华雄面试"><a href="#华雄面试" class="headerlink" title="华雄面试"></a>华雄面试</h2><h3 id="什么是盒子模型"><a href="#什么是盒子模型" class="headerlink" title="什么是盒子模型"></a>什么是盒子模型</h3><ul>
 <li>盒子模型有ie模型和 标准模型</li>
 <li>CSS盒模型本质上是一个盒子，封装周围的HTML元素，它包括：边距，边框，填充，和实际内容</li>
@@ -369,11 +377,24 @@
 <li>监听数据必须是data中声明过或者父组件传递过来的props中的数据，当数据变化时，触发其他操作，函数有两个参数，<br>　　immediate：组件加载立即触发回调函数执行，<br>　　deep: 深度监听，为了发现对象内部值的变化，复杂类型的数据时使用，例如数组中的对象内容的改变，注意监听数组的变动不需要这么做。注意：deep无法监听到数组的变动和对象的新增，参考vue数组变异,只有以响应式的方式触发才会被监听到。</li>
 </ol>
 <h2 id="babel原理"><a href="#babel原理" class="headerlink" title="babel原理"></a>babel原理</h2><p>ES6、7代码输入 -&gt; babylon进行解析 -&gt; 得到AST（抽象语法树）-&gt; plugin用babel-traverse对AST树进行遍历转译 -&gt;得到新的AST树-&gt;用babel-generator通过AST树生成ES5代码、</p>
-<h2 id="vue的设计模式"><a href="#vue的设计模式" class="headerlink" title="vue的设计模式"></a>vue的设计模式</h2><p>vue的设计模式是<code>mvvm</code><br>在Model和View之间多了叫做View-Model的一层</p>
+<h2 id="Vue-相关面试"><a href="#Vue-相关面试" class="headerlink" title="Vue 相关面试"></a>Vue 相关面试</h2><h3 id="为什么data属性是一个函数而不是一个对象？"><a href="#为什么data属性是一个函数而不是一个对象？" class="headerlink" title="为什么data属性是一个函数而不是一个对象？"></a>为什么data属性是一个函数而不是一个对象？</h3><p>对象 会造成 两个组件里的对象两者共用了同一个内存地址<br>根实例对象data可以是对象也可以是函数（根实例是单例），不会产生数据污染情况<br>组件实例对象data必须为函数，目的是为了防止多个组件实例对象之间共用一个data，产生数据污染。采用函数的形式，initData时会将其作为工厂函数都会返回全新data对象</p>
+<h3 id="Vue-在哪个生命周期有虚拟Dom？"><a href="#Vue-在哪个生命周期有虚拟Dom？" class="headerlink" title="Vue 在哪个生命周期有虚拟Dom？"></a>Vue 在哪个生命周期有虚拟Dom？</h3><p>在组件第一次执行render 函数后，就会有虚拟Dom<br>会调用由模板编译而来的 render 方法，最后生成了 虚拟 DOM</p>
+<p>beforeMount() 虚拟dom已创建完成，在数据渲染前最后一次更改数据<br>mounted() 页面、数据渲染完成，真实dom挂载完成</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">vue._init</span><br><span class="line">        initLifecycle(vm);</span><br><span class="line">        initEvents(vm);</span><br><span class="line">        initRender(vm); 挂载渲染函数</span><br><span class="line">        callHook$<span class="number">1</span>(vm, <span class="string">'beforeCreate'</span>, <span class="literal">undefined</span>, <span class="literal">false</span> <span class="comment">/* setContext */</span>);</span><br><span class="line">        initInjections(vm); <span class="comment">// resolve injections before data/props</span></span><br><span class="line">        initState(vm);</span><br><span class="line">        initProvide(vm); <span class="comment">// resolve provide after data/props</span></span><br><span class="line">        callHook$<span class="number">1</span>(vm, <span class="string">'created'</span>);</span><br><span class="line">        $mount</span><br><span class="line">        mountComponent</span><br><span class="line">        callHook$<span class="number">1</span>(vm, <span class="string">'beforeMount'</span>)</span><br><span class="line">        updateComponent = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            vm._update(vm._render(), hydrating);</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">new</span> Watcher(vm, updateComponent, noop, watcherOptions, <span class="literal">true</span> <span class="comment">/* isRenderWatcher */</span>);</span><br><span class="line">        callHook$<span class="number">1</span>(vm, <span class="string">'mounted'</span>);</span><br></pre></td></tr></table></figure>
+
+<p>从上面函数可以看出，虚拟Dom 在 beforeMount 后Watcher 里 执行updateComponent 里执行 render 函数生成的</p>
+<h3 id="vue的设计模式"><a href="#vue的设计模式" class="headerlink" title="vue的设计模式"></a>vue的设计模式</h3><p>vue的设计模式是<code>mvvm</code><br>在Model和View之间多了叫做View-Model的一层</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--view页面--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  ...</span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">vm-bind-key</span>=<span class="string">"name"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">vm-bind-key</span>=<span class="string">"data"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">  <span class="comment">// 生成model数据模型</span></span></span><br><span class="line"><span class="actionscript">  <span class="function"><span class="keyword">function</span> <span class="title">getDataApi</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">    <span class="comment">// 模拟接口返回</span></span></span><br><span class="line"><span class="actionscript">    <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="actionscript">      name: <span class="string">'mvc'</span>,</span></span><br><span class="line"><span class="actionscript">      data: <span class="string">'mvc 数据信息'</span></span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="actionscript">  <span class="comment">// ViewModel控制逻辑</span></span></span><br><span class="line"><span class="actionscript">  <span class="function"><span class="keyword">function</span> <span class="title">pageViewModel</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">const</span> result = getDataApi();</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">return</span> result;</span></span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>上面作为理想情况下例子，在ViewModel引入之后，视图完全由接口返回数据驱动，由开发者所控制的逻辑非常轻量。不过这里要说明的是，在MVVM模式下，Controller控制逻辑并非就没了，像操作页面DOM响应的逻辑被SDK（如Vue的内部封装实现）统一实现了，像不操作接口返回的数据是因为服务端在数据返回给前端前已经操作好了。<br>例子里pageViewModel函数的实现是非常关键的一步，如何将数据模型与页面视图绑定起来呢？在目前的前端领域里有三类实现，Angularjs的主动轮询检查新旧值变化更新视图、Vue利用ES5的Object.defineProperty的getter/setter方法绑定、backbone的发布订阅模式，从主动和被动的方式去实现了ViewModel的关系绑定，接下来主要看看Vue中的MVVM的实现。</p>
 <h3 id="Vue2-0中的MVVM实现"><a href="#Vue2-0中的MVVM实现" class="headerlink" title="Vue2.0中的MVVM实现"></a>Vue2.0中的MVVM实现</h3><p>Vue2.0的MVVM实现中，对View-Model的实现本质利用的ES5的Object.defineProperty方法，当Object.defineProperty方法在给数据Model对象定义属性的时候先挂载一些方法，在这些方法里实现与界面的值绑定响应关系，当应用的属性被读取或者写入的时候便会触发这些方法，从而达到数据模型里的值发生变化时同步响应到页面上。</p>
+<h3 id="Vue和React对比"><a href="#Vue和React对比" class="headerlink" title="Vue和React对比"></a>Vue和React对比</h3><h4 id="相同点"><a href="#相同点" class="headerlink" title="相同点"></a>相同点</h4><p>都有组件化思想<br>都支持服务器端渲染<br>都有Virtual DOM（虚拟dom）<br>数据驱动视图<br>都有支持native的方案：Vue的weex、React的React native<br>都有自己的构建工具：Vue的vue-cli、React的Create React App</p>
+<h4 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h4><p>数据流向的不同。react从诞生开始就推崇单向数据流，而Vue是双向数据流</p>
+<p>数据变化的实现原理不同。react使用的是不可变数据，而Vue使用的是可变的数据</p>
+<p>组件化通信的不同。react中我们通过使用回调函数来进行通信的，而Vue中子组件向父组件传递消息有两种方式：事件和回调函数</p>
+<p>diff算法不同。<br>react主要使用diff队列保存需要更新哪些DOM，得到patch树，再统一操作批量更新DOM。<br>Vue 使用双向指针，边对比，边更新DOM</p>
+<h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><h3 id="采用了MVC模式"><a href="#采用了MVC模式" class="headerlink" title="采用了MVC模式"></a>采用了MVC模式</h3><p>将模型和视图之间实现代码分离,并且减少了代码的重复性</p>
+<h3 id="React中的性能优化"><a href="#React中的性能优化" class="headerlink" title="React中的性能优化"></a>React中的性能优化</h3><p>定义ShouldComponent()中的条件判断避免重复渲染，因为这个函数本身默认返回true。<br>定义非数组下标的key值，因数组下标容易导致key值重复，且会在数组变化时更改。key值将在新旧dom中节点比较时运用。<br>能使用时，尽量使用无状态组件。因为无状态组件不需要声明类，不需要显示声明this关键字。</p>
 <h2 id="当你在浏览器地址栏输入一个URL后回车，将会发生的事情？"><a href="#当你在浏览器地址栏输入一个URL后回车，将会发生的事情？" class="headerlink" title="当你在浏览器地址栏输入一个URL后回车，将会发生的事情？"></a>当你在浏览器地址栏输入一个URL后回车，将会发生的事情？</h2><h3 id="基本流程："><a href="#基本流程：" class="headerlink" title="基本流程："></a>基本流程：</h3><p>①查询ip地址</p>
 <p>②建立tcp连接，接入服务器</p>
 <p>③浏览器发起http请求</p>
@@ -424,8 +445,151 @@
 </ol>
 <h2 id="为什么要使用typescript？"><a href="#为什么要使用typescript？" class="headerlink" title="为什么要使用typescript？"></a>为什么要使用typescript？</h2><p>1.我们在项目重构的时候发现，幸亏用了typescript，哈哈，举个小栗子，比如一个字段的类型，我们在项目初期把它定义成了一个number类型，然后突然后端同学告诉我们不行，全部都要换成string，但是不可能我们要用黑科技String（）吧，作为一名严谨的程序员，我需要改动他的类型，这时候typescript强大的强类型在编译器检验的时候，便报了一堆错，而我们此时只要根据报错改掉相应的参数即可。这是一点好处。</p>
 <p>2.项目来了个新人，我不用不停的跟他讲解这个方法是用来干嘛的，这个参数是什么意思，还能使用这个对象的哪些属性哪些方法。因为我们在项目初期就已经定义好了interface 或者 说是 class 。每个实体的作用一目了然。我们在编辑器coding的时候，提示也会主动跟出来。这也是一点好处。</p>
-<p>3.如果看过antd源码的同学肯定知道，antd也使用了typescript，并不是说大牛们用了，我们也要跟风一起 用。我想说的是如果你也想做一个类似antd的自己的sdk，那么使用typescript对你来说真的很合适，因为你可以定义一套规范的接口。自己看着爽，使用者用着也很爽。</p>
+<p>3.如果看过antd源码的同学肯定知道，antd也使用了typescript，并不是说大牛们用了，我们也要跟风一起用。我想说的是如果你也想做一个类似antd的自己的sdk，那么使用typescript对你来说真的很合适，因为你可以定义一套规范的接口。自己看着爽，使用者用着也很爽。</p>
 <p>综上所述，我为什么要使用typescript呢？1.模块管理更佳 2.类型检查更严格3.它使我的开发严谨而自由。</p>
+<h2 id="什么是BFC-Block-formatting-context"><a href="#什么是BFC-Block-formatting-context" class="headerlink" title="什么是BFC(Block formatting context)?"></a>什么是BFC(Block formatting context)?</h2><ul>
+<li>BFC(Block formatting context)直译为”块级格式化上下文”。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。</li>
+</ul>
+<h3 id="BFC的布局规则"><a href="#BFC的布局规则" class="headerlink" title="BFC的布局规则"></a>BFC的布局规则</h3><ol>
+<li><p>内部的Box会在垂直方向，一个接一个地放置。</p>
+</li>
+<li><p>Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠。</p>
+</li>
+<li><p>每个盒子（块盒与行盒）的margin box的左边，与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。</p>
+</li>
+<li><p>BFC的区域不会与float box重叠。</p>
+</li>
+<li><p>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。</p>
+</li>
+</ol>
+<h3 id="如何创建BFC"><a href="#如何创建BFC" class="headerlink" title="如何创建BFC"></a>如何创建BFC</h3><p>1、float的值不是none。<br>2、position的值不是static或者relative。<br>3、display的值是inline-block、table-cell、flex、table-caption或者inline-flex<br>4、overflow的值不是visible</p>
+<ul>
+<li>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。</li>
+<li>因为BFC内部的元素和外部的元素绝对不会互相影响，因此， 当BFC外部存在浮动时，它不应该影响BFC内部Box的布局，BFC会通过变窄，而不与浮动有重叠。同样的，当BFC内部有浮动时，为了不影响外部元素的布局，BFC计算高度时会包括浮动的高度。避免margin重叠也是这样的一个道理。</li>
+</ul>
+<h2 id="函数防抖和节流的概念和真实项目中的应用场景"><a href="#函数防抖和节流的概念和真实项目中的应用场景" class="headerlink" title="## 函数防抖和节流的概念和真实项目中的应用场景"></a>## 函数防抖和节流的概念和真实项目中的应用场景</h2><h3 id="函数防抖-debounce-："><a href="#函数防抖-debounce-：" class="headerlink" title="函数防抖(debounce)："></a>函数防抖(debounce)：</h3><p>在事件被触发n秒后再执行回调，如果在这n秒内又被触发，则重新计时；典型的案例就是输入搜索：输入结束后n秒才进行搜索请求，n秒内又输入的内容，就重新计时。</p>
+<p>立即执行版本</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span> (<span class="params">callback, wait</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> timeout</span><br><span class="line">  <span class="keyword">let</span> flag</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (timeout) clearTimeout(timeout)</span><br><span class="line"></span><br><span class="line">    flag = !timeout</span><br><span class="line"></span><br><span class="line">    timeout = setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      timeout = <span class="literal">null</span></span><br><span class="line">    &#125;, wait)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (flag) callback.apply(callback, <span class="built_in">arguments</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="举个例子–页面滚动"><a href="#举个例子–页面滚动" class="headerlink" title="举个例子–页面滚动"></a>举个例子–页面滚动</h4><p>基于上述场景，首先提出第一种思路：在第一次触发事件时，不立即执行函数，而是给出一个期限值比如200ms，然后：<br>• 如果在200ms内没有再次触发滚动事件，那么就执行函数<br>• 如果在200ms内再次触发滚动事件，那么当前的计时取消，重新开始计时<br>效果：如果短时间内大量触发同一事件，只会执行一次函数。<br>实现：既然前面都提到了计时，那实现的关键就在于setTimeOut这个函数，由于还需要一个变量来保存计时，考虑维护全局纯净，可以借助闭包来实现：</p>
+<p>延时版</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* fn [function] 需要防抖的函数</span></span><br><span class="line"><span class="comment">* delay [number] 毫秒，防抖期限值</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">fn,delay</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> timer = <span class="literal">null</span> <span class="comment">//借助闭包</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(timer)&#123;</span><br><span class="line">            clearTimeout(timer) <span class="comment">//进入该分支语句，说明当前正在一个计时过程中，并且又触发了相同事件。所以要取消当前的计时，重新开始计时</span></span><br><span class="line">            timer = setTimeOut(fn,delay) </span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            timer = setTimeOut(fn,delay) <span class="comment">// 进入该分支说明当前并没有在计时，那么就开始一个计时</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce1</span>(<span class="params">fn, delayMilliseconds</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> timer = <span class="literal">null</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (timer) clearTimeout(timer)</span><br><span class="line">    timer = setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      fn.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>)</span><br><span class="line">    &#125;, delayMilliseconds)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 然后是旧代码</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showTop</span>  (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> scrollTop = <span class="built_in">document</span>.body.scrollTop || <span class="built_in">document</span>.documentElement.scrollTop;</span><br><span class="line">　　<span class="built_in">console</span>.log(<span class="string">'滚动条位置：'</span> + scrollTop);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.onscroll = debounce(showTop,<span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>对于短时间内连续触发的事件（上面的滚动事件），防抖的含义就是让某个时间期限（如上面的1000毫秒）内，事件处理函数只执行一次。</li>
+</ul>
+<h3 id="实际的应用"><a href="#实际的应用" class="headerlink" title="实际的应用"></a>实际的应用</h3><p>用户在输入搜索的时候不是每次输入都执行keyup的事件 而是用户输入1s后再执行请求的事件</p>
+<p>1s之内用户再次输入的时候会从新计算时间</p>
+<h3 id="函数节流-throttle-："><a href="#函数节流-throttle-：" class="headerlink" title="函数节流(throttle)："></a>函数节流(throttle)：</h3><p>规定在一个单位时间内，只能触发一次函数，如果这个单位时间内触发多次函数，只有一次生效； 典型的案例就是鼠标不断点击触发，规定在n秒内多次点击只有一次生效。<br>立即执行版本</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span> (<span class="params">callback, wait</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> timeout</span><br><span class="line">  <span class="keyword">let</span> flag = <span class="literal">false</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!flag) callback.apply(callback, <span class="built_in">arguments</span>)</span><br><span class="line"></span><br><span class="line">    flag = <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (timeout) <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    timeout = setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      flag = <span class="literal">false</span></span><br><span class="line">      timeout = <span class="literal">null</span></span><br><span class="line">    &#125;, wait)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>延时版</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span> (<span class="params">callback, wait</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> timeout</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (timeout) <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    timeout = setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      callback.apply(callback, <span class="built_in">arguments</span>)</span><br><span class="line">      timeout = <span class="literal">null</span></span><br><span class="line">    &#125;, wait)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="实际的应用-1"><a href="#实际的应用-1" class="headerlink" title="实际的应用"></a>实际的应用</h3><p>滚动加载更多 在监听滚动条的位置的时候不是用户每次滚动都要去监听滚动条的位置的 而是例如2秒内不管你滚动多少次 我就监听一次滚动条的位置</p>
+<h3 id="其他应用场景举例"><a href="#其他应用场景举例" class="headerlink" title="其他应用场景举例"></a>其他应用场景举例</h3><p>讲完了这两个技巧，下面介绍一下平时开发中常遇到的场景：</p>
+<ol>
+<li>搜索框input事件，例如要支持输入实时搜索可以使用节流方案（间隔一段时间就必须查询相关内容），或者实现输入间隔大于某个值（如500ms），就当做用户输入完成，然后开始搜索，具体使用哪种方案要看业务需求。</li>
+<li>页面resize事件，常见于需要做页面适配的时候。需要根据最终呈现的页面情况进行dom渲染（这种情形一般是使用防抖，因为只需要判断最后一次的变化情况）</li>
+</ol>
+<p><a href="https://www.yuque.com/kylethanas/share/adt1bq" target="_blank" rel="noopener">参考链接</a></p>
+<h2 id="vue-相关面试题"><a href="#vue-相关面试题" class="headerlink" title="vue 相关面试题"></a>vue 相关面试题</h2><h3 id="vue-lazyloader-怎么实现的（高频）"><a href="#vue-lazyloader-怎么实现的（高频）" class="headerlink" title="vue-lazyloader 怎么实现的（高频）"></a>vue-lazyloader 怎么实现的（<strong>高频</strong>）</h3><p>1、vue-lazyload是通过指令的方式实现的，定义的指令是v-lazy指令<br>2、指令被bind时会创建一个listener，并将其添加到listener queue里面， 并且搜索target dom节点，为其注册dom事件(如scroll事件)<br>3、上面的dom事件回调中，会遍历 listener queue里的listener，判断此listener绑定的dom是否处于页面中perload的位置，如果处于则加载异步加载当前图片的资源<br>4、同时listener会在当前图片加载的过程的loading，loaded，error三种状态触发当前dom渲染的函数，分别渲染三种状态下dom的内容</p>
+<h3 id="vue-的响应式原理-（高频）"><a href="#vue-的响应式原理-（高频）" class="headerlink" title="vue 的响应式原理 （高频）"></a>vue 的响应式原理 （<strong>高频</strong>）</h3><p>Vue2 的响应式原理是核心是通过 ES5 的保护对象的 Object.defindeProperty 中的访问器属性中的 get 和 set 方法，data 中声明的属性都被添加了访问器属性，当读取 data 中的数据时自动调用 get 方法，当修改 data 中的数据时，自动调用 set 方法，检测到数据的变化，会通知观察者 Wacher，观察者 Wacher自动触发重新render 当前组件（子组件不会重新渲染）,生成新的虚拟 DOM 树</p>
+<p>Vue3 Porxy</p>
+<h3 id="能说下-vue-router-中常用的-hash-和-history-路由模式实现原理吗？"><a href="#能说下-vue-router-中常用的-hash-和-history-路由模式实现原理吗？" class="headerlink" title="能说下 vue-router 中常用的 hash 和 history 路由模式实现原理吗？"></a>能说下 vue-router 中常用的 hash 和 history 路由模式实现原理吗？</h3><p>（1）hash 模式的实现原理<br>早期的前端路由的实现就是基于 location.hash 来实现的。其实现原理很简单，location.hash 的值就是 URL 中 # 后面的内容。比如下面这个网站，它的 location.hash 的值为 ‘#search’：<br><a href="https://www.word.com#search" target="_blank" rel="noopener">https://www.word.com#search</a><br>hash 路由模式的实现主要是基于下面几个特性：</p>
+<p>URL 中 hash 值只是客户端的一种状态，也就是说当向服务器端发出请求时，hash 部分不会被发送；<br>hash 值的改变，都会在浏览器的访问历史中增加一个记录。因此我们能通过浏览器的回退、前进按钮控制hash 的切换；<br>可以通过 a 标签，并设置 href 属性，当用户点击这个标签后，URL 的 hash 值会发生改变；或者使用 JavaScript 来对 loaction.hash 进行赋值，改变 URL 的 hash 值；<br>我们可以使用 hashchange 事件来监听 hash 值的变化，从而对页面进行跳转（渲染）。</p>
+<p>Vue\React 都是根据这个 hashchange 来做的</p>
+<h2 id="讲-tcp-ip-网络层、三次握手，为什么不能两次握手"><a href="#讲-tcp-ip-网络层、三次握手，为什么不能两次握手" class="headerlink" title="讲 tcp/ip 网络层、三次握手，为什么不能两次握手"></a>讲 tcp/ip 网络层、三次握手，为什么不能两次握手</h2><p>采用三次握手可以减少服务端的资源浪费<br>如果使用两次握手，服务端回应后不确认客户端的状态，连接建立成功。服务端会长时间等待客户端发送数据，连接长期保持，会造成资源浪费。当多个客户端产生这种情况，服务器就会等待多个客户端的响应，连接数量过多，之后的客户端请求，服务器无法响应。造成服务器处于瘫痪状态。 只有使用三次握手，当服务端收到确认报文后，保证当前时刻，客户端可以发送数据时，才能建立有意义的连接</p>
+<h2 id="JavaScript-相关"><a href="#JavaScript-相关" class="headerlink" title="JavaScript 相关"></a>JavaScript 相关</h2><h3 id="说说new操作符具体干了什么？"><a href="#说说new操作符具体干了什么？" class="headerlink" title="说说new操作符具体干了什么？"></a>说说new操作符具体干了什么？</h3><p>可以自己在控制台打印下，new 出来的 构造函数跟原函数有什么差别<br>创建一个新的对象obj</p>
+<p>将对象与构建函数通过原型链连接起来</p>
+<p>将构建函数中的this绑定到新建的对象obj上</p>
+<p>根据构建函数返回类型作判断，如果是原始值则被忽略，如果是返回对象，需要正常处理</p>
+<p>举个例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> person1 = <span class="keyword">new</span> Person(<span class="string">'Tom'</span>, <span class="number">20</span>)</span><br><span class="line"><span class="built_in">console</span>.log(person1)  <span class="comment">// Person &#123;name: "Tom", age: 20&#125;</span></span><br><span class="line">t.sayName() <span class="comment">// 'Tom'</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="实现new"><a href="#实现new" class="headerlink" title="实现new"></a>实现new</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">mynew</span>(<span class="params">Func, ...args</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 1.创建一个新对象</span></span><br><span class="line">    <span class="keyword">const</span> obj = &#123;&#125;</span><br><span class="line">    <span class="comment">// 2.新对象原型指向构造函数原型对象</span></span><br><span class="line">    obj.__proto__ = Func.prototype</span><br><span class="line">    <span class="comment">// 3.将构建函数的this指向新对象</span></span><br><span class="line">    <span class="keyword">let</span> result = Func.apply(obj, args)</span><br><span class="line">    <span class="comment">// 4.根据返回值判断</span></span><br><span class="line">    <span class="keyword">return</span> result <span class="keyword">instanceof</span> <span class="built_in">Object</span> ? result : obj</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="为什么-typeof-null-是-object？"><a href="#为什么-typeof-null-是-object？" class="headerlink" title="为什么 typeof null 是 object？"></a>为什么 typeof null 是 object？</h3><p>typeof null 输出为 ‘object’ 其实是一个底层的错误，但直到现阶段都无法被修复。</p>
+<p>原因是，在 JavaScript 初始版本中，值以 32位 存储。前 3位 表示数据类型的标记，其余位则是值。</p>
+<h3 id="实现组合继承"><a href="#实现组合继承" class="headerlink" title="实现组合继承"></a>实现组合继承</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Super</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line">    <span class="keyword">this</span>.flag = <span class="literal">true</span>;  </span><br><span class="line">&#125;  </span><br><span class="line">Super.prototype.getFlag = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.flag;     <span class="comment">// 继承方法  </span></span><br><span class="line">&#125;  </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Sub</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line">    <span class="keyword">this</span>.subFlag = <span class="literal">false</span>  </span><br><span class="line">    Super.call(<span class="keyword">this</span>)    <span class="comment">// 继承属性  </span></span><br><span class="line">&#125;  </span><br><span class="line">Sub.prototype = <span class="keyword">new</span> Super;  </span><br><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> Sub();  </span><br><span class="line"><span class="comment">// Sub.prototype = new Super; 会导致Sub.prototype的constructor指向Super;</span></span><br><span class="line"><span class="comment">// 然而constructor的定义是要指向原型属性对应的构造函数的，Sub.prototype是Sub构造函数的原型，</span></span><br><span class="line"><span class="comment">// 所以应该添加一句纠正：Sub.prototype.constructor = Sub;</span></span><br><span class="line">Sub.prototype.constructor = Sub;  <span class="comment">// 修复构造函数指向</span></span><br><span class="line">Super.prototype.getSubFlag = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.flag;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h3><h2 id="CDN的作用和原理"><a href="#CDN的作用和原理" class="headerlink" title="CDN的作用和原理"></a>CDN的作用和原理</h2><h3 id="为什么有CDN"><a href="#为什么有CDN" class="headerlink" title="为什么有CDN"></a>为什么有CDN</h3><p>当下的互联网应用都包含大量的静态内容，但静态内容以及一些准动态内容又是最耗费带宽的，特别是针对全国甚至全世界的大型网站，如果这些请求都指向主站的服务器的话，不仅是主站服务器受不了，单端口500M左右的带宽也扛不住，所以大多数网站都需要CDN服务。</p>
+<p>根本上的原因是，访问速度对互联网应用的用户体验、口碑、甚至说直接的营收都有巨大的影响，任何的企业都渴望自己站点有更快的访问速度。</p>
+<ol>
+<li>为了加速网站的访问。</li>
+<li>为了节约成本</li>
+</ol>
+<h3 id="CDN原理"><a href="#CDN原理" class="headerlink" title="CDN原理"></a>CDN原理</h3><p>DNS 服务器根据用户 IP 地址，将域名解析成相应节点的缓存服务器IP地址，实现用户就近访问。使用 CDN 服务的网站，只需将其域名解析权交给 CDN 的全局负载均衡（GSLB）设备，将需要分发的内容注入 CDN，就可以实现内容加速了。</p>
+<h3 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h3><p>static 内容加速，静态内容加速，如：html image js css 等<br>视频直播加速<br>视频直播加速，流媒体切片、转码、码流转换等等。</p>
+<h2 id="webpack-系列"><a href="#webpack-系列" class="headerlink" title="webpack 系列"></a>webpack 系列</h2><h3 id="Web性能优化"><a href="#Web性能优化" class="headerlink" title="Web性能优化"></a>Web性能优化</h3><ol>
+<li>使用 source-map 特性查看运行时的源代码</li>
+<li>使用 WebpackDevServer 实现浏览器自动刷新</li>
+<li>缩小文件范围，优化构建速度</li>
+<li>CSS 支持：支持 less、sass，并支持自动补齐浏览器前缀 postcss</li>
+<li>优化文件监听范围</li>
+<li>DllPlugin  、HardSourceWebpackPlugin 优化构建性能</li>
+<li>【重】使用 happypack 并发执行打包任务</li>
+</ol>
+<p>为了优化输出质量，webpack 给我们提供了下面的方案：</p>
+<p>抽离、压缩CSS<br>压缩 HTML<br>【重】Tree Shaking<br>代码分割 Code Splitting</p>
+<p>通过 <code>report</code> 查看 文件打包后的大小</p>
+<h3 id="如何提高webpack的构建速度？"><a href="#如何提高webpack的构建速度？" class="headerlink" title="如何提高webpack的构建速度？"></a>如何提高webpack的构建速度？</h3><p>随着我们的项目涉及到页面越来越多，功能和业务代码也会随着越多，相应的 webpack 的构建时间也会越来越久</p>
+<p>构建时间与我们日常开发效率密切相关，当我们本地开发启动 devServer 或者 build 的时候，如果时间过长，会大大降低我们的工作效率</p>
+<p>所以，优化webpack 构建速度是十分重要的环节</p>
+<h4 id="如何优化"><a href="#如何优化" class="headerlink" title="如何优化"></a>如何优化</h4><ol>
+<li>优化 loader 配置</li>
+<li>合理使用 resolve.extensions</li>
+<li>优化 resolve.modules</li>
+<li>优化 resolve.alias</li>
+<li>使用 DLLPlugin 插件</li>
+<li>使用 cache-loader</li>
+<li>terser 启动多线程</li>
+<li>合理使用 sourceMap</li>
+<li>打包又耗时且页面加载也较慢得很。可以通过cdn直接引入，方便且速度快。</li>
+</ol>
+<p>打包生成 sourceMap 的时候，如果信息越详细，打包速度就会越慢。<br>可以看到，优化webpack构建的方式有很多，主要可以从优化搜索时间、缩小文件搜索范围、减少不必要的编译等方面入手</p>
+<h4 id="优化-loader"><a href="#优化-loader" class="headerlink" title="优化 loader"></a>优化 loader</h4><p>如采用 ES6 的项目为例，在配置 babel-loader时，可以这样：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="comment">// 如果项目源码中只有 js 文件就不要写成 /\.jsx?$/，提升正则表达式性能</span></span><br><span class="line">        test: <span class="regexp">/\.js$/</span>,</span><br><span class="line">        <span class="comment">// babel-loader 支持缓存转换出的结果，通过 cacheDirectory 选项开启</span></span><br><span class="line">        use: [<span class="string">'babel-loader?cacheDirectory'</span>],</span><br><span class="line">        <span class="comment">// 只对项目根目录下的 src 目录中的文件采用 babel-loader</span></span><br><span class="line">        include: path.resolve(__dirname, <span class="string">'src'</span>),</span><br><span class="line">      &#125;,</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="webpack-如何提高打包速度？"><a href="#webpack-如何提高打包速度？" class="headerlink" title="webpack 如何提高打包速度？"></a>webpack 如何提高打包速度？</h3><p><a href="https://www.cnblogs.com/shenjp/p/14961955.html" target="_blank" rel="noopener">webpack 性能优化</a></p>
+<ol>
+<li><p>Dllplugin</p>
+</li>
+<li><p>利用 ‘cache-loader’  提高打包速度</p>
+</li>
+<li><p>html-webpack-externals-plugin</p>
+</li>
+</ol>
+<h3 id="分析打包速度"><a href="#分析打包速度" class="headerlink" title="分析打包速度"></a>分析打包速度</h3><h2 id="React、Vue、SolidJS、Svelte"><a href="#React、Vue、SolidJS、Svelte" class="headerlink" title="React、Vue、SolidJS、Svelte"></a>React、Vue、SolidJS、Svelte</h2><p>SolidJS借鉴了很多Svelte的预编译优化和轻量运行时，已经不需要虚拟DOM,依赖收集借鉴了Vue,jsx 借鉴了 React<br>Svelte的预编译优化和轻量运行时<br>React 把每一个组件当成了一个状态机，组件内部通过state来维护组件状态的变化，当组件的状态发生变化时</p>
+<h2 id="请问-solidjs、React-要怎么调用子组件的方法，"><a href="#请问-solidjs、React-要怎么调用子组件的方法，" class="headerlink" title="请问 solidjs、React 要怎么调用子组件的方法，"></a>请问 solidjs、React 要怎么调用子组件的方法，</h2><p>vue 可以通过 expose 导出使用，那solidjs呢</p>
+<h3 id="React-1"><a href="#React-1" class="headerlink" title="React"></a>React</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React , &#123; Component &#125; <span class="keyword">from</span> <span class="string">"react"</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Child</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">	func()&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">"执行我"</span>)</span><br><span class="line">	&#125;</span><br><span class="line">	render()&#123;</span><br><span class="line">		<span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>子组件<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Parent</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">	<span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">	    <span class="keyword">super</span>(props);</span><br><span class="line">	 	<span class="keyword">this</span>.Child = React.createRef();</span><br><span class="line">	&#125;</span><br><span class="line">	handleOnClick = <span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.Child.current.func();</span><br><span class="line">	&#125;</span><br><span class="line">	render()&#123;</span><br><span class="line">		<span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">			<span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;this.handleOnClick&#125;</span>&gt;</span>click<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="xml">			<span class="tag">&lt;<span class="name">Child</span> <span class="attr">ref</span>=<span class="string">&#123;this.Child&#125;</span>&gt;</span><span class="tag">&lt;/<span class="name">Child</span>&gt;</span>	</span></span><br><span class="line"><span class="xml">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="SEO-优化"><a href="#SEO-优化" class="headerlink" title="SEO 优化"></a>SEO 优化</h2><h2 id="TDD-驱动测试开发-Test-Driven-Development，TDD）"><a href="#TDD-驱动测试开发-Test-Driven-Development，TDD）" class="headerlink" title="TDD 驱动测试开发(Test-Driven Development，TDD）"></a>TDD 驱动测试开发(Test-Driven Development，TDD）</h2><h2 id="什么是前端工程化流程，模块化开发，组件化开发"><a href="#什么是前端工程化流程，模块化开发，组件化开发" class="headerlink" title="什么是前端工程化流程，模块化开发，组件化开发"></a>什么是前端工程化流程，模块化开发，组件化开发</h2><ul>
+<li>前端工程化是一个高层次的思想，而模块化和组件化是为工程化思想下相对较具体的开发方式，因此可以简单的认为模块化和组件化是工程化-的表现形式。</li>
+<li>模块化和组件化一个最直接的好处就是复用，除了复用之外还有就是分治，我们能够在不影响其他代码的情况下，按需修改某一独立的模块或是组件，因此很多地方我们即使没有复用需要，也可以根据分治需求进行模块化或组件化开发。</li>
+</ul>
+<h3 id="什么是前端工程"><a href="#什么是前端工程" class="headerlink" title="什么是前端工程"></a>什么是前端工程</h3><p>将前端项目当成一项系统工程进行分析、组织和构建从而达到项目结构清晰、分工明确、团队配合默契、开发效率提高的目的。</p>
+<h3 id="模块化开发的好处"><a href="#模块化开发的好处" class="headerlink" title="模块化开发的好处"></a>模块化开发的好处</h3><p>避免变量污染，命名冲突<br>提高代码复用率<br>提高维护性<br>依赖关系的管理</p>
+<p>在模块化编程中，开发者将程序分解成离散功能块(discrete chunks of functionality)，并称之为模块。 每个模块具有比完整程序更小的接触面，使得校验、调试、测试轻而易举。 精心编写的模块提供了可靠的抽象和封装界限，使得应用程序中每个模块都具有条理清楚的设计和明确的目的。<br>模块应该是职责单一、相互独立、低耦合的、高度内聚且可替换的离散功能块。</p>
+<h3 id="什么是组件化"><a href="#什么是组件化" class="headerlink" title="什么是组件化"></a>什么是组件化</h3><ul>
+<li><p>降低整个系统的耦合度，在保持接口不变的情况下，我们可以替换不同的组件快速完成需求，例如输入框，可以替换为日历、时间、范围等组件作具体的实现</p>
+</li>
+<li><p>调试方便，由于整个系统是通过组件组合起来的，在出现问题的时候，可以用排除法直接移除组件，或者根据报错的组件快速定位问题，之所以能够快速定位，是因为每个组件之间低耦合，职责单一，所以逻辑会比分析整个系统要简单</p>
+</li>
+<li><p>提高可维护性，由于每个组件的职责单一，并且组件在系统中是被复用的，所以对代码进行优化可获得系统的整体升级</p>
+</li>
+</ul>
+<h2 id="浏览器事件机制"><a href="#浏览器事件机制" class="headerlink" title="浏览器事件机制"></a>浏览器事件机制</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Promise</span>.resolve().then(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'promise1'</span>);</span><br><span class="line">&#125;).then(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'promise2'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">Promise</span>.resolve().then(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'promise3'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// promise1</span></span><br><span class="line"><span class="comment">// promise3</span></span><br><span class="line"><span class="comment">// promise2</span></span><br></pre></td></tr></table></figure>
+
+<p>因为第一 promise 由于第一个promise的.then()的返回依然是promise，所以第二个.then()会放到microtask队列继续执行，输出 ‘promise2’;</p>
+<h3 id="为什么会需要event-loop"><a href="#为什么会需要event-loop" class="headerlink" title="为什么会需要event-loop?"></a>为什么会需要event-loop?</h3><p>因为 JavaScript 是单线程的。单线程就意味着，所有任务需要排队，前一个任务结束，才会执行后一个任务。如果前一个任务耗时很长，后一个任务就不得不一直等着。为了协调事件（event），用户交互（user interaction），脚本（script），渲染（rendering），网络（networking）等，用户代理（user agent）必须使用事件循环（event loops）。</p>
+<h2 id="WebSocket-握手的原理是什么？"><a href="#WebSocket-握手的原理是什么？" class="headerlink" title="WebSocket 握手的原理是什么？"></a>WebSocket 握手的原理是什么？</h2><p>其实很简单，因为只有一次握手：<br>服务端验证客户端的握手包符合规范之后，也会发送一个握手包给客户端</p>
+<h2 id="自我介绍"><a href="#自我介绍" class="headerlink" title="自我介绍"></a>自我介绍</h2><p>你好，我叫陈新鑫，拥有5年多前端经验，呆过两家公司，我在上家公司主要负责 TV 相关多业务，带着3个人的小组，平常我主要负责压测相关<br>的题目，在这家公司拿过优秀员工奖。然后我自己平常比较喜欢关注前端生态的内容，比较喜欢尝试新东西。会自己写blog,有时间也会混迹在 github 看看代码，提提issue。<br>TDD pnpm</p>
+<h2 id="你有什么想问我的"><a href="#你有什么想问我的" class="headerlink" title="你有什么想问我的"></a>你有什么想问我的</h2><p>这个问题确实不怎么好答，相信很多人都被这个问题困扰过</p>
+<p>回答没什么想问的呢，可能会给面试官一个你并不想进公司的感觉<br>瞎问呢又怕惹得面试官不高兴了</p>
+<p>其实这个问题问得好的话反而是一个能很好了解对方公司的一个渠道。<br>以下是一些笔者认为不错的提问，能够很好地了解到对方公司的一些东西，包括开发流程、职业晋升、公司发展等等。大家可以选择性地提出 2 - 3 个感兴趣的问题，这样不仅能帮助到自身了解到公司的一些情况，也能给予面试官一个不错的印象，以下问题针对于技术面：</p>
+<p>公司常用的技术栈是什么？<br>你们如何测试代码？<br>你们如何解决线上故障？<br>你们如何准备故障恢复？是否有完善的发布机制？<br>公司是否有技术分享交流活动？有的话，多久一次呢？<br>一次迭代的流程是怎么样的？从 PRD 评审开始到发布这一整个流程。<br>公司技术团队的架构和人员组成？<br>有公司级别的学习资源吗？比如电子书订阅或者在线课程？<br>你们认为和竞品相比有什么优势？</p>
+<p>作者：yck<br>链接：<a href="https://juejin.cn/post/6844904029340827656" target="_blank" rel="noopener">https://juejin.cn/post/6844904029340827656</a><br>来源：稀土掘金<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
 <h2 id="特殊面试题"><a href="#特殊面试题" class="headerlink" title="特殊面试题"></a>特殊面试题</h2><p>问题</p>
 <ol>
 <li>分析一下目录.editorconfig 是干嘛的 … </li>
@@ -733,15 +897,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">V8引擎</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">React笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">V8引擎</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -789,11 +953,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">经验 经历</a>
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color1">经验 经历</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -841,7 +1005,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Axios</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue的坑</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -853,15 +1025,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Axios</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue的坑</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">分享会</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">promise</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vitest</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">jest</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">test</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -878,10 +1058,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">workspace</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">promise</a>
               </li>
              
               <li class="article-tag-list-item">

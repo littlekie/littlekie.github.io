@@ -211,6 +211,396 @@
             
 
   
+    <article id="post-Vue3-0-笔记/Vue3.xApi-笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/08/12/Vue3-0-笔记/Vue3.xApi-笔记/" target="_blank">Vue3.0 笔记</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/08/12/Vue3-0-笔记/Vue3.xApi-笔记/" class="archive-article-date">
+        <time datetime="2020-08-12T02:30:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-12</time>
+</a>
+
+  
+  
+  
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="Vue3-0-笔记"><a href="#Vue3-0-笔记" class="headerlink" title="Vue3.0 笔记"></a>Vue3.0 笔记</h1><h2 id="definedProperty-和-Proxy-差别"><a href="#definedProperty-和-Proxy-差别" class="headerlink" title="definedProperty 和 Proxy 差别"></a>definedProperty 和 Proxy 差别</h2><p>Object.definedProperty 是劫持对象的属性，新增元素需要再次 definedProperty。<br>而 Proxy 劫持的是整个对象，不需要做特殊处理</p>
+<h2 id="插槽"><a href="#插槽" class="headerlink" title="插槽"></a>插槽</h2><ul>
+<li>跟 v-on 和 v-bind 一样，v-slot 也有缩写，即把参数之前的所有内容 (v-slot:) 替换为字符 #。例如 v-slot:header 可以被重写为 #header：</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">base-layout</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- #header === v-slot:header --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">template</span> #<span class="attr">header</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Here might be a page title<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">template</span> #<span class="attr">default</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>A paragraph for the main content.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>And another one.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">template</span> #<span class="attr">footer</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>Here's some contact info<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">base-layout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="v"><a href="#v" class="headerlink" title="v"></a>v</h2><ol>
+<li><p>Performance: 性能比vue2.0快1.2～2倍。</p>
+</li>
+<li><p>Tree Shaking Support: 按需编译，体积更小</p>
+</li>
+<li><p>Composition Api :组合式Api（类似React Hooks)</p>
+</li>
+<li><p>Better Typescript Support: 更好的支持TS</p>
+</li>
+<li><p>Custom Render API : 自定义渲染 API</p>
+</li>
+<li><p>Fragment、Teleport(portal),Suspense:更先进的组件</p></li></ol>
+    
+    <a class="article-more-a" href="/2020/08/12/Vue3-0-笔记/Vue3.xApi-笔记/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/08/12/Vue3-0-笔记/Vue3.xApi-笔记/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="mac-MacVscode快捷键" class="article article-type-mac  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/05/18/MacVscode快捷键/" target="_blank">MacVscode快捷键</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/05/18/MacVscode快捷键/" class="archive-article-date">
+        <time datetime="2020-05-18T02:14:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-18</time>
+</a>
+
+  
+  
+  
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'Ctrl + ` '</span>可以打开或关闭终端</span><br><span class="line">control + ~	打开默认终端</span><br><span class="line">control + shift + ~	新建新的终端</span><br><span class="line">control + shift + Y	打开调试控制台,然后再自行切换终端选项</span><br><span class="line">Command + Shift + P / F1 显示命令面板</span><br><span class="line">Command + P 快速打开</span><br><span class="line">Command + Shift + N 打开新窗口</span><br><span class="line">Command + W 关闭窗口</span><br><span class="line">编辑器管理</span><br><span class="line">Command + W 关闭编辑器</span><br><span class="line">Command + K F 关闭文件夹</span><br><span class="line">Command + \ 编辑器分屏</span><br><span class="line">Command + <span class="number">1</span> 切换到第一分组</span><br><span class="line">Command + <span class="number">2</span> 切换到第二分组</span><br><span class="line">Command + <span class="number">3</span> 切换到第三分组</span><br><span class="line">Command + K Command + Left 切换到上一分组</span><br><span class="line">Command + K Command + Right 切换到下一分组</span><br><span class="line">Command + K Command + Shift + Left 左移编辑器</span><br><span class="line">Command + K Command + Shift + Right 右移编辑器</span><br><span class="line">Command + K Left 激活左侧编辑组</span><br><span class="line">Command + K Right 激活右侧编辑组</span><br><span class="line"></span><br><span class="line">Command + X 剪切（未选中文本的情况下，剪切光标所在行）</span><br><span class="line">Command + C 复制（未选中文本的情况下，复制光标所在行）</span><br><span class="line">Option + Up 向上移动行</span><br><span class="line">Option + Down 向下移动行</span><br><span class="line">Option + Shift + Up 向上复制行</span><br><span class="line">Option + Shift + Down 向下复制行</span><br><span class="line">Command + Shift + K 删除行</span><br><span class="line">Command + Enter 下一行插入</span><br><span class="line">Command + Shift + Enter 上一行插入</span><br><span class="line">Command + Shift + \ 跳转到匹配的括号</span><br><span class="line">Command + [ 减少缩进</span><br><span class="line">Command + ] 增加缩进</span><br><span class="line">Home 跳转至行首</span><br><span class="line">End 跳转到行尾</span><br><span class="line">Command + Up 跳转至文件开头</span><br><span class="line">Command + Down 跳转至文件结尾</span><br><span class="line">Ctrl + PgUp 按行向上滚动</span><br><span class="line">Ctrl + PgDown 按行向下滚动</span><br><span class="line">Command + PgUp 按屏向上滚动</span><br><span class="line">Command + PgDown 按屏向下滚动</span><br><span class="line">Command + Shift + [ 折叠代码块</span><br><span class="line">Command + Shift + ] 展开代码块</span><br><span class="line">Command + K  + [ 折叠全部子代码块</span><br><span class="line">Command + K  + ] 展开全部子代码块</span><br><span class="line">Command + K  + <span class="number">0</span> 折叠全部代码块</span><br><span class="line">Command + K  + J 展开全部代码块</span><br><span class="line">Command + K Command + C 添加行注释</span><br><span class="line">Command + K Command + U 移除行注释</span><br><span class="line">Command + <span class="regexp">/ 添加、移除行注释</span></span><br><span class="line"><span class="regexp">Option + Shift + A 添加、移除块注释</span></span><br><span class="line"><span class="regexp">Option + Z 自动换行、取消自动换行</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="MAC-问题"><a href="#MAC-问题" class="headerlink" title="MAC 问题"></a>MAC 问题</h2><h3 id="触控栏不显示问题"><a href="#触控栏不显示问题" class="headerlink" title="触控栏不显示问题"></a>触控栏不显示问题</h3><p>关机情况下<br>按住键盘左边的 ctol +option 加右边的shift 7s<br>然后再按住电源7s后、<br>再按电源键可以reset,比如触控栏不显示问题等</p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/05/18/MacVscode快捷键/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-git相关" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/05/09/git相关/" target="_blank">git相关</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/05/09/git相关/" class="archive-article-date">
+        <time datetime="2020-05-09T14:51:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-09</time>
+</a>
+
+  
+  
+  
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="git错误"><a href="#git错误" class="headerlink" title="git错误"></a>git错误</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-error: RPC failed; curl <span class="number">18</span> transfer closed <span class="keyword">with</span> outstanding read data remaining的解决方法</span><br></pre></td></tr></table></figure>
+
+<p>仓库由于太大，会出西安clone失败 把 clone https 改成clone ssh 地址</p>
+<p>ssh 的配置</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"superGG1990"</span></span><br><span class="line"></span><br><span class="line">$ git config --global user.email <span class="string">"superGG1990@163.com"</span></span><br></pre></td></tr></table></figure>
+
+<p>[注意：（引号内请输入你自己设置的名字，和你自己的邮箱）]此用户名和邮箱是git提交代码时用来显示你身份和联系方式的，并不是github用户名和邮箱</p>
+<h3 id="生成公钥"><a href="#生成公钥" class="headerlink" title="生成公钥"></a>生成公钥</h3><p>去 .ssh/ 查看自己的公钥，然后在你的自己仓库添加你公钥</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ cat ~<span class="regexp">/.ssh/i</span>d_rsa.pub</span><br><span class="line"></span><br><span class="line">ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0X6L1zLL4VHuvGb8aJH3ippTozmReSUzgntvk434aJ/v7kOdJ/MTyBlWXFCR+HAo3FXRitBqxiX1nKhXpHAZsMciLq8vR3c8E7CjZN733f5AL8uEYJA+YZevY5UCvEg+umT7PHghKYaJwaCxV7sjYP7Z6V79OMCEAGDNXC26IBMdMgOluQjp6o6j2KAdtRBdCDS/QIU5THQDxJ9lBXjk1fiq9tITo/aXBvjZeD+gH/Apkh/<span class="number">0</span>GbO8VQLiYYmNfqqAHHeXdltORn8N7C9lOa/UW3KM7QdXo6J0GFlBVQeTE/IGqhMS5PMln3 admin@admin-PC</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://www.tuicool.com/articles/BzUrAvF" target="_blank" rel="noopener">参考链接</a>(<a href="https://www.tuicool.com/articles/BzUrAvF" target="_blank" rel="noopener">https://www.tuicool.com/articles/BzUrAvF</a>)</p>
+<h2 id="git命令"><a href="#git命令" class="headerlink" title="git命令"></a>git命令</h2><h3 id="1-其它"><a href="#1-其它" class="headerlink" title="1.其它"></a>1.其它</h3><p>git init：初始化本地库</p>
+<p>git status：查看工作区、暂存区的状态</p>
+<p>git add <file name>：将工作区的“新建/修改”添加到暂存区</file></p>
+<p>git rm –cached <file name>：移除暂存区的修改</file></p>
+<p>git commit <file name>：将暂存区的内容提交到本地库</file></p>
+<p>　　tip：需要再编辑提交日志，比较麻烦，建议用下面带参数的提交方法</p>
+<p>git commit -m “提交日志” <file name>：文件从暂存区到本地库</file></p>
+<h3 id="2-日志"><a href="#2-日志" class="headerlink" title="2.日志"></a>2.日志</h3><p>git log：查看历史提交</p>
+<p>　　tip：空格向下翻页，b向上翻页，q退出</p>
+<p>git log –pretty=oneline：以漂亮的一行显示，包含全部哈希索引值</p>
+<p>git log –oneline：以简洁的一行显示，包含简洁哈希索引值</p>
+<p>git reflog：以简洁的一行显示，包含简洁哈希索引值，同时显示移动到某个历史版本所需的步数</p>
+<h3 id="3-版本控制"><a href="#3-版本控制" class="headerlink" title="3.版本控制"></a>3.版本控制</h3><p>git reset –hard 简洁/完整哈希索引值：回到指定哈希值所对应的版本</p>
+<p>git reset –hard HEAD：强制工作区、暂存区、本地库为当前HEAD指针所在的版本</p>
+<p>git reset –hard HEAD^：后退一个版本　　</p>
+<p>　　tip：一个^表示回退一个版本</p>
+<p>git reset –hard HEAD~1：后退一个版本</p>
+<p>　　tip：波浪线~后面的数字表示后退几个版本</p>
+<h3 id="4-比较差异"><a href="#4-比较差异" class="headerlink" title="4.比较差异"></a>4.比较差异</h3><p>git diff：比较工作区和暂存区的所有文件差异</p>
+<p>git diff <file name>：比较工作区和暂存区的指定文件的差异</file></p>
+<p>git diff HEAD|HEAD^|HEAD~|哈希索引值 <file name>：比较工作区跟本地库的某个版本的指定文件的差异</file></p>
+<h3 id="5-分支操作"><a href="#5-分支操作" class="headerlink" title="5.分支操作"></a>5.分支操作</h3><p>git branch -v：查看所有分支</p>
+<p>git branch -d &lt;分支名&gt;：删除本地分支</p>
+<p>git branch &lt;分支名&gt;：新建分支</p>
+<p>git checkout &lt;分支名&gt;：切换分支</p>
+<p>git merge &lt;被合并分支名&gt;：合并分支</p>
+<p>　　tip：如master分支合并 hot_fix分支，那么当前必须处于master分支上，然后执行 git merge hot_fix 命令</p>
+<p>　　tip2：合并出现冲突</p>
+<p>　　　　①删除git自动标记符号，如&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD、&gt;&gt;&gt;&gt;&gt;&gt;&gt;等</p>
+<p>　　　　②修改到满意后，保存退出</p>
+<p>　　　　③git add <file name></file></p>
+<p>　　　　④git commit -m “日志信息”，此时后面不要带文件名</p>
+<h3 id="git基于某个分支创建分支"><a href="#git基于某个分支创建分支" class="headerlink" title="git基于某个分支创建分支"></a>git基于某个分支创建分支</h3><p>1.git checkout -b 新分支名 老分支名</p>
+<p>git checkout -b dev_20150909 master </p>
+<p>git ls -tree 分支名字</p>
+<h3 id="二、本地库跟远程库交互："><a href="#二、本地库跟远程库交互：" class="headerlink" title="二、本地库跟远程库交互："></a>二、本地库跟远程库交互：</h3><p>git clone &lt;远程库地址&gt;：克隆远程库</p>
+<p>　　功能：①完整的克隆远程库为本地库，②为本地库新建origin别名，③初始化本地库</p>
+<p>git remote -v：查看远程库地址别名</p>
+<p>git remote add &lt;别名&gt; &lt;远程库地址&gt;：新建远程库地址别名</p>
+<p>git remote rm &lt;别名&gt;：删除本地中远程库别名</p>
+<p>git push &lt;别名&gt; &lt;分支名&gt;：本地库某个分支推送到远程库，分支必须指定</p>
+<p>git pull &lt;别名&gt; &lt;分支名&gt;：把远程库的修改拉取到本地</p>
+<p>　　tip：该命令包括git fetch，git merge</p>
+<p>git fetch &lt;远程库别名&gt; &lt;远程库分支名&gt;：抓取远程库的指定分支到本地，但没有合并</p>
+<p>git merge &lt;远程库别名/远程库分支名&gt;：将抓取下来的远程的分支，跟当前所在分支进行合并</p>
+<p>git fork：复制远程库</p>
+<p>　　tip：一般是外面团队的开发人员fork本团队项目，然后进行开发，之后外面团队发起pull request，然后本团队进行审核，如无问题本团队进行merge（合并）到团队自己的远程库，整个流程就是本团队跟外面团队的协同开发流程，Linux的团队开发成员即为这种工作方式。</p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/05/09/git相关/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Mac笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class=" article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/05/09/Mac笔记/" target="_blank">Mac笔记</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/05/09/Mac笔记/" class="archive-article-date">
+        <time datetime="2020-05-09T02:09:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-09</time>
+</a>
+
+  
+  
+  
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="Mac-快捷键"><a href="#Mac-快捷键" class="headerlink" title="Mac 快捷键"></a>Mac 快捷键</h2><p><code>command + shift + .</code>  查看文件的隐藏文件</p>
+<p><code>command + shift + n</code>  新建文件夹</p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">mac 快捷键、mac操作</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/05/09/Mac笔记/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-面试/面试题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -243,10 +633,18 @@
     <h2 id="service-worker-indexdb"><a href="#service-worker-indexdb" class="headerlink" title="service worker/indexdb"></a>service worker/indexdb</h2><ol>
 <li>service worker 判断断网问题（workbox\workbox-webpack-plugin）</li>
 <li>indexdb,取上下20条数据，避免内存溢出(localforage)</li>
-<li>如何定位内存问题（heapdump）<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><h2 id="手写-深度拷贝"><a href="#手写-深度拷贝" class="headerlink" title="手写 深度拷贝"></a>手写 深度拷贝</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">deepCopy</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">  </span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">typeof</span> obj!== <span class="string">'object'</span>) <span class="keyword">return</span> </span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> result = obj <span class="keyword">instanceof</span> <span class="built_in">Array</span> ? [] : &#123;&#125;;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> obj)&#123;</span><br><span class="line">    result[key]=<span class="keyword">typeof</span> obj[key] ===<span class="string">'object'</span>?deepCopy(obj[key]): obj[key]</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person=&#123;<span class="attr">name</span>:<span class="string">"小明"</span>,<span class="attr">ageAndSex</span>:&#123;<span class="attr">age</span>:<span class="number">16</span>,<span class="attr">sex</span>:<span class="string">"男"</span>&#125;&#125;</span><br><span class="line"><span class="keyword">let</span> personCopy= deepCopy(person)</span><br><span class="line">personCopy=== person <span class="comment">// false</span></span><br><span class="line">personCopy.ageAndSex.age=<span class="number">20</span></span><br></pre></td></tr></table></figure>
-
-</li>
+<li>如何定位内存问题（heapdump）<h2 id="大文件切片上传"><a href="#大文件切片上传" class="headerlink" title="大文件切片上传"></a>大文件切片上传</h2></li>
+<li>blob.slice</li>
+<li>axios<br> 2.1、前端并发控制 p-limit/pmaps、sindrrsohus) (<a href="https://github.com/sindresorhus/p-limit" target="_blank" rel="noopener">https://github.com/sindresorhus/p-limit</a>)<br> 2.2  高并发的控制：（rate limit） (redis)</li>
+<li>graphql<br> 3.1 可请求所需的数据<br> 3.2 post 和缓存</li>
+<li>jwt <a href="https://jwt.io/" target="_blank" rel="noopener">https://jwt.io/</a><br> jwt的好处？ 不需要做数据存储，<br> 分为三部分 header payload signature</li>
 </ol>
+<ul>
+<li>时间久远的项目 ，如果技术不懂建议不要放在简历上</li>
+<li>写在简历上的技术要保证很熟悉<h2 id="0-1-0-2-0-3"><a href="#0-1-0-2-0-3" class="headerlink" title="0.1+0.2 !== 0.3"></a>0.1+0.2 !== 0.3</h2>由于 0.2转化为二进制会出现精度丢失问题，所以 0.1+0.2 !== 0.3</li>
+</ul>
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><h2 id="手写-深度拷贝"><a href="#手写-深度拷贝" class="headerlink" title="手写 深度拷贝"></a>手写 深度拷贝</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepCopy</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">typeof</span> obj!== <span class="string">'object'</span>) <span class="keyword">return</span> </span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> result = obj <span class="keyword">instanceof</span> <span class="built_in">Array</span> ? [] : &#123;&#125;;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> obj)&#123;</span><br><span class="line">    result[key]=<span class="keyword">typeof</span> obj[key] ===<span class="string">'object'</span>?deepCopy(obj[key]): obj[key]</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person=&#123;<span class="attr">name</span>:<span class="string">"小明"</span>,<span class="attr">ageAndSex</span>:&#123;<span class="attr">age</span>:<span class="number">16</span>,<span class="attr">sex</span>:<span class="string">"男"</span>&#125;&#125;</span><br><span class="line"><span class="keyword">let</span> personCopy= deepCopy(person)</span><br><span class="line">personCopy=== person <span class="comment">// false</span></span><br><span class="line">personCopy.ageAndSex.age=<span class="number">20</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="华雄面试"><a href="#华雄面试" class="headerlink" title="华雄面试"></a>华雄面试</h2><h3 id="什么是盒子模型"><a href="#什么是盒子模型" class="headerlink" title="什么是盒子模型"></a>什么是盒子模型</h3><ul>
 <li>盒子模型有ie模型和 标准模型</li>
 <li>CSS盒模型本质上是一个盒子，封装周围的HTML元素，它包括：边距，边框，填充，和实际内容</li>
@@ -951,597 +1349,9 @@
 
 
   
-    <article id="post-React笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/12/06/React笔记/" target="_blank">React笔记</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/12/06/React笔记/" class="archive-article-date">
-        <time datetime="2019-12-06T08:34:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-06</time>
-</a>
-
-  
-  
-  
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="React"><a href="#React" class="headerlink" title="React"></a>React</h1><p><a href="https://zh-hans.reactjs.org/docs/hooks-overview.html" target="_blank" rel="noopener">React中文文档</a></p>
-<h2 id="react-VR"><a href="#react-VR" class="headerlink" title="react VR"></a>react VR</h2><p>webVR ract-vr、aframe</p>
-<p>webgQL</p>
-<h2 id="setState的问题"><a href="#setState的问题" class="headerlink" title="setState的问题"></a>setState的问题</h2><p>setState是异步更新</p>
-<h3 id="setState循环调用风险"><a href="#setState循环调用风险" class="headerlink" title="setState循环调用风险"></a>setState循环调用风险</h3><p>当调用setState时，实际上会执行enqueueSetState方法，并对partialState以及<em>pending-StateQueue更新队列进行合并操作，最终通过enqueueUpdate执行state更新<br>而performUpdateIfNecessary方法会获取_pendingElement,</em> pendingStateQueue，_ pending-ForceUpdate，并调用receiveComponent和updateComponent方法进行组件更新<br>如果在shouldComponentUpdate或者componentWillUpdate方法中调用setState，此时this._pending-StateQueue != null，就会造成循环调用，使得浏览器内存占满后崩溃</p>
-<h3 id="调用栈"><a href="#调用栈" class="headerlink" title="调用栈"></a>调用栈</h3><p>既然setState最终是通过enqueueUpdate执行state更新，那么enqueueUpdate到底是如何更新state的呢？ 首先看下面的问题</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>()&#123;</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">        <span class="comment">//在组件初始化可以直接操作this.state</span></span><br><span class="line">        <span class="keyword">this</span>.state = &#123;</span><br><span class="line">            val: <span class="number">0</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    componentDidMount()&#123;</span><br><span class="line">        <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">           val: <span class="keyword">this</span>.state.val + <span class="number">1</span></span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="comment">//第一次输出</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.state.val);</span><br><span class="line">        <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">           val: <span class="keyword">this</span>.state.val + <span class="number">1</span></span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="comment">//第二次输出</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.state.val);</span><br><span class="line">        setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">           <span class="keyword">this</span>.setState(&#123;<span class="attr">val</span>: <span class="keyword">this</span>.state.val + <span class="number">1</span>&#125;);</span><br><span class="line">            <span class="comment">//第三次输出</span></span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.state.val);</span><br><span class="line">            <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">               val: <span class="keyword">this</span>.state.val + <span class="number">1</span></span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="comment">//第四次输出</span></span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.state.val);</span><br><span class="line">        &#125;, <span class="number">0</span>);  </span><br><span class="line">    &#125;</span><br><span class="line">    render()&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>上述代码中，4次console.log打印出来的val分别是: 0，0，2 ，3</p>
-<p>enqueueUpdate的源码如下(上面流程的第三步)(batching的意思是批量的)</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">enqueueUpdate</span>(<span class="params">component</span>)</span>&#123;</span><br><span class="line">       <span class="comment">//injected注入的</span></span><br><span class="line">       ensureInjected();</span><br><span class="line">       <span class="comment">//如果不处于批量更新模式</span></span><br><span class="line">       <span class="keyword">if</span>(!batchingStrategy.isBatchingUpdates)&#123;</span><br><span class="line">           batchingStrategy.batchedUpdates(enqueueUpdate, component);</span><br><span class="line">           <span class="keyword">return</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">//如果处于批量更新模式</span></span><br><span class="line">       dirtyComponents.push(component);</span><br></pre></td></tr></table></figure>
-
-<p>如果isBatchingUpdates为true，则对所有队列中的更新执行 <code>batchedUpdates</code> 方法，否则只把当前组件(即调用了setState的组件)放入dirtyComponents数组中，例子中4次setState调用的表现之所以不同，这里的逻辑判断起了关键作用</p>
-<p>前两次调用<code>setState</code> 时 <code>isBatchingUpdates</code> 已经被设置为true，所以没有立即更新，<br>后两次在setTimeout的  因为没有前置的batchedUpdates,所以立即更新</p>
-<h2 id="React-的坑"><a href="#React-的坑" class="headerlink" title="React 的坑"></a>React 的坑</h2><p>在 <code>React</code> 应用中，当某个组件的状态发生变化时，它会以该组件为根，重新渲染整个组件子树。<br>如要避免不必要的子组件的重渲染，你需要在所有可能的地方使用 PureComponent，或是手动实现 shouldComponentUpdate 方法。同时你可能会需要使用不可变的数据结构来使得你的组件更容易被优化。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">shouldComponentUpdate(nextProps) &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">JSON</span>.stringify(nextProps) == <span class="built_in">JSON</span>.stringify(<span class="keyword">this</span>.props)) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">import</span> React, &#123; PureComponent &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">IndexPage</span> <span class="keyword">extends</span> <span class="title">PureComponent</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>() &#123;</span><br><span class="line">    <span class="keyword">super</span>();</span><br><span class="line">    <span class="keyword">this</span>.state = &#123;</span><br><span class="line">      isShow: <span class="literal">false</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'constructor'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  changeState = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">      isShow: <span class="literal">true</span></span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'render'</span>);</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;button onClick=&#123;<span class="keyword">this</span>.changeState&#125;&gt;点击&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">        &lt;div&gt;&#123;this.state.isShow.toString()&#125;&lt;/</span>div&gt;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>在 Vue 应用中，组件的依赖是在渲染过程中自动追踪的，所以系统能精确知晓哪个组件确实需要被重渲染。你可以理解为每一个组件都已经自动获得了 shouldComponentUpdate，并且没有上述的子树问题限制。</p>
-<p>Vue 的这个特点使得开发者不再需要考虑此类优化，从而能够更好地专注于应用本身。</p>
-<h2 id="React生命周期"><a href="#React生命周期" class="headerlink" title="React生命周期"></a>React生命周期</h2><p> 所有有关生命周期的变量应该放到class里</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Clock</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line"> <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">   <span class="keyword">super</span>(props);</span><br><span class="line">   <span class="keyword">this</span>.state = &#123;<span class="attr">date</span>: <span class="keyword">new</span> <span class="built_in">Date</span>()&#125;;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> changeState()&#123;</span><br><span class="line">   <span class="keyword">this</span>.setState(&#123;<span class="attr">data</span>:<span class="string">''</span>&#125;)</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>[state]在React.Component里是只读状态，需要改变state里的值要使用this.setState({data:’’})<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Component</span>&lt;<span class="title">P</span>, <span class="title">S</span>&gt; </span>&#123;</span><br><span class="line">       <span class="comment">// tslint won't let me format the sample code in a way that vscode likes it :(</span></span><br><span class="line">       <span class="comment">/**</span></span><br><span class="line"><span class="comment">        * If set, `this.context` will be set at runtime to the current value of the given Context.</span></span><br><span class="line"><span class="comment">        *</span></span><br><span class="line"><span class="comment">        * Usage:</span></span><br><span class="line"><span class="comment">        *</span></span><br><span class="line"><span class="comment">        * </span></span><br><span class="line"><span class="comment">        * type MyContext = number</span></span><br><span class="line"><span class="comment">        * const Ctx = React.createContext&lt;MyContext&gt;(0)</span></span><br><span class="line"><span class="comment">        *</span></span><br><span class="line"><span class="comment">        * class Foo extends React.Component &#123;</span></span><br><span class="line"><span class="comment">        *   static contextType = Ctx</span></span><br><span class="line"><span class="comment">        *   context!: React.ContextType&lt;typeof Ctx&gt;</span></span><br><span class="line"><span class="comment">        *   render () &#123;</span></span><br><span class="line"><span class="comment">        *     return &lt;&gt;My context's value: &#123;this.context&#125;&lt;/&gt;;</span></span><br><span class="line"><span class="comment">        *   &#125;</span></span><br><span class="line"><span class="comment">        * &#125;</span></span><br><span class="line"><span class="comment">        * </span></span><br><span class="line"><span class="comment">        *</span></span><br><span class="line"><span class="comment">        * <span class="doctag">@see </span>https://reactjs.org/docs/context.html#classcontexttype</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">       <span class="keyword">static</span> contextType?: Context&lt;any&gt;;</span><br><span class="line"></span><br><span class="line">       <span class="comment">/**</span></span><br><span class="line"><span class="comment">        * If using the new style context, re-declare this in your class to be the</span></span><br><span class="line"><span class="comment">        * `React.ContextType` of your `static contextType`.</span></span><br><span class="line"><span class="comment">        * Should be used with type annotation or static contextType.</span></span><br><span class="line"><span class="comment">        *</span></span><br><span class="line"><span class="comment">        * </span></span><br><span class="line"><span class="comment">        * static contextType = MyContext</span></span><br><span class="line"><span class="comment">        * // For TS pre-3.7:</span></span><br><span class="line"><span class="comment">        * context!: React.ContextType&lt;typeof MyContext&gt;</span></span><br><span class="line"><span class="comment">        * // For TS 3.7 and above:</span></span><br><span class="line"><span class="comment">        * declare context: React.ContextType&lt;typeof MyContext&gt;</span></span><br><span class="line"><span class="comment">        * </span></span><br><span class="line"><span class="comment">        *</span></span><br><span class="line"><span class="comment">        * <span class="doctag">@see </span>https://reactjs.org/docs/context.html</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">       <span class="comment">// TODO (TypeScript 3.0): unknown</span></span><br><span class="line">       context: any;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">constructor</span>(props: Readonly&lt;P&gt;);</span><br><span class="line">       /**</span><br><span class="line">        * @deprecated</span><br><span class="line">        * @see https://reactjs.org/docs/legacy-context.html</span><br><span class="line">        */</span><br><span class="line">       <span class="keyword">constructor</span>(props: P, context?: any);</span><br><span class="line"></span><br><span class="line">       // We MUST keep setState() as a unified signature because it allows proper checking of the method return type.</span><br><span class="line">       // See: https://github.com/DefinitelyTyped/DefinitelyTyped/issues/18365#issuecomment-351013257</span><br><span class="line">       // Also, the ` | S` allows intellisense to not be dumbisense</span><br><span class="line">       setState&lt;K extends keyof S&gt;(</span><br><span class="line">           state: ((prevState: Readonly&lt;S&gt;, props: Readonly&lt;P&gt;) =&gt; (Pick&lt;S, K&gt; | S | null)) | (Pick&lt;S, K&gt; | S | null),</span><br><span class="line">           callback?: () =&gt; void</span><br><span class="line">       ): void;</span><br><span class="line"></span><br><span class="line">       forceUpdate(callback?: () =&gt; void): void;</span><br><span class="line">       render(): ReactNode;</span><br><span class="line"></span><br><span class="line">       // React.Props&lt;T&gt; is now deprecated, which means that the `children`</span><br><span class="line">       // property is not available on `P` by default, even though you can</span><br><span class="line">       // always pass children as variadic arguments to `createElement`.</span><br><span class="line">       // In the future, if we can define its call signature conditionally</span><br><span class="line">       // on the existence of `children` in `P`, then we should remove this.</span><br><span class="line">       readonly props: Readonly&lt;P&gt; &amp; Readonly&lt;&#123; children?: ReactNode &#125;&gt;;</span><br><span class="line">       state: Readonly&lt;S&gt;;</span><br><span class="line">       <span class="comment">/**</span></span><br><span class="line"><span class="comment">        * <span class="doctag">@deprecated</span></span></span><br><span class="line"><span class="comment">        * https://reactjs.org/docs/refs-and-the-dom.html#legacy-api-string-refs</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">       refs: &#123;</span><br><span class="line">           [key: string]: ReactInstance</span><br><span class="line">       &#125;;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h3 id="setState"><a href="#setState" class="headerlink" title="setState"></a>setState</h3><ul>
-<li>setState是异步的，如果需要在改变一个值后在执行方法，需要在setState回调的方法里执行。</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">setState&lt;K extends keyof S&gt;<span class="function">(<span class="params">state: ((prevState: Readonly&lt;S&gt;, props: P</span>) =&gt;</span> Pick&lt;S, K&gt; | S) | <span class="function">(<span class="params">Pick&lt;S, K&gt; | S</span>), <span class="params">callback</span>?: <span class="params">()</span> =&gt;</span> any): <span class="keyword">void</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">           <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">               qrCodeContent: <span class="string">`<span class="subst">$&#123;apiHeader&#125;</span>/merchant/admin/app/login/scan?uuid=<span class="subst">$&#123;data.uuid&#125;</span>`</span></span><br><span class="line">           &#125;,()=&gt;&#123;</span><br><span class="line">               <span class="built_in">console</span>.log(<span class="string">'uuid'</span>, <span class="keyword">this</span>.state.qrCodeContent)</span><br><span class="line"></span><br><span class="line">               <span class="keyword">if</span> (<span class="keyword">this</span>.refs.refWeappQrCode) &#123;</span><br><span class="line">                   <span class="keyword">this</span>.refs.refWeappQrCode.refreshQrCode()</span><br><span class="line">                   <span class="keyword">this</span>.pollingTimerId= <span class="keyword">this</span>.loginWithRqCode(data.uuid)</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;)</span><br></pre></td></tr></table></figure>
-
-<h2 id="React-Hook"><a href="#React-Hook" class="headerlink" title="React Hook"></a>React Hook</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Example</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 声明一个叫 “count” 的 state 变量。</span></span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = useState(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;p&gt;You clicked &#123;count&#125; times&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">      &lt;button onClick=&#123;() =&gt; setCount(count + 1)&#125;&gt;</span></span><br><span class="line"><span class="regexp">        Click me</span></span><br><span class="line"><span class="regexp">      &lt;/</span>button&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>在这里，useState 就是一个 Hook （等下我们会讲到这是什么意思）。通过在函数组件里调用它来给组件添加一些内部 state。React 会在重复渲染时保留这个 state。useState 会返回一对值：当前状态和一个让你更新它的函数，你可以在事件处理函数中或其他一些地方调用这个函数。它类似 class 组件的 this.setState，但是它不会把新的 state 和旧的 state 进行合并</p>
-<p>你之前可能已经在 React 组件中执行过数据获取、订阅或者手动修改过 DOM。我们统一把这些操作称为“副作用”，或者简称为“作用”。</p>
-<p>useEffect 就是一个 Effect Hook，给函数组件增加了操作副作用的能力。它跟 class 组件中的 componentDidMount、componentDidUpdate 和 componentWillUnmount 具有相同的用途，只不过被合并成了一个 API。（我们会在使用 Effect Hook 里展示对比 useEffect 和这些方法的例子。）</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState, useEffect &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Example</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = useState(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 相当于 componentDidMount 和 componentDidUpdate:</span></span><br><span class="line">  useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 使用浏览器的 API 更新页面标题</span></span><br><span class="line">    <span class="built_in">document</span>.title = <span class="string">`You clicked <span class="subst">$&#123;count&#125;</span> times`</span>;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;p&gt;You clicked &#123;count&#125; times&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">      &lt;button onClick=&#123;() =&gt; setCount(count + 1)&#125;&gt;</span></span><br><span class="line"><span class="regexp">        Click me</span></span><br><span class="line"><span class="regexp">      &lt;/</span>button&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>当你调用 useEffect 时，就是在告诉 React 在完成对 DOM 的更改后运行你的“副作用”函数。由于副作用函数是在组件内声明的，所以它们可以访问到组件的 props 和 state。默认情况下，React 会在每次渲染后调用副作用函数 —— 包括第一次渲染的时候。（我们会在使用 Effect Hook 中跟 class 组件的生命周期方法做更详细的对比。）</p>
-<h3 id="Hook-使用规则"><a href="#Hook-使用规则" class="headerlink" title="Hook 使用规则"></a>Hook 使用规则</h3><p>Hook 就是 JavaScript 函数，但是使用它们会有两个额外的规则：</p>
-<p>只能在函数最外层调用 Hook。不要在循环、条件判断或者子函数中调用。<br>只能在 React 的函数组件中调用 Hook。不要在其他 JavaScript 函数中调用。（还有一个地方可以调用 Hook —— 就是自定义的 Hook 中，我们稍后会学习到。）</p>
-<h3 id="Vue与React的区别"><a href="#Vue与React的区别" class="headerlink" title="Vue与React的区别"></a>Vue与React的区别</h3><p>vue组件分为全局注册和局部注册，在react中都是通过import相应组件，然后模版中引用；<br>props是可以动态变化的，子组件也实时更新，在react中官方建议props要像纯函数那样，输入输出一致对应，而且不太建议通过props来更改视图；<br>子组件一般要显示地调用props选项来声明它期待获得的数据。而在react中不必需，另两者都有props校验机制；<br>每个Vue实例都实现了事件接口，方便父子组件通信，小型项目中不需要引入状态管理机制，而react必需自己实现；<br>使用插槽分发内容，使得可以混合父组件的内容与子组件自己的模板；<br>多了指令系统，让模版可以实现更丰富的功能，而React只能使用JSX语法；<br>Vue增加的语法糖computed和watch，而在React中需要自己写一套逻辑来实现；<br>react的思路是all in js，通过js来生成html，所以设计了jsx，还有通过js来操作css，社区的styled-component、jss等；而 vue是把html，css，js组合到一起，用各自的处理方式，vue有单文件组件，可以把html、css、js写到一个文件中，html提供了模板引擎来处理。<br>react做的事情很少，很多都交给社区去做，vue很多东西都是内置的，写起来确实方便一些， 比如 redux的combineReducer就对应vuex的modules， 比如reselect就对应vuex的getter和vue组件的computed， vuex的mutation是直接改变的原始数据，而redux的reducer是返回一个全新的state，所以redux结合immutable来优化性能，vue不需要。<br>react是整体的思路的就是函数式，所以推崇纯组件，数据不可变，单向数据流，当然需要双向的地方也可以做到，比如结合redux-form，组件的横向拆分一般是通过高阶组件。而vue是数据可变的，双向绑定，声明式的写法，vue组件的横向拆分很多情况下用mixin</p>
-<p>作者：ikoala<br>链接：<a href="https://juejin.im/post/5cf495e96fb9a07ef5622025" target="_blank" rel="noopener">https://juejin.im/post/5cf495e96fb9a07ef5622025</a><br>来源：掘金</p>
-<h2 id="Ant-Design-实战教程"><a href="#Ant-Design-实战教程" class="headerlink" title="Ant Design 实战教程"></a>Ant Design 实战教程</h2><h3 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h3><ul>
-<li><p>一是所有 HTML 标签必须是闭合的，如果写成</p><h1>Hello就会报错。如果是那种没有闭合语法的标签，必须在标签尾部加上斜杠，比如<img src>。二是任何 JSX 表达式，顶层只能有一个标签，也就是说只能有一个根元素<p></p>
-</h1></li>
-<li><p>一般来说，HTML 原生标签都使用小写，开发者自定义的组件标签首字母大写，比如<mycomponent></mycomponent></p>
-</li>
-<li><p>shouldComponentUpdate(nextProps, nextState)：每当this.props或this.state有变化，在render方法执行之前，就会调用这个方法。该方法返回一个布尔值，表示是否应该继续执行render方法，即如果返回false，UI 就不会更新，默认返回true。组件挂载时，render方法的第一次执行，不会调用这个方法。</p>
-</li>
-<li><p>static getDerivedStateFromProps(props, state)：该方法在render方法执行之前调用，包括组件的第一次记载。它应该返回一个新的 state 对象，通常用在组件状态依赖外部输入的参数的情况。</p>
-</li>
-<li><p>getSnapshotBeforeUpdate()：该方法在每次 DOM 更新之前调用，用来收集 DOM 信息。它返回的值，将作为参数传入componentDidUpdate()方法。</p>
-</li>
-</ul>
-<h4 id="非受控组件"><a href="#非受控组件" class="headerlink" title="非受控组件"></a>非受控组件</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">const</span> MyInput = <span class="function">(<span class="params">&#123; onChange &#125;</span>) =&gt;</span> (</span><br><span class="line">  &lt;input onChange=&#123;onChange&#125; /&gt;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  onTextChange = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(event.target.value);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;MyInput onChange=&#123;<span class="keyword">this</span>.onTextChange&#125; /&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>看起来，修改 MyInput 中的值不太容易。<br>对于这种不能直接控制状态的组件，我们称之为“非受控组件”。</li>
-</ul>
-<h4 id="受控组件"><a href="#受控组件" class="headerlink" title="受控组件"></a>受控组件</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> MyInput = <span class="function">(<span class="params">&#123; value = <span class="string">''</span>, onChange &#125;</span>) =&gt;</span> (</span><br><span class="line">  &lt;input value=&#123;value&#125; onChange=&#123;onChange&#125; /&gt;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  state = &#123;</span><br><span class="line">    text: <span class="string">''</span>,</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  onTextChange = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123; <span class="attr">text</span>: event.target.value &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;MyInput value=&#123;<span class="keyword">this</span>.state.text&#125; onChange=&#123;<span class="keyword">this</span>.onTextChange&#125; /&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>“受控”与“非受控”两个概念，区别在于这个 <code>组件的状态是否可以被外部修改</code> 。一个设计得当的组件应该同时支持“受控”与“非受控”两种形式，即当开发者不控制组件属性时，组件自己管理状态，而当开发者控制组件属性时，组件该由属性控制。而开发一个复杂组件更需要注意这点，以避免只有部分属性受控，使其变成一个半受控组件。</li>
-</ul>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">React笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/12/06/React笔记/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-markDown语法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/06/02/markDown语法/" target="_blank">markDown语法</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/06/02/markDown语法/" class="archive-article-date">
-        <time datetime="2019-06-02T02:26:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-02</time>
-</a>
-
-  
-  
-  
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">**1加粗**</span><br><span class="line">*2斜体*</span><br><span class="line">***3加粗+斜体***</span><br><span class="line">~~4删除线~~</span><br><span class="line">^5^上标</span><br><span class="line">~6~下标</span><br><span class="line">1. 有序列表</span><br><span class="line">2. 有序列表</span><br><span class="line">- 无序列表</span><br><span class="line">+ 无序列表</span><br><span class="line">* 无序列表</span><br></pre></td></tr></table></figure>
-
-<p><strong>字体处理中语法和文本不能加空格</strong><br><strong>1加粗</strong><br><em>2斜体</em><br><strong><em>3加粗+斜体</em></strong><br><del>4删除线</del><br>^5^上标<br><del>6</del>下标</p>
-<ol>
-<li>有序列表</li>
-<li>有序列表</li>
-</ol>
-<ul>
-<li>无序列表</li>
-</ul>
-<ul>
-<li>无序列表</li>
-</ul>
-<ul>
-<li>无序列表</li>
-</ul>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/06/02/markDown语法/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-随手笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/04/25/随手笔记/" target="_blank">随手笔记</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/04/25/随手笔记/" class="archive-article-date">
-        <time datetime="2019-04-25T06:06:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-25</time>
-</a>
-
-  
-  
-  
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="可以用-DevTools-的-queryObjects-函数测试是否有内存泄漏"><a href="#可以用-DevTools-的-queryObjects-函数测试是否有内存泄漏" class="headerlink" title="可以用 DevTools 的 queryObjects()函数测试是否有内存泄漏"></a>可以用 DevTools 的 queryObjects()函数测试是否有内存泄漏</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">queryObjects(<span class="built_in">Promise</span>)</span><br><span class="line"><span class="literal">undefined</span></span><br><span class="line"><span class="built_in">Array</span>(<span class="number">14</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="githooks-钩子没有被触发的原因"><a href="#githooks-钩子没有被触发的原因" class="headerlink" title="githooks 钩子没有被触发的原因"></a>githooks 钩子没有被触发的原因</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[core]</span><br><span class="line">	repositoryformatversion = 0</span><br><span class="line">	filemode = <span class="literal">true</span></span><br><span class="line">	bare = <span class="literal">false</span></span><br><span class="line">	logallrefupdates = <span class="literal">true</span></span><br><span class="line">	ignorecase = <span class="literal">true</span></span><br><span class="line">	precomposeunicode = <span class="literal">true</span></span><br><span class="line">	hooksPath = .husky <span class="comment">#这一行删除</span></span><br></pre></td></tr></table></figure>
-
-<p>有可能之前安装了 .husky 后面又没用了把 hooksPath = .husky 这一行删除</p>
-<h3 id="git-hooks-里sample文件-的作用"><a href="#git-hooks-里sample文件-的作用" class="headerlink" title=".git hooks 里sample文件 的作用"></a>.git hooks 里sample文件 的作用</h3><p>pre-commit.sample文件看一下其中的内容，大致意思是说这是一个示例，做了一些格式方面的检测，这个脚本默认是不生效的，如果要生效，把文件名改为pre-commit即可</p>
-<h2 id="怎么写出优质的-JavaScript-代码"><a href="#怎么写出优质的-JavaScript-代码" class="headerlink" title="怎么写出优质的 JavaScript 代码?"></a>怎么写出优质的 JavaScript 代码?</h2><h3 id="指数幂"><a href="#指数幂" class="headerlink" title="指数幂"></a>指数幂</h3><p>我们可以使用Math.pow()方法来得到一个数字的幂。有一种更短的语法来实现，即双星号 (**)。//Longhand </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> power = <span class="built_in">Math</span>.pow(<span class="number">4</span>, <span class="number">3</span>); <span class="comment">// 64 </span></span><br><span class="line"><span class="comment">// Shorthand </span></span><br><span class="line"><span class="keyword">const</span> power = <span class="number">4</span>**<span class="number">3</span>; <span class="comment">// 64</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="数字分隔符"><a href="#数字分隔符" class="headerlink" title="数字分隔符"></a>数字分隔符</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 旧语法</span></span><br><span class="line"><span class="keyword">let</span> number = <span class="number">98234567</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 新语法</span></span><br><span class="line"><span class="keyword">let</span> number = <span class="number">98</span>_234_567</span><br></pre></td></tr></table></figure>
-
-<h3 id="使用方法链（尤其是类）"><a href="#使用方法链（尤其是类）" class="headerlink" title="使用方法链（尤其是类）"></a>使用方法链（尤其是类）</h3><p>播放器对象/类是这种情况，请使用方法链接。<br>需要做的就是从要链接的函数中返回对象的实例。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Player</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span> (name, score, position) &#123;</span><br><span class="line">    <span class="keyword">this</span>.position = position;</span><br><span class="line">    <span class="keyword">this</span>.score = score;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">  &#125;</span><br><span class="line">  setName(name) &#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>; <span class="comment">// &lt;-- THIS</span></span><br><span class="line">  &#125;</span><br><span class="line">  setPosition(position) &#123;</span><br><span class="line">    <span class="keyword">this</span>.position = position;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>; <span class="comment">// &lt;-- THIS</span></span><br><span class="line">  &#125;</span><br><span class="line">  setScore(score) &#123;</span><br><span class="line">    <span class="keyword">this</span>.score = score;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>; <span class="comment">// &lt;-- THIS</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> player = <span class="keyword">new</span> Player();</span><br><span class="line">player.setScore(<span class="number">0</span>).setName(<span class="string">'Sudongyuer'</span>).setPosition([<span class="number">2</span>, <span class="number">0</span>]);</span><br><span class="line"><span class="comment">// SUPER COOL 😎</span></span><br><span class="line"><span class="built_in">console</span>.log(player)</span><br></pre></td></tr></table></figure>
-
-<h2 id="代码可维护性、可复用性和可扩展性的区别"><a href="#代码可维护性、可复用性和可扩展性的区别" class="headerlink" title="代码可维护性、可复用性和可扩展性的区别"></a>代码可维护性、可复用性和可扩展性的区别</h2><ul>
-<li>在《Java设计模式》一书中对<code>可维护性</code>的定义为：指软件能够被理解、改正、适应及扩展的难易程度。</li>
-<li>对<code>可复用性</code>的定义为：指软件能够被重复使用的难易程度。<br>一般般说到可维护性指的是改正性维护，根据修复一个问题所花的平均时间和修复正确的百分比来衡量<br>广义上的可维护性也包括扩展可维护性，此时可扩展性是可维护性的一部分。（可以想见可理解性也是可维护性的一部分）<br>改正侧重改，扩展侧重增。</li>
-</ul>
-<h4 id="可维护性"><a href="#可维护性" class="headerlink" title="可维护性"></a>可维护性</h4><p>可维护性表明了<code>在软件中纠正一个缺陷或做一次更改的简易程度</code>。</p>
-<p>可维护性取决于理解软件、更改软件和测试软件的简易程度，可维护性与灵活性密切相关。<br>高可维护性对于那些经历周期性更改的产品或快速开发的产品很重要。<br>你可以根据修复一个问题所花的平均时间和修复正确的百分比来衡量可维护性。</p>
-<h4 id="可扩展性"><a href="#可扩展性" class="headerlink" title="可扩展性"></a>可扩展性</h4><p>可扩展性反映软件适应“变化”的能力。</p>
-<p>在软件开发过程中，“变化”是司空见惯的事情，如需求、设计的变化，算法的改进，程序的变化等等。</p>
-<p>现代软件产品通常采用“增量开发模式”，不断推出新版本，获取增值利润。可扩展性越来越重要。<br>可扩展性是系统设计阶段重点考虑的质量属性。<br>谈到软件的可扩展性，开发人员首先想到的是怎样提高可扩展性，于是努力去设计很好的体系结构来提高可扩展性，却不考虑该不该做这件事。<br>从商业角度考虑，如果某个软件将不断地推出新版本，那么可扩展性很重要。<br>但是如果软件永远都不会有下个版本（一次性买卖），那么根本无需提高可扩展性。</p>
-<h4 id="一、变量"><a href="#一、变量" class="headerlink" title="一、变量"></a>一、变量</h4><ol>
-<li><p>用有意义且常用的单词命名</p>
-</li>
-<li><p>对同一类型的变量使用相同的命名保持统一</p>
-</li>
-<li><p>每个常量都该命名(全大写)</p>
-</li>
-<li><p>避免无意义的命名</p>
-</li>
-<li><p>传参使用默认值</p>
-</li>
-</ol>
-<h4 id="二、函数"><a href="#二、函数" class="headerlink" title="二、函数"></a>二、函数</h4><ol>
-<li><p>函数参数( 最好 2 个或更少 )<br>如果参数超过两个，建议使用 ES6 的解构语法，不用考虑参数的顺序。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Bad:</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createMenu</span>(<span class="params"> title, body, buttonText, cancellable </span>) </span>&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Good:</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createMenu</span>(<span class="params"> &#123; title, body, buttonText, cancellable &#125; </span>) </span>&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line">createMenu(&#123;</span><br><span class="line">    title: <span class="string">'Foo'</span>,</span><br><span class="line">    body: <span class="string">'Bar'</span>,</span><br><span class="line">    buttonText: <span class="string">'Baz'</span>,</span><br><span class="line">    cancellable: <span class="literal">true</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>一个方法只做一件事情</p>
-</li>
-<li><p>函数名上体现它的作用</p>
-</li>
-<li><p>删除重复代码，合并相似函数</p>
-</li>
-<li><p>使用 Object.assign 设置默认属性</p>
-</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Bad:</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createMenu</span>(<span class="params">config</span>) </span>&#123;</span><br><span class="line">  config.title = config.title || <span class="string">'Foo'</span>;</span><br><span class="line">  config.body = config.body || <span class="string">'Bar'</span>;</span><br><span class="line">  config.buttonText = config.buttonText || <span class="string">'Baz'</span>;</span><br><span class="line">  config.cancellable = config.cancellable !== <span class="literal">undefined</span> ? config.cancellable : <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Good:</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createMenu</span>(<span class="params">config</span>) </span>&#123;</span><br><span class="line">  config = <span class="built_in">Object</span>.assign(&#123;</span><br><span class="line">    title: <span class="string">'Foo'</span>,</span><br><span class="line">    body: <span class="string">'Bar'</span>,</span><br><span class="line">    buttonText: <span class="string">'Baz'</span>,</span><br><span class="line">    cancellable: <span class="literal">true</span></span><br><span class="line">  &#125;, config);</span><br><span class="line">  <span class="comment">// config : &#123;title: "Order", body: "Bar", buttonText: "Send", cancellable: true&#125;</span></span><br><span class="line">&#125;</span><br><span class="line">createMenu(menuConfig);</span><br></pre></td></tr></table></figure>
-
-<h3 id="用枚举来约定变量的使用与赋值"><a href="#用枚举来约定变量的使用与赋值" class="headerlink" title="用枚举来约定变量的使用与赋值"></a>用枚举来约定变量的使用与赋值</h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> Menu &#123;</span><br><span class="line">    title,</span><br><span class="line">    body,</span><br><span class="line">    buttonText,</span><br><span class="line">    cancellable</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> currentMenu: Menu = Menu.title;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setMenu</span>(<span class="params">menu:Menu</span>)</span>&#123;</span><br><span class="line">  currentMenu = menu;</span><br><span class="line">&#125;</span><br><span class="line">setMenu(Menu.title);</span><br></pre></td></tr></table></figure>
-
-<h3 id="every"><a href="#every" class="headerlink" title="every"></a>every</h3><p>every()方法的定义与用法：</p>
-<p>every()方法用于检测数组中的所有元素是否都满足指定条件（该条件为一个函数）。<br>every()方法会遍历数组的每一项，如果有有一项不满足条件，则表达式返回false,剩余的项将不会再执行检测；如果遍历完数组后，每一项都符合条，则返回true。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a  = [<span class="number">20</span>,<span class="number">18</span>,<span class="number">1</span>,<span class="number">20</span>,<span class="number">2</span>]</span><br><span class="line"><span class="keyword">const</span> flag = a.every(<span class="function">(<span class="params">item</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(item)</span><br><span class="line">  <span class="keyword">return</span> item &gt;  <span class="number">18</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// flag :true</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Husky钩子在SourceTree中报错：-husky-pre-commit-Line-4-npm-command-not-found"><a href="#Husky钩子在SourceTree中报错：-husky-pre-commit-Line-4-npm-command-not-found" class="headerlink" title="Husky钩子在SourceTree中报错：.husky/pre-commit: Line 4 npm: command not found"></a>Husky钩子在SourceTree中报错：.husky/pre-commit: Line 4 npm: command not found</h3><p>在命令行中可以正常commit，并正确触发钩子，但是，在SourceTree中，却报错了：</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.husky/pre-commit: Line <span class="number">4</span> npm: command <span class="keyword">not</span> found</span><br></pre></td></tr></table></figure>
-
-<h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h4><p>找到所需命令所在路径，然后添加到~/.huskyrc文件中。<br>用以下命令自动创建文件并添加路径：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo <span class="string">'export PATH="/usr/local/bin/:$PATH"'</span> &gt;&gt; ~<span class="regexp">/.huskyrc</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h4><p><a href="https://xmanyou.com/sourcetree-husky-npm-command-not-found/" target="_blank" rel="noopener">https://xmanyou.com/sourcetree-husky-npm-command-not-found/</a></p>
-<h3 id="TDD-驱动测试开发"><a href="#TDD-驱动测试开发" class="headerlink" title="TDD 驱动测试开发"></a>TDD 驱动测试开发</h3><ul>
-<li>测试驱动开发（Test-Driven Development，TDD）<br>T –&gt; tasking<br>D –&gt; tasking<br>D –&gt; tasking<h3 id="mac-使用code命令打开VSCode"><a href="#mac-使用code命令打开VSCode" class="headerlink" title="mac 使用code命令打开VSCode"></a>mac 使用code命令打开VSCode</h3>我们在mac的终端可以使用 open .打开文件夹<br>如果我们想用vs-code打开文件夹,用的命令是 code .,不过你得先按照code<br>安装code：打开VSCode –&gt; command+shift+p –&gt; 输入shell command –&gt; 点击提示Shell Command: Install ‘code’ command in PATH运行<br>使用：打开终端，cd到要用VSCode打开的文件夹，然后输入命令code .即可打开</li>
-</ul>
-<h3 id="工程化方面"><a href="#工程化方面" class="headerlink" title="工程化方面"></a>工程化方面</h3><p>lerna：Lerna 是一个管理工具，用于管理包含多个软件包（package）的 JavaScript 项目。<br>prettier：Prettier 中文的意思是漂亮的、美丽的，是一个流行的代码格式化的工具。<br>tslint：TSLint 是可扩展的静态分析工具，用于检查 TypeScript 代码的可读性，可维护性和功能性错误。<br>commitizen &amp; cz-conventional-changelog：用于帮助我们生成符合规范的 commit message。<br>husky：husky 能够防止不规范代码被 commit、push、merge 等等。<br>jest：Jest 是由 Facebook 维护的 JavaScript 测试框架。<br>coveralls：用于获取 Coveralls.io 的覆盖率报告，并在 README 文件中添加一个不错的覆盖率按钮。<br>vuepress：Vue 驱动的静态网站生成器，它用于生成 BetterScroll 2.0 的文档。</p>
-<p>作者：阿宝哥<br>链接：<a href="https://juejin.cn/post/6876943860988772360" target="_blank" rel="noopener">https://juejin.cn/post/6876943860988772360</a><br>来源：稀土掘金</p>
-<h3 id="页面载入进度条"><a href="#页面载入进度条" class="headerlink" title="页面载入进度条"></a>页面载入进度条</h3><ul>
-<li>页面路由切换时，附带一个加载进度条会显得非常友好，不至于白屏时间过长，让用户以为页面假死。这时候我们可以用到nprogress，在路由切换时开启和关闭：import NProgress from ‘nprogress’;</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">router.beforeEach(<span class="keyword">async</span> (to, <span class="keyword">from</span>, next) =&gt; &#123;</span><br><span class="line">  NProgress.start();</span><br><span class="line">&#125;);</span><br><span class="line">router.afterEach(<span class="function">(<span class="params">to</span>) =&gt;</span> &#123;</span><br><span class="line">  NProgress.done();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p>作者：codexu<br>链接：<a href="https://zhuanlan.zhihu.com/p/428497238" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/428497238</a><br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
-<h3 id="vite"><a href="#vite" class="headerlink" title="vite"></a>vite</h3><ol>
-<li><p>如何加载依赖包？<br>在 ESModule 只会加载 <code>./</code>或者<code>/</code> 开头 的路径</p>
-</li>
-<li><p>如何加载 SFC组件(.vue)?</p>
-</li>
-</ol>
-<p>第一步 vue文件 =&gt; template script (compiler-sfc))</p>
-<h3 id="是因为很多你想做的项目，要么在GitHub上已经有了，要么已经在文档中被人讨论过了，那为什么是你做？为什么你更有可能去做成？"><a href="#是因为很多你想做的项目，要么在GitHub上已经有了，要么已经在文档中被人讨论过了，那为什么是你做？为什么你更有可能去做成？" class="headerlink" title="是因为很多你想做的项目，要么在GitHub上已经有了，要么已经在文档中被人讨论过了，那为什么是你做？为什么你更有可能去做成？"></a>是因为很多你想做的项目，要么在GitHub上已经有了，要么已经在文档中被人讨论过了，那为什么是你做？为什么你更有可能去做成？</h3><p>玉伯说：这个问题的一个“政治正确”的答案是和你的业务有相关性，更实际的可能是和你这个人更有关系，是你内心想不想做，愿不愿意去长期的投入。</p>
-<p>比如Ant Design、AntV，其实当时是集团更有机会去做的，因为集团有数据产品技术部，他们有很多业务，在这些业务土壤下是更有机会去长出这些项目的，但是他们缺人。所以对这个问题我的回答是，很多情况下，人的要素是比业务更重要的。只要你对事情是笃定想要去做的，大胆去做就好了。</p>
-<h3 id="可选链-，空值合并运算符"><a href="#可选链-，空值合并运算符" class="headerlink" title="可选链?. ，空值合并运算符??"></a>可选链<code>?.</code> ，空值合并运算符<code>??</code></h3><ul>
-<li>空值合并操作符（<code>??</code>）是一个逻辑操作符，当左侧的操作数为 <code>null</code> 或者 <code>undefined</code> 时，返回其右侧操作数，否则返回左侧操作数。</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> foo = <span class="literal">null</span> ?? <span class="string">'default string'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(foo);</span><br><span class="line"><span class="comment">// expected output: "default string"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> baz = <span class="literal">undefined</span> ?? <span class="number">42</span>;</span><br><span class="line"><span class="built_in">console</span>.log(baz);</span><br><span class="line"><span class="comment">// expected output: 42</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> baz1 = <span class="number">0</span> ?? <span class="number">42</span>;</span><br><span class="line"><span class="built_in">console</span>.log(baz1);</span><br><span class="line"><span class="comment">// expected output: 0</span></span><br></pre></td></tr></table></figure>
-
-<p>可选链式操作符（<code>?.</code>) 与 <code>??</code> 一样，可能为 undefined 与 null 的对象时，可选链式操作符非常有用。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> foo = &#123; <span class="attr">someFooProp</span>: <span class="string">"hi"</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(foo.someFooProp?.toUpperCase()); <span class="comment">// "HI"</span></span><br><span class="line"><span class="built_in">console</span>.log(foo.someBarProp?.toUpperCase()); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="动画卡顿分析"><a href="#动画卡顿分析" class="headerlink" title="动画卡顿分析"></a>动画卡顿分析</h3><h4 id="动画卡顿的原因"><a href="#动画卡顿的原因" class="headerlink" title="动画卡顿的原因"></a>动画卡顿的原因</h4><p>大多数设备的刷新频率是60次/秒，也就是1秒钟的动画是由60个画面连在一起生成的，所以要求浏览器对每一帧画面的渲染工作要在16ms内完成。当渲染时间超出16ms时，1秒钟内少于60个画面生成，就会有不连贯、卡顿的感觉，影响用户体验。</p>
-<p>一个页面帧在客户端的渲染分为以下几步：</p>
-<p>JavaScript：JavaScript实现动画效果，DOM操作等。<br>Style（样式计算）：确认每个DOM元素应用的CSS样式规则。<br>Layout（布局）：计算每个DOM元素最终在屏幕上的大小和位置。由于DOM元素的布局是相对的，所以当某个元素发生变化影响了布局时，其他元素也会随之变化，则需要回退重新渲染，这个过程称之为reflow。<br>Paint（绘制）：在多个层上绘制DOM元素的文字、颜色、图像、边框和阴影等。<br>Composite（Render Layer合并）：按照合理的顺序合并图层并显示到屏幕上。 浏览器在实际渲染页面的时候需要经过一系列的映射，由HTML页面构建出来的DOM树到最终的图层，映射过程如下图(来源：参考[3])所示（注意下图类名在后续有所更改，RenderObject-&gt;LayoutObject，RenderLayer-&gt;PaintLayer）：<br>Node-&gt;RenderObject：DOM树的每个Node都有一个对应的RenderObject（一对一关系，RenderObject包含了Node的内容）；</p>
-<p>RenderObject -&gt; RenderLayer：一个或多个RenderObject对应一个RenderLayer（多对一），RenderLayer用于保证元素之间的层级关系，一般来说位于同一位置的且层级相同的元素位于同一个Render Layer，只有某些特殊的RenderObject会专门创建一个新的渲染层，其他的RenderObject与第一个拥有RenderLayer的祖先元素共用一个。常见的生成RenderLayer的RenderObject拥有以下的一种特征</p>
-<h4 id="优化方法"><a href="#优化方法" class="headerlink" title="优化方法"></a>优化方法</h4><p>结合页面渲染流程，这里将结合一些测试代码，分析动画的各种优化方案和效果：</p>
-<p>JavaScript：优化JavaScript的执行效率<br>requestAnimationFrame代替setTimeout和setInterval<br>可并行的DOM元素更新划分为多个小任务<br>DOM无关的耗时操作放到Web Workers中<br>Style：降低样式计算复杂度和范围<br>降低样式选择器的复杂度<br>减少需要执行样式计算的元素个数<br>Layout：避免大规模、复杂的布局<br>避免频繁改变布局<br>用flexbox布局替代老的布局模型<br>避免强制同步布局事件<br>Paint/Composite：GPU加速<br>将移动或渐变元素由渲染层（RenderLayer）提升为合成层（Compositing Layer）<br>避免提升合成层的陷阱<br>JavaScript：优化JavaScript的执行效率</p>
-<ol>
-<li>requestAnimationFrame代替setTimeout和setInterval<br>为什么setTimeout和setInterval不好？<br>由于js是单线程执行，所以为了防止某个任务执行时间过长而导致进程阻塞，js中存在异步队列的概念，对于如setTimeout和ajax请求都是把进程放到了异步队列中，当主进程为空时才执行异步队列中的任务。所以 setTimeout和setInterval无法保证回调函数的执行时机，可能会在一帧之内执行多次导致多次页面渲染，浪费CPU资源甚至产生卡顿，或者是在一帧即将结束时执行导致重新渲染，出现掉帧的情况。<br>requestAnimationFrame是怎么优化的？</li>
-</ol>
-<p>CPU节能，当页面被隐藏或最小化时，暂停渲染。<br>函数节流，其循环间隔是由屏幕刷新频率决定的，保证回调函数在屏幕的每一次刷新间隔中只执行一次。<br>优化效果具体如何？DEMO<br>通过chrome的performance面板查看具体表现的差别。<br>通过setTimeout进行了3次渲染，而且有长时间帧出现：</p>
-<p>使用 requestAnimationFrameDOM操作部分合并，只进行了2次渲染，长时间帧也被优化：</p>
-<p><a href="https://juejin.cn/post/6844903796817002504" target="_blank" rel="noopener">参考链接</a></p>
-<h4 id="requestAnimationFrame"><a href="#requestAnimationFrame" class="headerlink" title="requestAnimationFrame"></a>requestAnimationFrame</h4><p>1、requestAnimationFrame 会把每一帧中的所有DOM操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率，一般来说，这个频率为每秒60帧。<br>2、在隐藏或不可见的元素中，requestAnimationFrame将不会进行重绘或回流，这当然就意味着更少的的cpu，gpu和内存使用量。</p>
-<p>作者：我是一个前端<br>链接：<a href="https://www.jianshu.com/p/fa5512dfb4f5" target="_blank" rel="noopener">https://www.jianshu.com/p/fa5512dfb4f5</a><br>来源：简书<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
-<h4 id="优化方法-1"><a href="#优化方法-1" class="headerlink" title="优化方法"></a>优化方法</h4><h3 id="querySelector和getElementById性能分析与使用选择"><a href="#querySelector和getElementById性能分析与使用选择" class="headerlink" title="querySelector和getElementById性能分析与使用选择"></a>querySelector和getElementById性能分析与使用选择</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.time(<span class="string">'querySelector'</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">100000</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">document</span>.querySelector(<span class="string">"#wp_editbtns"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'querySelector'</span>);</span><br><span class="line"><span class="comment">//querySelector: 10.057373046875 ms</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.time(<span class="string">'getElementById'</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">100000</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">"wp_editbtns"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'getElementById'</span>);</span><br><span class="line"><span class="comment">// getElementById: 4.985595703125 ms</span></span><br></pre></td></tr></table></figure>
-
-<p>querySelector的耗时明显多了好多<br>得到集合时间对比相差巨大。可是现在主流框架，比如jquery，手机上的框架jqmobi等内部实现查找元都是使用的querySelector，等方法，性能低的方法被使用唯一理由就是它用着方便。</p>
-<ul>
-<li>得到的元素不是需要很麻烦的多次getElementBy..的话，尽量使用getElementBy..,因为他快些。</li>
-<li>得到的元素需要很麻烦的多次getElementBy..组合才能得到的话使用querySelector，方便。</li>
-<li>看实际情况，你决定方便优先还是性能优先，<h2 id="URLSearchParams"><a href="#URLSearchParams" class="headerlink" title="URLSearchParams"></a>URLSearchParams</h2></li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Pass in a string literal</span></span><br><span class="line"><span class="keyword">var</span> url = <span class="keyword">new</span> URL(<span class="string">'https://example.com?foo=1&amp;bar=2'</span>);</span><br><span class="line"><span class="comment">// Retrieve from window.location</span></span><br><span class="line"><span class="keyword">var</span> url2 = <span class="keyword">new</span> URL(<span class="built_in">window</span>.location);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Retrieve params via url.search, passed into ctor</span></span><br><span class="line"><span class="keyword">var</span> params = <span class="keyword">new</span> URLSearchParams(url.search);</span><br><span class="line"><span class="keyword">var</span> params2 = <span class="keyword">new</span> URLSearchParams(url2.search);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Pass in a sequence</span></span><br><span class="line"><span class="keyword">var</span> params3 = <span class="keyword">new</span> URLSearchParams([[<span class="string">"foo"</span>, <span class="number">1</span>],[<span class="string">"bar"</span>, <span class="number">2</span>]]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Pass in a record</span></span><br><span class="line"><span class="keyword">var</span> params4 = <span class="keyword">new</span> URLSearchParams(&#123;<span class="string">"foo"</span> : <span class="number">1</span> , <span class="string">"bar"</span> : <span class="number">2</span>&#125;);</span><br></pre></td></tr></table></figure>
-
-<h2 id="vue-cli3-单独打包库"><a href="#vue-cli3-单独打包库" class="headerlink" title="vue-cli3 单独打包库"></a>vue-cli3 单独打包库</h2><p><a href="https://cli.vuejs.org/zh/guide/build-targets.html#%E5%BA%93" target="_blank" rel="noopener">参考链接</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue-cli-service build --target lib --name port [<span class="string">'./src/_port/index.js'</span>]</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">File                     Size                     Gzipped</span><br><span class="line"></span><br><span class="line">dist/myLib.umd.min.js    13.28 kb                 8.42 kb</span><br><span class="line">dist/myLib.umd.js        20.95 kb                 10.22 kb</span><br><span class="line">dist/myLib.common.js     20.57 kb                 10.09 kb</span><br><span class="line">dist/myLib.css           0.33 kb                  0.23 kb</span><br></pre></td></tr></table></figure>
-
-<h2 id="Node-Sass-could-not-find-a-binding-for-your-current-environment-OS-X-64-bit-with-Node-js-6-x"><a href="#Node-Sass-could-not-find-a-binding-for-your-current-environment-OS-X-64-bit-with-Node-js-6-x" class="headerlink" title="Node Sass could not find a binding for your current environment: OS X 64-bit with Node.js 6.x"></a>Node Sass could not find a binding for your current environment: OS X 64-bit with Node.js 6.x</h2><blockquote>
-<p>进入project根目录，执行rebuild命令</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm rebuild node-sass</span><br></pre></td></tr></table></figure>
-
-<h2 id="在-Mac-下安装-Node-与-NPM"><a href="#在-Mac-下安装-Node-与-NPM" class="headerlink" title="在 Mac 下安装 Node 与 NPM"></a>在 Mac 下安装 Node 与 NPM</h2><h3 id="安装-Node"><a href="#安装-Node" class="headerlink" title="安装 Node"></a>安装 Node</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">brew search node <span class="comment"># 安装之前可以先看看 brew 支持的 node 版本</span></span><br><span class="line">brew install node  <span class="comment"># 安装默认最新版本，如果要指定版本的话可以这样 brew install node@10</span></span><br><span class="line"> </span><br><span class="line">node -v <span class="comment"># 如果安装成功会输出 Node 版本</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>注意</strong> 安装 Node 的时候 NPM 会自动被安装，所以无需进行下一步。</p>
-<h3 id="安装-NPM"><a href="#安装-NPM" class="headerlink" title="安装 NPM"></a>安装 NPM</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">brew search npm <span class="comment"># 安装之前可以先看看 brew 支持的 npm 版本</span></span><br><span class="line">brew install npm  <span class="comment"># 安装默认最新版本</span></span><br><span class="line"> </span><br><span class="line">npm -v <span class="comment"># 如果安装成功会输出 NPM 版本</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="安装-Node-1"><a href="#安装-Node-1" class="headerlink" title="安装 Node"></a>安装 Node</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">brew search node <span class="comment"># 安装之前可以先看看 brew 支持的 node 版本</span></span><br><span class="line">brew install node  <span class="comment"># 安装默认最新版本，如果要指定版本的话可以这样 brew install node@10</span></span><br><span class="line"> </span><br><span class="line">node -v <span class="comment"># 如果安装成功会输出 Node 版本</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="params动态路由传参"><a href="#params动态路由传参" class="headerlink" title="params动态路由传参"></a>params动态路由传参</h2><p>params动态路由传参一定要在路由中定义参数，然后在路由跳转的时候必须要加上参数，否则就是空白页面：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;      </span><br><span class="line">    path: <span class="string">'/detail/:id'</span>,      </span><br><span class="line">    name: <span class="string">'Detail'</span>,      </span><br><span class="line">    component: Detail    </span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p><strong>注意</strong>，params传参时，如果没有在路由中定义参数，也是可以传过去的，同时也能接收到，但是一旦刷新页面，这个参数就不存在了。这对于需要依赖参数进行某些操作的行为是行不通的，因为你总不可能要求用户不能刷新页面吧</p>
-</blockquote>
-<h2 id="在引用子组件里的-click-方法不生效"><a href="#在引用子组件里的-click-方法不生效" class="headerlink" title="在引用子组件里的 click 方法不生效"></a>在引用子组件里的 click 方法不生效</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"disable-hover button ion-button"</span></span></span><br><span class="line"><span class="tag">          <span class="attr">:class</span>=<span class="string">"[modeClass,typeClass,shapeClass,sizeClass,colorClass,roleClass,strongClass]"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"button-inner"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">slot</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"button-effect"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ion-button</span> @<span class="attr">click.native</span>=<span class="string">"primary()"</span> <span class="attr">color</span>=<span class="string">"primary"</span>&gt;</span>primary<span class="tag">&lt;/<span class="name">ion-button</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>据<code>Vue2.x</code>官方文档关于父子组件通讯的原则，父组件通过prop传递数据给子组件，子组件触发事件给父组件。但父组件想在子组件上监听自己的click的话，需要加上native修饰符</p>
-<p>注意：<strong>Vue.3x</strong> 已经移除 <del>v-on.native</del></p>
-<h2 id="commit-lint"><a href="#commit-lint" class="headerlink" title="commit-lint"></a>commit-lint</h2><p>可以帮助我们检查提交的 commit 信息，它强制约束我们的 commit 信息必须在开头附加指定类型，用于标示本次提交的大致意图，支持的类型关键字有：</p>
-<ul>
-<li>feat：表示添加一个新特性；</li>
-<li>chore：表示做了一些与特性和修复无关的「家务事」；</li>
-<li>fix：表示修复了一个 Bug；</li>
-<li>refactor：表示本次提交是因为重构了代码；</li>
-<li>style：表示代码美化或格式化；</li>
-</ul>
-<h2 id="CSS-变量教程"><a href="#CSS-变量教程" class="headerlink" title="CSS 变量教程"></a>CSS 变量教程</h2>
-    
-    <a class="article-more-a" href="/2019/04/25/随手笔记/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    <div class="article-pop-out tagcloud">
-      <i class="icon-tuding"></i>
-      <a class="article-tag-list-link color3">置顶</a>
-    </div>
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">浏览器</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">随手笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">平时遇到的问题</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/04/25/随手笔记/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-年度总结/迟来的2018年度总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/01/31/年度总结/迟来的2018年度总结/" target="_blank">迟来的2018年度总结</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/01/31/年度总结/迟来的2018年度总结/" class="archive-article-date">
-        <time datetime="2019-01-31T06:22:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-31</time>
-</a>
-
-  
-  
-  
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="简述2018"><a href="#简述2018" class="headerlink" title="简述2018"></a>简述2018</h2><p> 还是老套话，时间过得真快，一下子已经大学毕业了，步入再也没有寒暑假的工作中。（看到实习生有自己的寒暑假，除了羡慕外就剩下在大学期间没有好好的做一回大学生，没有好好珍惜寒暑假，感到可惜。）<br>从高考成绩出来那一刻，对自己失望之极，紧接着对自己报的学校感到服气（爬过了一座山菜刀校门口，记忆里依旧清晰的呈现出满街的尘土，天空飘着灰尘，从农村来的我觉得这空其，真垃圾什么**学校），紧急着专业负责人给我们介绍我们的专业是做什么的。对了，我的专业是数字媒体技术，是当时新兴的专业。不过我真的一点都不敢兴趣。从大一到大三期间，我就不多说了，就是虚度光阴呀，可能虚度光阴这个词还太高估我。<br>到大三期间，我似乎自己明白点什么，还是自己找到了自己喜欢的东西，专业的 Java面向对象、Unity3D、Html(那时连css都搞不太清楚，居然就会copy网页的代码，把好看的网页效果另存为就可以拿到页面，然后用记事本打开。当时根本不懂浏览器有自己的控制器) 上课的我居然认真听讲，不玩手机，大学的前两年真的是少见少见，可能几乎没有。大三下时，由于对css动画的效果向往，于是就在网上找视频学习（果然对着别人的代码敲，也敲不出效果），当时找视频是在腾讯课堂，当时腾讯课堂还没有做大，我才当时他们还是试水吧，没想到现在腾讯课堂已经是一个收费的大课堂了。那一段日子狼人杀很火，我呢，就杀红了眼睛一样在玩，有一天早上，培训机构销售找到来我们宿舍巡逻，哈，话唠的我就跟他们唠嗑起来，就因为他们培训的项目由H5这两个字，然后唠嗑完，没过多久就被他们“骗取”培训了。主要我也确实刚兴趣。这期间，计算机专业的学生居然找到我，叫我帮他们写页面，只能说浩哥人员真广，这都可以找到我，于是周末我会座两个小时的车去培训机构听课，应该说学习html+css，平时就待在学校跟浩哥他们一起做大部落这个项目。（由于我是数媒专业，他们居然找我做大部落logo，哈哈，我啥都不会，于求助我们班的人，人多力量大，一个晚上里的一两个小时就做出来了，虽然还是不怎么好看，但是至少已经有了大致形象，后续被带我们的那个老师修修改改，现在什么样也不记得了）。不过段日子，感觉生活好充实，慢慢的跟英雄联盟这个游戏远离（身边有一个人玩王者荣耀，所以向王者荣耀靠近，现在休息时还是会玩一两局）。<br>到了暑假，就直接到培训机构去了，终于不用坐两个小时的公交去听课。上课时，我应该是最啰嗦的一个，只要老师有时间我都会找他们，哈哈、太笨了，太多的不懂，没有编程思维，经常没有思路，一步一步的学习。大四上学期快点期末，结业准备去找工作，由于没毕业只能找实习，我不甘心，于是去了一家外包公司，月薪3000。（由于当时确实需要钱）。在那做了一个游戏竞猜项目，only me,纯html+css+jq做的H5，学到Vue都没用上，项目经理自己不会，怕以后不会维护，当时不懂事就听了他，写了一大堆冗余的代码，不想吐槽了，过完年就被开了，开除理由是“你太忙了”，what the fuck,什么鬼理由（是因为实习，才没有补贴的吗？）。后来才知道他们去了一家做拼车软件的公司（估计是不能要实习生，实习生全被开除）。<br>毕业后，通过一个老师的介绍来到现在的公司（微码信息科技有限公司），面试很失败的进入这家公司（所以工资当然也减了很多）。刚开始在公司里负责电话机器人开发好遗留下的Bug，哇，看别人的代码那个痛苦（当然对我后面独立开发这个项目还是很有帮助的）。期间拼命的复习Vue，去看Vue的源码，去了解Vue的watch、数据绑定。或过头再学习Vue还是有不错的理解,复习了好多次Vue文档，每次都有不一样的收货。一直想学习React，但都没有去了解。2019年我要好好的学习javascript,React还有Vue3.0，在公司就像一个菜鸟一样，根本没有带领团队的能力，沟通能力贼弱，多写几篇Blog，去锻炼自己的语言组织能力</p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">年度总结</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">反思</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/01/31/年度总结/迟来的2018年度总结/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
     </nav>
   
 
@@ -1676,15 +1486,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">V8引擎</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">React笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">V8引擎</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1732,11 +1542,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">经验 经历</a>
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color1">经验 经历</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1784,7 +1594,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Axios</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue的坑</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1796,15 +1614,23 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Axios</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue的坑</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">分享会</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">promise</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vitest</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">jest</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">test</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1821,10 +1647,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">workspace</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">promise</a>
               </li>
              
               <li class="article-tag-list-item">
