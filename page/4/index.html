@@ -641,17 +641,7 @@
 </ol>
 <ul>
 <li>时间久远的项目 ，如果技术不懂建议不要放在简历上</li>
-<li>写在简历上的技术要保证很熟悉<h2 id="0-1-0-2-0-3"><a href="#0-1-0-2-0-3" class="headerlink" title="0.1+0.2 !== 0.3"></a>0.1+0.2 !== 0.3</h2>由于 0.2转化为二进制会出现精度丢失问题，所以 0.1+0.2 !== 0.3</li>
-</ul>
-<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><h2 id="手写-深度拷贝"><a href="#手写-深度拷贝" class="headerlink" title="手写 深度拷贝"></a>手写 深度拷贝</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepCopy</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">typeof</span> obj!== <span class="string">'object'</span>) <span class="keyword">return</span> </span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> result = obj <span class="keyword">instanceof</span> <span class="built_in">Array</span> ? [] : &#123;&#125;;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> obj)&#123;</span><br><span class="line">    result[key]=<span class="keyword">typeof</span> obj[key] ===<span class="string">'object'</span>?deepCopy(obj[key]): obj[key]</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> person=&#123;<span class="attr">name</span>:<span class="string">"小明"</span>,<span class="attr">ageAndSex</span>:&#123;<span class="attr">age</span>:<span class="number">16</span>,<span class="attr">sex</span>:<span class="string">"男"</span>&#125;&#125;</span><br><span class="line"><span class="keyword">let</span> personCopy= deepCopy(person)</span><br><span class="line">personCopy=== person <span class="comment">// false</span></span><br><span class="line">personCopy.ageAndSex.age=<span class="number">20</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="华雄面试"><a href="#华雄面试" class="headerlink" title="华雄面试"></a>华雄面试</h2><h3 id="什么是盒子模型"><a href="#什么是盒子模型" class="headerlink" title="什么是盒子模型"></a>什么是盒子模型</h3><ul>
-<li>盒子模型有ie模型和 标准模型</li>
-<li>CSS盒模型本质上是一个盒子，封装周围的HTML元素，它包括：边距，边框，填充，和实际内容</li>
-<li>ie盒模型算上border、padding及自身（不算margin），标准的只算上自身窗体的大小 css设置方法如下<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 标准模型 */</span></span><br><span class="line"><span class="selector-tag">box-sizing</span><span class="selector-pseudo">:content-box</span>;</span><br><span class="line"> <span class="comment">/*IE模型*/</span></span><br><span class="line"><span class="selector-tag">box-sizing</span><span class="selector-pseudo">:border-box</span>;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
+<li>写在简历上的技术要保证很熟悉<h2 id="0-1-0-2-0-3"><a href="#0-1-0-2-0-3" class="headerlink" title="0.1+0.2 !== 0.3"></a>0.1+0.2 !== 0.3</h2>由于 0.2转化为二进制会出现精度丢失问题，所以 0.1+0.2 !== 0.3</li></ul>
     
     <a class="article-more-a" href="/2020/04/09/面试/面试题/#more">more >></a>
     
@@ -671,6 +661,10 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">面试题</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
         		</li>
       		
 		</ul>
@@ -1663,6 +1657,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">面试题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
             
             <div class="clearfix"></div>

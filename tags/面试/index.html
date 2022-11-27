@@ -6,19 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://littleki.gitee.io">
-  <title>Littleki</title>
+  <title>Tag: 面试 | Littleki</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-    
-    <!-- <meta name="keywords" content="littleki博客,nova博客,随手笔记,vue,javascript,面试题目"> -->
-    <!-- <meta name="description" content="littleki博客,记录一些平时碰到的问题"> -->
   
   <meta name="description" content="littleki博客,记录一些平时碰到的问题">
 <meta name="keywords" content="littleki博客,nova博客,随手笔记,vue,javascript,面试题目">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Littleki">
-<meta property="og:url" content="https://littleki.gitee.io/page/2/index.html">
+<meta property="og:url" content="https://littleki.gitee.io/tags/面试/index.html">
 <meta property="og:site_name" content="Littleki">
 <meta property="og:description" content="littleki博客,记录一些平时碰到的问题">
 <meta property="og:locale" content="zh-CN">
@@ -209,343 +205,40 @@
           </div>
           <div id="js-content" class="content-ll">
             
-
-  
-    <article id="post-mongo笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
   
   
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2021/07/02/mongo笔记/" target="_blank">MongoDB笔记</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2021/07/02/mongo笔记/" class="archive-article-date">
-        <time datetime="2021-07-02T09:42:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-02</time>
-</a>
-
-  
-  
-  
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="MongoDB笔记"><a href="#MongoDB笔记" class="headerlink" title="MongoDB笔记"></a>MongoDB笔记</h2><h3 id="MongoDB-数据库的命名规则"><a href="#MongoDB-数据库的命名规则" class="headerlink" title="MongoDB 数据库的命名规则"></a>MongoDB 数据库的命名规则</h3><p>注意：数据库最终会成为文件，数据库名就是文件的名称。<br>由于数据库名称在 MongoDB 中不区分大小写，因此数据库名称不能仅仅区别于字符。<br>对于在 Windows 上运行的 MongoDB，数据库名称不能包含以下字符：/、\、“、$、*、＜ ＞、：、|、? 。<br>对于在 UNIX 和 Linux 系统上运行的 MongoDB，数据库名称不能包含以下字符：/、\、。、”、$。<br>虽然 UTF-8 可以提供很多国家的语言的命名格式，在 MongoDB 数据库命名时也可以使用汉字作为数据库名，但是最好尽量采用英文字母、数字、字符等为主的命名格式。</p>
-<p>如下命名格式是正确的：myDB、my_NewDB、myDB12。</p>
-<p>以下命名格式则不被 MongoDB 接受：.myDB、/123。</p>
-<h3 id="查看数据库"><a href="#查看数据库" class="headerlink" title="查看数据库"></a>查看数据库</h3><p>MongoDB 使用 show 命令查看当前数据库列表，代码如下:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;show dbs        //可以在任意当前数据库上执行该命令</span><br><span class="line">admin 0.000GB    //保留数据库，admin</span><br><span class="line">myDB 0.000GB     //自定义数据库，myDB,该数据库里已经插入记录，没有记录的自定义数据库不会显示 </span><br><span class="line"><span class="built_in">local</span> 0.000GB    //保留数据库，<span class="built_in">local</span></span><br><span class="line"><span class="built_in">test</span> 0.000GB     //保留数据库，<span class="built_in">test</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="查看某个数据"><a href="#查看某个数据" class="headerlink" title="查看某个数据"></a>查看某个数据</h3><p>MongoDB 使用 stats() 方法查看某个数据库的具体统计信息，注意对某个数据库进行操作之前，一定要用 use 切换至数据库，否则会出错，代码如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&gt;use <span class="built_in">test</span>              //选择执行的<span class="built_in">test</span>数据库</span><br><span class="line">switched to db <span class="built_in">test</span>    //use执行后返回的结果</span><br><span class="line">&gt; db. stats ()         //统计数据信息</span><br><span class="line">&#123; </span><br><span class="line">    <span class="string">"db"</span> : <span class="string">"test"</span>,     //数据库名</span><br><span class="line">    <span class="string">"collections"</span> : 0, //集合数量</span><br><span class="line">    <span class="string">"views"</span> : 0,</span><br><span class="line">    <span class="string">"objects"</span> : 0,     //文档数量</span><br><span class="line">    <span class="string">"avgObjSize"</span> : 0,  //平均每个文档的大小</span><br><span class="line">    <span class="string">"dataSize"</span> : 0,    //数据占用空间大小，不包括索引，单位为字节</span><br><span class="line">    <span class="string">"storageSize"</span> : 0, //分配的存储空间</span><br><span class="line">    <span class="string">"nuinExtents"</span> : 0, //连续分配的数据块</span><br><span class="line">    <span class="string">"indexes"</span> : 0,     //索引个数</span><br><span class="line">    <span class="string">"indexsize"</span> : 0,   //索引占用空间大小</span><br><span class="line">    <span class="string">"fileSize"</span> : 0,    //物理存储文件的大小</span><br><span class="line">    <span class="string">"ok"</span> : 1 </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><a href="http://c.biancheng.net/view/6549.html" target="_blank" rel="noopener">MongoDB笔记参考链接</a></p>
-<h3 id="查看集合（查看数据库的表）"><a href="#查看集合（查看数据库的表）" class="headerlink" title="查看集合（查看数据库的表）"></a>查看集合（查看数据库的表）</h3><p>MongoDB 使用 getCollectionNames() 方法查询当前数据库下的所有集合，代码如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;use <span class="built_in">test</span></span><br><span class="line">&gt;db.getCollectionNames ()    //查询当前数据下所有的集合名称</span><br></pre></td></tr></table></figure>
-
-<h3 id="查看当前集合的数据"><a href="#查看当前集合的数据" class="headerlink" title="查看当前集合的数据"></a>查看当前集合的数据</h3><p><a href="http://c.biancheng.net/view/6555.html" target="_blank" rel="noopener">查看当前集合的数据参考链接</a></p>
-<h4 id="find-简介"><a href="#find-简介" class="headerlink" title="find() 简介"></a>find() 简介</h4><p>MongoDB 中查询文档使用 find() 方法。find() 方法以非结构化的方式来显示所要查询的文档， 查询数据的语法格式如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;db.collection.find(query, projection)</span><br></pre></td></tr></table></figure>
-
-<p>query 为可选项，设置查询操作符指定查询条件；projection 也为可选项，表示使用投影操作符指定返回的字段，如果忽略此选项则返回所有字段。</p>
-<p>查询 test 集合中的所有文档时，为了使显示的结果更为直观，可使用 pretty() 方法以格式化的方式来显示所有文档，方法如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; db.test.find().pretty()</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>会变的更清楚<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">        <span class="string">"_id"</span> : ObjectId(<span class="string">"5a22c886f7293355a5b5016f"</span>),</span><br><span class="line">        <span class="string">"user_name"</span> : <span class="string">"cangdu"</span>,</span><br><span class="line">        <span class="string">"password"</span> : <span class="string">"3vz/9Bxu0J6Uqzrxlr09VQ=="</span>,</span><br><span class="line">        <span class="string">"id"</span> : <span class="number">1</span>,</span><br><span class="line">        <span class="string">"create_time"</span> : <span class="string">"2017-12-02 23:36"</span>,</span><br><span class="line">        <span class="string">"status"</span> : <span class="number">2</span>,</span><br><span class="line">        <span class="string">"city"</span> : <span class="string">"上海"</span>,</span><br><span class="line">        <span class="string">"avatar"</span> : <span class="string">"16aaf980b9a39581.jpg"</span>,</span><br><span class="line">        <span class="string">"admin"</span> : <span class="string">"超级管理员"</span>,</span><br><span class="line">        <span class="string">"__v"</span> : <span class="number">0</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">        <span class="string">"_id"</span> : ObjectId(<span class="string">"5a234c2b5e602c0c46e3b213"</span>),</span><br><span class="line">        <span class="string">"user_name"</span> : <span class="string">"walkmansk"</span>,</span><br><span class="line">        <span class="string">"password"</span> : <span class="string">"ZcA59muoPiFzNznkxA9E0Q=="</span>,</span><br><span class="line">        <span class="string">"id"</span> : <span class="number">13</span>,</span><br><span class="line">        <span class="string">"create_time"</span> : <span class="string">"2017-12-03 08:58"</span>,</span><br><span class="line">        <span class="string">"status"</span> : <span class="number">1</span>,</span><br><span class="line">        <span class="string">"city"</span> : <span class="string">"北京"</span>,</span><br><span class="line">        <span class="string">"avatar"</span> : <span class="string">"default.jpg"</span>,</span><br><span class="line">        <span class="string">"admin"</span> : <span class="string">"管理员"</span>,</span><br><span class="line">        <span class="string">"__v"</span> : <span class="number">0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
     
     
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Node mongod</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/07/02/mongo笔记/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2022" class="archive-year">2022</a>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-经济小知识" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+        <div class="archives">
     
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2021/06/21/经济小知识/" target="_blank">经济小知识</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2021/06/21/经济小知识/" class="archive-article-date">
-        <time datetime="2021-06-21T05:56:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-21</time>
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	
+<a href="/2022/10/10/面试/公司面试技能要求/" class="archive-article-date">
+        <time datetime="2022-10-10T09:29:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-10-10</time>
 </a>
 
-  
-  
-  
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="经济小知识"><a href="#经济小知识" class="headerlink" title="经济小知识"></a>经济小知识</h2><h3 id="通货膨胀周边"><a href="#通货膨胀周边" class="headerlink" title="通货膨胀周边"></a>通货膨胀周边</h3><p>工资上涨和通胀是没有联系的，物价上涨会导致生活支出减少，企业经营困难，企业裁员员工失业，但是市场上的钱并不会减少，只能输出通胀或者加息减少流动性。这里面的任何一环都不会让资本家心甘情愿的涨薪的。</p>
-<h3 id="房贷利率"><a href="#房贷利率" class="headerlink" title="房贷利率"></a>房贷利率</h3><p>房贷利率上调有可能是因为基准利率上调导致。</p>
-<h3 id="成交量"><a href="#成交量" class="headerlink" title="成交量"></a>成交量</h3><p>杭州去年二手房成交量在10万套以上，福州和厦门加起来没有人家一个城市多，甚至再把泉州加进去都不一定比得了。福厦泉也不过如此，福建其他城市就更不用说了，越小的城市越没有二手房市场。在成交量远比人家小的情况下，福建的二手房贷款额度自然没有那么紧张。所以，当你们看到什么莆田、宁德、三明等地有人在抱怨房价多高多高，二手房开价两万三万的时候，就应该想到这些价格都是虚的，没有成交量支撑只是浮云而已，有些地区的二手房有价无市，只不过是一场博傻的游戏。</p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/06/21/经济小知识/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-房子/房子" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
+    	 
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2021/06/18/房子/房子/" target="_blank">房子</a>
+	  <a class="archive-article-title" href="/2022/10/10/面试/公司面试技能要求/" target="_blank">公司面试技能要求</a>
   
     </h1>
   
 
 
-  
-  
-<a href="/2021/06/18/房子/房子/" class="archive-article-date">
-        <time datetime="2021-06-18T02:32:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-18</time>
-</a>
-
-  
-  
-  
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>##</p>
-<h3 id="房源比较"><a href="#房源比较" class="headerlink" title="房源比较"></a>房源比较</h3><h4 id="浦口新城和胪雷新城哪个好呢？"><a href="#浦口新城和胪雷新城哪个好呢？" class="headerlink" title="浦口新城和胪雷新城哪个好呢？"></a>浦口新城和胪雷新城哪个好呢？</h4><ul>
-<li><code>浦口新城</code>房子好，</li>
-<li><code>胪雷新城</code>周边配套完善。<h4 id="浦上大道的浦新小区更好还是春风苑的好？"><a href="#浦上大道的浦新小区更好还是春风苑的好？" class="headerlink" title="浦上大道的浦新小区更好还是春风苑的好？"></a>浦上大道的浦新小区更好还是春风苑的好？</h4>浦新小区地段好一点，但是隔壁有个变电站，买的楼栋尽量靠外一点。房子和单价倒是差不多<h3 id="房源"><a href="#房源" class="headerlink" title="房源"></a>房源</h3></li>
-</ul>
-<ol>
-<li><p>黄山新城真的实惠，房子新，社区也还好，最便宜的才1.4万</p>
-</li>
-<li><p>盖山新苑和霞镜新城</p>
-</li>
-<li><p>园山还没证，双湖新城一平方1.3-1.4万一直都有成交。虽然不多。</p>
-</li>
-</ol>
-<p>英泰第一城b区？</p>
-<ol start="4">
-<li>齐安新苑</li>
-<li>迎霞新城</li>
-<li>洪塘新城</li>
-</ol>
-<h4 id="安置费费用"><a href="#安置费费用" class="headerlink" title="安置费费用"></a>安置费费用</h4><p><img src="/2021/06/18/房子/房子/%E5%AE%89%E7%BD%AE%E6%88%BF.png" alt></p>
-<p>小耳你说的对，如果我真的爱你对话，就不会一直惹你生气发狂，还不肯放手，爱一个人应该爱护她的健康，而不是让死缠不放。<br>你知道吗，我怕我放手了，连爱你但机会都没有了。<br>我发现自己已经习惯你的存在，习惯了早晨起床时你脚一踢，我就知道我该起床了；习惯了我在骄傲时你会提醒我，别自负了；<br>习惯了一下班就想着早点回来见你。<br>房子的事情这段日子,我明白了很多，能早点给你一个完整的家，其实不差那点钱，更何况还是概率性问题，不能拿你的幸福去堵，<br>我们更应该适应当下，即使未来涨了，也没有必要感觉可惜，至少我们提前住了一年，我们不存在亏。<br>还因为房子的事情都要跟你姐姐吵起来了，太糟糕了(像你说的玻璃心了那时候，太小心眼了)。<br>如果还有以后的话，小耳朵不喜欢的话不应该重复去提，不对，不喜欢的事情和话都不能提，说出来的话要过大脑，要考虑小耳朵她自己。<br>我会努力把这个重中之重做好，让小耳可以因为这个不在烦恼、生气。<br>我希望有一天，小耳朵可以很骄傲的在别人面前谈起我的变化，<br>更希望小耳朵可以重新像以前那样开开心心的,即使不是跟我在一起也要开开心心的。</p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">房子</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/06/18/房子/房子/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-面试/字节面试" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2021/06/16/面试/字节面试/" target="_blank">字节面试题</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2021/06/16/面试/字节面试/" class="archive-article-date">
-        <time datetime="2021-06-15T16:09:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-16</time>
-</a>
-
-  
-  
-  
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="字节面试题"><a href="#字节面试题" class="headerlink" title="字节面试题"></a>字节面试题</h2><p><img src="/2021/06/16/面试/字节面试/1%E5%AD%97%E8%8A%82.png" alt><br><img src="/2021/06/16/面试/字节面试/2%E5%AD%97%E8%8A%82.png" alt><br><img src="/2021/06/16/面试/字节面试/3%E5%AD%97%E8%8A%82.png" alt></p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -553,675 +246,84 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">面试题</a>
         		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/06/16/面试/字节面试/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-经验之道" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2021/06/02/经验之道/" target="_blank">经验之道</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2021/06/02/经验之道/" class="archive-article-date">
-        <time datetime="2021-06-02T02:09:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-02</time>
-</a>
-
-  
-  
-  
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="成为PM的过程"><a href="#成为PM的过程" class="headerlink" title="成为PM的过程"></a>成为PM的过程</h2><h3 id="PM的职业素养"><a href="#PM的职业素养" class="headerlink" title="PM的职业素养"></a>PM的职业素养</h3><p>PM的目标只有一个：“确保项目按时保质上线”，但过程也同样重要，阿里巴巴有句土话我很喜欢：<strong>没有过程的结果是“垃圾”，没有结果的过程是“放屁”</strong>。</p>
-<p>在推进项目的过程中，一名合格的PM需要具备的基本素养是：</p>
-<p>拥有Owner的心态<br>做关键技术决策<br>充分暴露风险<br>调动能调动的一切力量</p>
-<p>内心时刻铭记一句团队内广为流传的名言：<strong>所有关于事的困难可以靠坚持解决，所有关于人的困难可以靠换位思考解决</strong>。</p>
-<h3 id="关于方案评估"><a href="#关于方案评估" class="headerlink" title="关于方案评估"></a>关于方案评估</h3><p>评估某个方案是否可行，不应该只是评估技术上是否可行，还要考虑按照这个方案推进后，会带来怎样的影响。</p>
-<p>对于我这种新人甚至是我们团队在PD心中，都是非常<code>消耗信用</code>的一件事，“积累信用可能需要好久，但消耗信用，仅仅只是一次无意间的失误”，要<code>珍惜自己的信用</code>，“信用”，才是PM推进事情时的通行证</p>
-<h3 id="做一名有“标签”的人"><a href="#做一名有“标签”的人" class="headerlink" title="做一名有“标签”的人"></a>做一名有“标签”的人</h3><p>要做一名有标签，有特色，有影响力的人，在公司工作了一段时间后，在人们心中不应该只是一名“前端工程师”，应该是一名XXX的前端工程师。</p>
-<h3 id="培养⼀些好的习惯"><a href="#培养⼀些好的习惯" class="headerlink" title="培养⼀些好的习惯"></a>培养⼀些好的习惯</h3><p>也许这些好的习惯，跟专业技术没有直接关系，但会潜移默化地提升你的综合实⼒。</p>
-<ol>
-<li>时间管理；</li>
-<li>项⽬管理；</li>
-<li>记录与总结；</li>
-<li>学会求助；</li>
-<li>多⾛⼀步：除了完成需求，能不能多想想，多⾛⼀步，去做⼀些有价值的事情。</li>
-</ol>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
+      		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">经验 经历</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
         		</li>
       		
 		</ul>
 	</div>
 
-    
+          
 
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/06/02/经验之道/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-leetcode" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
     
-      <header class=" article-header">
-  
+    
+      
+        </div></section>
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	
+<a href="/2020/04/09/面试/面试题/" class="archive-article-date">
+        <time datetime="2020-04-08T16:09:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-09</time>
+</a>
+
+        </div>
+    	 
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2021/05/26/leetcode/" target="_blank">leetcode</a>
+	  <a class="archive-article-title" href="/2020/04/09/面试/面试题/" target="_blank">面试题</a>
   
     </h1>
   
 
 
-  
-  
-<a href="/2021/05/26/leetcode/" class="archive-article-date">
-        <time datetime="2021-05-26T03:23:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-26</time>
-</a>
-
-  
-  
-  
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="模式识别"><a href="#模式识别" class="headerlink" title="模式识别"></a>模式识别</h2><ol>
-<li>移动左右两头的问题可以考虑双指针</li>
-</ol>
-<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ol>
-<li>给定一个数组，将数组中的元素向右移动 k 个位置，其中 k 是非负数。</li>
-</ol>
-<p>进阶：</p>
-<p>尽可能想出更多的解决方案，至少有三种不同的方法可以解决这个问题。<br>你可以使用空间复杂度为 O(1) 的 原地 算法解决这个问题吗？</p>
-<p>最易懂的逻辑 将最后一个元素删掉 并插入到数组第一个位置 但是由于splice方法从根本上来说是将后边所有元素都向后推一个位置 所以时间复杂度比较高 代码如下</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> rotate = <span class="function"><span class="keyword">function</span>(<span class="params">nums, k</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> n = <span class="number">0</span>;n &lt; k; n++)&#123;</span><br><span class="line">               nums.splice(<span class="number">0</span>,<span class="number">0</span>,nums.splice(nums.length<span class="number">-1</span>,<span class="number">1</span>)[<span class="number">0</span>]);</span><br><span class="line">           &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</li>
-</ol>
-<p>说明：</p>
-<p>你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[]&#125;</span> <span class="variable">nums</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> singleNumber = <span class="function"><span class="keyword">function</span>(<span class="params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">const</span> num <span class="keyword">of</span> nums) &#123;</span><br><span class="line">        ans ^= num; <span class="comment">// 异或运算</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p><code>什么是异或？</code><br>定义：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> ⊕ <span class="number">1</span> = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="number">0</span> ⊕ <span class="number">0</span> = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="number">1</span> ⊕ <span class="number">0</span> = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="number">0</span> ⊕ <span class="number">1</span> = <span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-<p>根据定义我们很容易获得异或两个特性：</p>
-<p>恒等律：X ⊕ 0 = X 归零律：X ⊕ X = 0</p>
-<h2 id="动态规划可解问题需同时满足以下三个特点："><a href="#动态规划可解问题需同时满足以下三个特点：" class="headerlink" title="动态规划可解问题需同时满足以下三个特点："></a>动态规划可解问题需同时满足以下三个特点：</h2><ol>
-<li>存在最优子结构。</li>
-<li>存在重复子问题。</li>
-<li>无后效性。</li>
-</ol>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">算法 leetcode</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">面试题</a>
         		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/05/26/leetcode/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-专有名词" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2021/05/24/专有名词/" target="_blank">专有名词</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2021/05/24/专有名词/" class="archive-article-date">
-        <time datetime="2021-05-24T02:04:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-24</time>
-</a>
-
-  
-  
-  
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="英文专有名词"><a href="#英文专有名词" class="headerlink" title="英文专有名词"></a>英文专有名词</h2><h3 id="什么是-RPC？-Remote-Procedure-Call"><a href="#什么是-RPC？-Remote-Procedure-Call" class="headerlink" title="什么是 RPC？( Remote Procedure Call )"></a>什么是 RPC？( Remote Procedure Call )</h3><p>RPC ( Remote Procedure Call ) 是一种通用的网络调用方式，其广泛应用于后端服务之间，像 Dubbo、SOAP、Thrift、gRPC、RESTful 等，从广义上来说都是一种 RPC 的实现。几乎可以这么说，只要公司达到一定量级，其后端服务之间必定会采用 RPC 而非简单 HTTP 的形式来进行互相调用。因此，对于想做全栈或者后端 Node.js 的同学来说，早点了解与使用 RPC 是非常有必要的。</p>
-<h3 id="Lamda表达式"><a href="#Lamda表达式" class="headerlink" title="Lamda表达式"></a>Lamda表达式</h3><p>在js 里就是箭头函数 <code>()=&gt; 1</code></p>
-<h3 id="double-payload"><a href="#double-payload" class="headerlink" title="double payload"></a>double payload</h3><h3 id="hydration-开销"><a href="#hydration-开销" class="headerlink" title="hydration 开销"></a>hydration 开销</h3><ul>
-<li>客户端接到 SSR 响应之后，为了支持（基于 JavaScript 的）交互功能，仍然需要创建出组件树，与 SSR 渲染的 HTML 关联起来，并绑定相关的 DOM 事件，让页面变得可交互，这个过程称为 hydration<h3 id="SFC-语法"><a href="#SFC-语法" class="headerlink" title="SFC 语法"></a>SFC 语法</h3></li>
-<li>SFC(sequential Function Chart)是一种新颖的、按照工艺流程进行编程的图形编程语言，正因为它按照工艺流程动作顺序编制程序，因此在自动化设备的PLC编程中得到了非常广泛的应用。</li>
-<li>允许用户通过图形化的方式组态和调试顺序控制系统</li>
-</ul>
-<p><a href="https://github.com/vuejs/rfcs" target="_blank" rel="noopener">vuersfc</a></p>
-<h3 id="What-is-an-RFC"><a href="#What-is-an-RFC" class="headerlink" title="What is an RFC?"></a>What is an RFC?</h3><p>The “RFC” (request for comments) process is intended to provide a consistent and controlled path for new features to enter the framework.</p>
-<p>Many changes, including bug fixes and documentation improvements can be implemented and reviewed via the normal GitHub pull request workflow.</p>
-<p>Some changes though are “substantial”, and we ask that these be put through a bit of a design process and produce a consensus among the Vue core team and the community.</p>
-<p>“ RFC”（征求意见）过程旨在为新功能进入框架提供一致且受控的路径。</p>
-<p>可以通过正常的GitHub拉取请求工作流程来实现和检查许多更改，包括错误修复和文档改进。</p>
-<p>但是，有些更改是“实质性的”，我们要求对这些更改进行一些设计过程，并在Vue核心团队和社区之间达成共识。</p>
-<h3 id="AST-抽象语法树"><a href="#AST-抽象语法树" class="headerlink" title="AST 抽象语法树"></a>AST 抽象语法树</h3><p>AST 叫做 抽象语法树</p>
-<h3 id="monorepo"><a href="#monorepo" class="headerlink" title="monorepo"></a>monorepo</h3><ul>
-<li>monorepo 是一种将多个项目代码存储在一个仓库里的软件开发策略（”mono” 来源于希腊语 μόνος 意味单个的，而 “repo”，显而易见地，是 repository 的缩写）。将不同的项目的代码放在同一个代码仓库中，这种「把鸡蛋放在同一个篮子里」的做法可能乍看之下有些奇怪，但实际上，这种代码管理方式有很多好处，无论是世界一流的互联网企业 Google，Facebook，还是社区知名的开源项目团队 Babel （如下图）都使用了 monorepo 策略管理他们的代码。</li>
-</ul>
-<h3 id="AO"><a href="#AO" class="headerlink" title="AO"></a>AO</h3><p>活跃对象(Activation Object, AO，有时也称活动对象、激活对象)</p>
-<p>javaScript 与 C 语言不同，它是从堆中分配该对象。且这个活跃对象并不会在函数返回时被自动销毁，它的生命周期与普通对象的垃圾回收机制类似，是根据引用数量决定的。</p>
-<p>一个活跃对象包含：</p>
-<ul>
-<li>对应函数对象的引用；</li>
-<li>调用者对应的活跃对象，用于 return 之后的控制权转移；</li>
-<li>调用完毕之后用于继续执行后续逻辑的恢复信息，它通常是一个将在函数调用完毕之后立即要执行的指令的地址；</li>
-<li>函数对应的形参，从实参初始化而来；</li>
-<li>函数中的变量，以 undefined 进行初始化；</li>
-<li>函数用于计算复杂表达式的临时变量；</li>
-<li>this，如果函数作为一个方法被调用，那么 this 通常就是它的宿主对象。</li>
-<li>其实 ES5+ 之后的广义“活跃对象”就是对于 ES 1 / 3 定义的活跃对象的一个扩展，并将其应用到了词法环境中。</li>
-</ul>
-<p>现如今的“活跃对象”是一个类似于活跃记录和栈帧的广义抽象概念。</p>
-<p><a href="https://mp.weixin.qq.com/s/aZRm0-KP1CTIneTI4FWKzQ" target="_blank" rel="noopener">javaScript 中的活跃对象（AO）浅谈及导读</a></p>
-<h4 id="什么是闭包"><a href="#什么是闭包" class="headerlink" title="什么是闭包"></a>什么是闭包</h4><p>一个拥有外层函数对象所对应的活跃对象引用的函数对象就被称为<code>闭包</code>。</p>
-<h3 id="VO"><a href="#VO" class="headerlink" title="VO"></a>VO</h3><p>可变对象（Variable Object, VO，有时也称变量对象）</p>
-<p>mongod –dbpath ~/Downloads/mongodb/data/db</p>
-<h3 id="CI-持续集成"><a href="#CI-持续集成" class="headerlink" title="CI (持续集成)"></a>CI (持续集成)</h3><p>持续集成是自动化流程中一个十分重要的部分</p>
-<h3 id="HC"><a href="#HC" class="headerlink" title="HC"></a>HC</h3><p>hc就是<code>headcount的</code>意思(人头数)<br>HC应该指的是人员预算的计划,也就是预计招人数量的计划</p>
-<h3 id="HMR（热更新）"><a href="#HMR（热更新）" class="headerlink" title="HMR（热更新）"></a>HMR（热更新）</h3><p>热更新</p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
+      		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">英文专有名词</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
         		</li>
       		
 		</ul>
 	</div>
 
-    
+          
 
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/05/24/专有名词/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-单元测试" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
   
   
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2021/05/14/单元测试/" target="_blank">单元测试</a>
+    </div></section>
   
-    </h1>
-  
-
-
-  
-  
-<a href="/2021/05/14/单元测试/" class="archive-article-date">
-        <time datetime="2021-05-14T02:16:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-14</time>
-</a>
-
-  
-  
-  
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="为什么要做单测"><a href="#为什么要做单测" class="headerlink" title="为什么要做单测"></a>为什么要做单测</h2><h3 id="ToB-业务-与-ToC-相比："><a href="#ToB-业务-与-ToC-相比：" class="headerlink" title="ToB 业务 与 ToC 相比："></a>ToB 业务 与 ToC 相比：</h3><p>业务会相对稳定：UI页面稳定变化少</p>
-<p>稳定性要求极高：需要频繁的进行回归测试，服务的是付费用户</p>
-<p>持续升级迭代：迭代周期相对较长</p>
-<h3 id="单测带来的收益："><a href="#单测带来的收益：" class="headerlink" title="单测带来的收益："></a>单测带来的收益：</h3><p>减少Bug：如今的项目大多都是多人分模块协同开发，当各个模块集成时再去发现问题，定位和沟通成本是非常高的，通过单元测试来保证各个模块的正确性，可以尽早的发现问题，而不时等到集成时再发现问题；</p>
-<p>放心重构：对于持续升级迭代的项目，代码不断的在变化和重构，通过单元测试，开发可以放心的修改重构代码，减少改代码时心理负担，提高重构的成功率；</p>
-<p>改进设计：越是良好设计的代码，一般越容易编写单元测试，多个小的方法的单测一般比大方法（成百上千行代码）的单测代码要简单、要稳定，所以在编写单测的过程中，如果发现单测代码非常难写，一般表明被测试的代码包含了太多的依赖或功能，需要反思代码的合理性，进而推进代码设计的优化，形成正向循环；</p>
-    
-    <a class="article-more-a" href="/2021/05/14/单元测试/#more">more >></a>
-    
-    
 
     
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">UT</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/05/14/单元测试/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-V8引擎" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2021/04/29/V8引擎/" target="_blank">V8引擎</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2021/04/29/V8引擎/" class="archive-article-date">
-        <time datetime="2021-04-29T14:53:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-29</time>
-</a>
-
-  
-  
-  
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="V8引擎"><a href="#V8引擎" class="headerlink" title="V8引擎"></a>V8引擎</h2><h3 id="什么V8引擎"><a href="#什么V8引擎" class="headerlink" title="什么V8引擎"></a>什么V8引擎</h3><p>是由 C++ 编写的 Google 开源高性能 javascript 和 WebAssembly 引擎。他用于 Chrome和Node等。</p>
-<p>是接收javsccript 代码，编译代码然后执行 C++ 的程序，编译后的代码可以在多种操作系统多种处理器运行</p>
-<h3 id="V8主要工作"><a href="#V8主要工作" class="headerlink" title="V8主要工作"></a>V8主要工作</h3><ol>
-<li>编译和执行JS代码</li>
-<li>处理调用杖</li>
-<li>内存的分配</li>
-<li>垃圾回收</li>
-</ol>
-<h4 id="V8引擎如何工作"><a href="#V8引擎如何工作" class="headerlink" title="V8引擎如何工作"></a>V8引擎如何工作</h4><ol>
-<li>parser  解析器  生成AST抽象语法树</li>
-<li>interpreter   解释器   Ignition   生成byteCode字节码  并直接执行</li>
-<li>清除AST 释放内存空间</li>
-<li>得到25% - 50%的等效机器代码大小</li>
-<li>compiler  运行过程中，解释器收集优化信息发送给编译器TurboFan</li>
-<li>重新生成机器码</li>
-<li>有些热点函数变更会由优化后的机器码还原成字节码 也就是deoptimization  回退字节码操作执行</li>
-</ol>
-<p>优化点：</p>
-<ol>
-<li>值声明未调用，不会被解析生成AST</li>
-<li>函数只被调用一次，bytcode直接被解释执行，不会进入到编译优化阶段</li>
-<li>函数被调用多次，Igniton会收集函数类型信息，可能会被标记为热点函数，可能被编译成优化后的机器代码</li>
-</ol>
-<p><a href="https://www.bilibili.com/video/BV1zV411z7RX?from=search&seid=6074485310793836918" target="_blank" rel="noopener">参考链接</a></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span> (<span class="params">x,y</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x + y</span><br><span class="line">&#125;</span><br><span class="line">sum(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">sum(<span class="number">3</span>,<span class="number">2</span>)</span><br><span class="line">sum(<span class="number">5</span>,<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">sum(<span class="string">'a'</span>,<span class="string">'b'</span>)</span><br></pre></td></tr></table></figure>
-    
-    <a class="article-more-a" href="/2021/04/29/V8引擎/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">V8引擎</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/04/29/V8引擎/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-VDOM" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class=" article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2021/04/28/VDOM/" target="_blank">VDOM</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2021/04/28/VDOM/" class="archive-article-date">
-        <time datetime="2021-04-28T04:03:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-28</time>
-</a>
-
-  
-  
-  
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="VDOM"><a href="#VDOM" class="headerlink" title="VDOM"></a>VDOM</h2><h3 id="何为贪心？"><a href="#何为贪心？" class="headerlink" title="何为贪心？"></a>何为贪心？</h3><ul>
-<li>贪心算法（又称贪婪算法）是指，在对问题求解时，总是做出在当前看来是最好的选择。也就是说，不从整体最优上加以考虑，算法得到的是在某种意义上的局部最优解。（百度百科解释）</li>
-<li>贪心思想，同样是长度为 2 的序列，[1,2] 一定比 [1,4] 好，因为它更有潜力。换句话说，我们想要组成最长的递增子序列， 就要让这个子序列中上升的尽可能的慢，这样才能更长。</li>
-</ul>
-<h4 id="贪心使用条件"><a href="#贪心使用条件" class="headerlink" title="贪心使用条件"></a>贪心使用条件</h4><p>利用贪心法求解的问题应具备如下2个特征。</p>
-<ol>
-<li>贪心选择性质<br>一个问题的整体最优解可通过一系列局部的最优解的选择达到，并且每次的选择可以依赖以前作出的选择，但不依赖于后面要作出的选择。这就是贪心选择性质。对于一个具体问题，要确定它是否具有贪心选择性质，必须证明每一步所作的贪心选择最终导致问题的整体最优解。</li>
-<li>最优子结构性质<br>当一个问题的最优解包含其子问题的最优解时，称此问题具有最优子结构性质。问题的最优子结构性质是该问题可用贪心法求解的关键所在。在实际应用中，至于什么问题具有什么样的贪心选择性质是不确定的，需要具体问题具体分析</li>
-</ol>
-<h4 id="贪心存在问题编"><a href="#贪心存在问题编" class="headerlink" title="贪心存在问题编"></a>贪心存在问题编</h4><p>贪心算法也存在如下问题：<br>1、不能保证解是最佳的。因为贪心算法总是从局部出发，并没从整体考虑<br>2、贪心算法一般用来解决求最大或最小解<br>3、贪心算法只能确定某些问题的可行性范围 。</p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/04/28/VDOM/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -1261,10 +363,10 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
+		isHome: false,
 		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: false,
